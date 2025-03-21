@@ -43,9 +43,9 @@ const Navbar: React.FC = () => {
                             <path d="M3 4H21V6H3V4ZM3 11H15V13H3V11ZM3 18H21V20H3V18Z"></path>
                     </svg>
                 </Button>
-                    <div className="lg:block hidden text-white text-2xl font-bold ">
-                        Cristian
-                    </div>
+                    <img 
+                        src="/src/assets/images/1.png"
+                        className="hidden lg:block lg:w-[50px] lg:h-[50px] rounded-full object-cover border-2 border-gray-700" />
                 </div>
 
                 {/* Columna central: Menú de navegación */}
@@ -69,6 +69,7 @@ const Navbar: React.FC = () => {
                 {/* Columna derecha: Íconos sociales */}
                 <div className="flex space-x-4 shrink-0 ml-auto lg:ml-0 lg:justify-self-end items-center justify-center">
                     <a
+                        title="Linkedin"
                         href="https://linkedin.com/in/tu-linkedin"
                         target="_blank"
                         rel="noopener noreferrer"
@@ -77,6 +78,7 @@ const Navbar: React.FC = () => {
                         <FaLinkedin size={24} />
                     </a>
                     <a
+                        title="GitHub"
                         href="https://github.com/CristianMR87"
                         target="_blank"
                         rel="noopener noreferrer"

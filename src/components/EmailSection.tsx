@@ -12,7 +12,7 @@ function EmailSection() {
     };
 
     const copyEmail = () => {
-        navigator.clipboard.writeText('tuemail@example.com').then(() => {
+        navigator.clipboard.writeText('Cristian.morano@hotmail.com').then(() => {
             setCopied(true);
             setTimeout(() => {
                 setCopied(false);
@@ -23,7 +23,7 @@ function EmailSection() {
     
 
     return (
-        <div className="flex shrink-0 ml-auto lg:ml-0 lg:justify-self-end relative">
+        <div className="flex shrink-0 ml-auto lg:ml-0 lg:justify-self-end relative" title="Contacto">
             {/* Botón principal */}
             <Button onClick={toggleOptions}>
                 <FaEnvelope size={24} className="text-white" />
@@ -31,7 +31,7 @@ function EmailSection() {
 
             {/* Opciones que aparecen al hacer clic */}
             {isOpen && (
-                <div
+                <div title="Copiar email"
                     className="absolute top-17 left-1/2 transform -translate-x-1/2 flex space-x-4 animate-slideIn"
                 >
                     {/* Opción 1: Copiar email */}
@@ -45,6 +45,7 @@ function EmailSection() {
                     </Button>
                         {/* Opción 2: Enviar email */}
                         <a
+                        title="Enviar email"
                         href="mailto:Cristian.morano@hotmail.com"
                         className="flex items-center justify-center w-12 h-12 bg-gradient-to-br from-gray-950 to-blue-950 border border-cyan-400/30 rounded-full shadow-lg shadow-blue-500/20 hover:shadow-blue-500/40 transition-all duration-300"
                         aria-label="Enviar email"

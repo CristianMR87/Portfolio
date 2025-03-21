@@ -10,7 +10,7 @@ const AboutSection: React.FC = () => {
     const [copied, setCopied] = useState(false);
 
     const copyEmail = () => {
-        navigator.clipboard.writeText('tuemail@example.com').then(() => {
+        navigator.clipboard.writeText('Cristian.morano@hotmail.com').then(() => {
             setCopied(true);
             setTimeout(() => {
                 setCopied(false);
@@ -36,7 +36,7 @@ const AboutSection: React.FC = () => {
                     <br/>
                     <div className="position:relative flex flex-row items-center justify-center lg:justify-start gap-2">
                         <p className="my-3 mr-2">Cristian.morano@hotmail.com</p>
-                        <div className="relative">
+                        <div className="relative" title="Copiar email">
                             <Button onClick={copyEmail} className="!w-8 !h-8">
                                 <FaCopy size={14} className="text-white" />
                             </Button>
@@ -50,6 +50,7 @@ const AboutSection: React.FC = () => {
 
                     <div className="flex flex-row text-sm font-semibold rounded-full lg:justify-start justify-center">
                         <a
+                            title="Linkedin"
                             href="https://linkedin.com/in/tu-linkedin"
                             target="_blank"
                             rel="noopener noreferrer"
@@ -58,6 +59,7 @@ const AboutSection: React.FC = () => {
                             <FaLinkedin size={24} />
                         </a>
                         <a
+                            title="GitHub"
                             href="https://github.com/CristianMR87"
                             target="_blank"
                             rel="noopener noreferrer"
