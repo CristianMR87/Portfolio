@@ -17,11 +17,11 @@
 
 a {
   font-weight: 500;
-  color: #646cff;
+  color: #FFFFFF;
   text-decoration: inherit;
 }
 a:hover {
-  color: #535bf2;
+  color: #6AA2F6;
 }
 
 nav {
@@ -35,7 +35,7 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
-  background-color: #171717; /* Gris oscuro para que el margen no muestre blanco */
+  background-color: #030712; /* Cambiar esto si la linea superior del nav molesta. */
 }
 
 h1 {
@@ -43,8 +43,7 @@ h1 {
   line-height: 1.1;
 }
 
-button {
-
+.button-default {
   border: 1px solid transparent;
   font-size: 1em;
   font-weight: 500;
@@ -71,6 +70,11 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+
+  button, a {
+    border-color: #64748b; /* Un gris claro en lugar de blanco */
+  }
+  
   
 }
 
