@@ -18,7 +18,7 @@ const AboutSection: React.FC = () => {
     };
 
     return (
-        <section className="min-w-95 md:min-w-[768px] lg:min-w-240 p-4 mt-16 mx-auto w-3/5 rounded-lg ">           
+        <section className="min-w-95 lg:w-[1024px] p-4 mt-16 mx-auto w-4/5 rounded-lg ">           
             <div className="flex flex-col lg:flex-row items-center lg:items-start gap-4 md:gap-8 lg:gap-12">                
                 {/* Texto */}
                 <div className="flex-1 text-white lg:text-left text-center">

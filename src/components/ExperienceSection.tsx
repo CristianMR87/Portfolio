@@ -2,11 +2,11 @@ import React from 'react';
 
 const ExperienceSection: React.FC = () => {
     return (
-        <section className="min-w-95 md:min-w-[768px] lg:min-w-240 p-4 mt-14 mx-auto w-4/5">
+        <section className="min-w-95 md:min-w-[768px] lg:w-[1024px] p-4 mt-14 mx-auto ">
             <h2 className="text-5xl font-bold text-blue-400 text-center lg:text-center mb-8">Experiencia</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                 {/* Experiencia 1 */}
-                <div className="relative min-w-80 bg-gradient-to-br from-gray-900 to-gray-800 p-6 rounded-xl shadow-xl shadow-blue-500/40 hover:shadow-blue-500/80 active:shadow-blue-500/80 transition-all duration-300 border border-gray-700 group">
+                <div className="relative min-w-80 bg-gradient-to-br from-neutral-950 to-blue-950 p-6 rounded-xl shadow-xl shadow-blue-500/40 hover:shadow-blue-500/80 active:shadow-blue-500/80 transition-all duration-300 border border-gray-700 group">
                     <h3 className="text-xl font-semibold text-white">Desarrollador Full-Stack - Proyecto Personal</h3>
                     <p className="text-gray-400 text-sm mt-1">Marzo 2024 - Actualidad</p>
                     <p className="text-gray-400 mt-1">Desarrollador Freelancer</p>
@@ -23,7 +23,7 @@ const ExperienceSection: React.FC = () => {
                     </span>
                 </div>
                 {/* Experiencia 2 */}
-                <div className="relative min-w-80 bg-gradient-to-br from-gray-900 to-gray-800 p-6 rounded-xl shadow-xl shadow-green-500/40 hover:shadow-green-500/80 active:shadow-green-500/80 transition-all duration-300 border border-gray-700 group">
+                <div className="relative min-w-80 bg-gradient-to-br from-neutral-950 to-blue-950 p-6 rounded-xl shadow-xl shadow-green-500/40 hover:shadow-green-500/80 active:shadow-green-500/80 transition-all duration-300 border border-gray-700 group">
                     <h3 className="text-xl font-semibold text-white">SDR / AE</h3>
                     <p className="text-gray-400 text-sm mt-1">Agosto 2021 - Agosto 2023</p>
                     <p className="text-gray-400 mt-1">Teimas </p>

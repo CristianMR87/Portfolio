@@ -3,11 +3,11 @@ import { FaReact, FaPython, FaBootstrap, FaHtml5, FaCss3, FaFlask} from 'react-i
 
 const ProjectsSection: React.FC = () => {
     return (
-        <section className="min-w-95 md:min-w-[600px] md:max-w-[500px] lg:min-w-[1024px] p-4 mt-16 mx-auto w-4/5">
+        <section className="min-w-95 p-4 mt-16 mx-auto lg:w-[1024px] w-full">
             <h2 className="text-5xl font-bold text-blue-400 text-center mb-8">Proyectos</h2>
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <div className="grid md:grid-cols-3 lg:grid-cols-3 gap-3">
                 {/* Proyecto 1 */}
-                <div className="relative bg-gradient-to-br from-gray-900 to-gray-800 p-6 rounded-xl shadow-xl shadow-blue-500/20 hover:shadow-blue-500/60 active:shadow-blue-500/60 transition-all duration-300 border border-gray-700 group flex flex-col">
+                <div className="relative bg-gradient-to-br from-neutral-950 to-blue-950 p-6 rounded-xl shadow-xl shadow-blue-500/40 hover:shadow-blue-500/80 active:shadow-blue-500/80 transition-all duration-300 border border-gray-700 group flex flex-col">
                     <img
                         src="/images/Portfolio.jpg"
                         alt="Portfolio Personal"
@@ -53,7 +53,7 @@ const ProjectsSection: React.FC = () => {
                     </span>
                 </div>
                 {/* Proyecto 2 */}
-                <div className="relative bg-gradient-to-br from-gray-900 to-gray-800 p-6 rounded-xl shadow-xl shadow-green-500/20 hover:shadow-green-500/60 active:shadow-green-500/60 transition-all duration-300 border border-gray-700 group flex flex-col">
+                <div className="relative bg-gradient-to-br from-neutral-950 to-blue-950 p-6 rounded-xl shadow-xl shadow-green-500/40 hover:shadow-green-500/80 active:shadow-green-500/80 transition-all duration-300 border border-gray-700 group flex flex-col">
                     <img
                         src="/images/NimbusProject.jpg"
                         alt="App consulta clima"
@@ -99,7 +99,7 @@ const ProjectsSection: React.FC = () => {
                     </span>
                 </div>
                 {/* Proyecto 3 */}
-                <div className="relative bg-gradient-to-br from-gray-900 to-gray-800 p-6 rounded-xl shadow-xl shadow-purple-500/20 hover:shadow-purple-500/60 active:shadow-purple-500/60 transition-all duration-300 border border-gray-700 group flex flex-col">
+                <div className="relative bg-gradient-to-br from-neutral-950 to-blue-950 p-6 rounded-xl shadow-xl shadow-purple-500/40 hover:shadow-purple-500/80 active:shadow-purple-500/80 transition-all duration-300 border border-gray-700 group flex flex-col">
                     <img
                         src="/images/BootstrapProject.jpg"
                         alt="Diseño de website"
