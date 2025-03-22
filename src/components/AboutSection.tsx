@@ -19,7 +19,7 @@ const AboutSection: React.FC = () => {
     };
 
     return (
-        <section className="min-w-80 p-4 mt-16 mx-auto w-3/5 rounded-lg shadow-lg">           
+        <section className="min-w-80 lg:min-w-240 p-4 mt-16 mx-auto w-3/5 rounded-lg ">           
             <div className="flex flex-col lg:flex-row items-center lg:items-start gap-4 md:gap-8 lg:gap-12">                
                 {/* Texto */}
                 <div className="flex-1 text-white lg:text-left text-center">
@@ -38,10 +38,10 @@ const AboutSection: React.FC = () => {
                         <p className="my-3 mr-2">Cristian.morano@hotmail.com</p>
                         <div className="relative" title="Copiar email">
                             <Button onClick={copyEmail} className="!w-8 !h-8">
-                                <FaCopy size={14} className="text-white" />
+                                <FaCopy size={14} className="hover:text-blue-500 shadow-lg hover:shadow-blue-500/40 transition-all duration-300" />
                             </Button>
                             {copied && (
-                                <span className="absolute -bottom-11 left-1/2 transform -translate-x-1/2 bg-gray-800 text-white text-xs py-1 px-2 rounded">
+                                <span className="absolute -bottom-11 left-1/2 transform -translate-x-1/2 bg-gray-800 text-white text-xs py-1 px-2 border border-gray-700 rounded">
                                     ¡Email Copiado!
                                 </span>
                             )}
@@ -54,18 +54,16 @@ const AboutSection: React.FC = () => {
                             href="https://linkedin.com/in/tu-linkedin"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="text-white hover:text-gray-300 shadow-lg mr-5 shadow-blue-500/20 hover:shadow-blue-500/40"
                         >
-                            <FaLinkedin size={24} />
+                            <FaLinkedin size={24} className="hover:text-blue-500 shadow-lg mr-4 hover:shadow-blue-500/40 transition-all duration-300"/>
                         </a>
                         <a
                             title="GitHub"
                             href="https://github.com/CristianMR87"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="text-white hover:text-gray-300 shadow-lg shadow-blue-500/20 hover:shadow-blue-500/40"
                         >
-                            <FaGithub size={24} />
+                            <FaGithub size={24} className="text-white hover:text-blue-500 shadow-lg hover:shadow-blue-500/40 transition-all duration-300"/>
                         </a>
                     </div>
                 </div>
@@ -74,7 +72,7 @@ const AboutSection: React.FC = () => {
                     <img
                         src={fotoCristian}
                         alt="Foto de Cristian"
-                        className="w-60 h-60 lg:w-[300px] lg:h-[300px] rounded-full object-cover border-2 border-gray-700"
+                        className="w-50 h-50 md:w-60 md:h-60 lg:w-[300px] lg:h-[300px] rounded-full object-cover border-2 border-gray-700"
                     />
                 </div>
             </div>

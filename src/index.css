@@ -4,6 +4,7 @@
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
+  
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
@@ -20,8 +21,16 @@ a {
   color: #FFFFFF;
   text-decoration: inherit;
 }
-a:hover {
-  color: #6AA2F6;
+
+a img {
+  filter: brightness(100%);
+}
+
+.gradient-text:hover {
+  background: linear-gradient(to right, #166bd3, #00b7ff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 nav {
@@ -35,7 +44,7 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
-  background-color: #030712; /* Cambiar esto si la linea superior del nav molesta. */
+  background-color: #030712; 
 }
 
 h1 {
@@ -72,10 +81,8 @@ button:focus-visible {
   }
 
   button, a {
-    border-color: #64748b; /* Un gris claro en lugar de blanco */
+    border-color: #64748b; 
   }
-  
-  
 }
 
 @keyframes slideIn {
@@ -91,4 +98,21 @@ button:focus-visible {
 
 .animate-slideIn {
   animation: slideIn 0.3s ease-out forwards;
+}
+
+.underline-from-left::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(to right, #090088, #580192);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease-in-out;
+}
+
+.group:hover .underline-from-left::after {
+  transform: scaleX(1);
 }
