@@ -7,7 +7,7 @@ const ProjectsSection: React.FC = () => {
             <h2 className="text-5xl font-bold text-blue-400 text-center mb-8">Proyectos</h2>
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
                 {/* Proyecto 1 */}
-                <div className="relative bg-gradient-to-br from-gray-900 to-gray-800 p-6 rounded-xl shadow-lg shadow-blue-500/20 hover:shadow-blue-500/60 active:shadow-blue-500/60 transition-all duration-300 border border-gray-700 group flex flex-col">
+                <div className="relative bg-gradient-to-br from-gray-900 to-gray-800 p-6 rounded-xl shadow-xl shadow-blue-500/20 hover:shadow-blue-500/60 active:shadow-blue-500/60 transition-all duration-300 border border-gray-700 group flex flex-col">
                     <img
                         src="/images/Portfolio.jpg"
                         alt="Portfolio Personal"
@@ -22,7 +22,7 @@ const ProjectsSection: React.FC = () => {
                             className="bg-blue-500 hover:shadow-blue-500/60 hover:scale-110 active:shadow-blue-500/60 active:scale-110 transition-all duration-300 p-1 rounded-full"
                             title="Enlace al proyecto"
                         >
-                            <div className="shadow-lg shadow-blue-500/20 hover:shadow-blue-500/60 hover:scale-110 active:shadow-blue-500/60 active:scale-110 transition-all duration-300 rounded-full " title="DEMO">
+                            <div className="shadow-xl shadow-blue-500/20 hover:shadow-blue-500/60 hover:scale-110 active:shadow-blue-500/60 active:scale-110 transition-all duration-300 rounded-full " title="DEMO">
                                 <img src="/images/Demo.jpg" className="w-7 h-7" />
                             </div>
                         </a>*/}
@@ -35,16 +35,16 @@ const ProjectsSection: React.FC = () => {
                         <li>- Integré las tres tecnologías para un proyecto sólido y escalable.</li>
                     </ul>
                     <div className="mt-4 flex justify-center gap-4">
-                        <div className="shadow-lg shadow-blue-300/20 hover:shadow-blue-400/60 hover:scale-115 transition-all duration-300 p-2 rounded-full active:shadow-blue-400/60 active:scale-115" title="React">
+                        <div className="shadow-xl shadow-blue-300/20 hover:shadow-blue-400/60 hover:scale-115 transition-all duration-300 p-2 rounded-full active:shadow-blue-400/60 active:scale-115" title="React">
                             <FaReact className="text-blue-300" size={24} />
                         </div>
-                        <div className="shadow-lg shadow-blue-300/20 hover:shadow-blue-400 hover:scale-115 transition-all duration-300 p-2 rounded-full active:shadow-blue-400 active:scale-115" title="TailWindCSS">
+                        <div className="shadow-xl shadow-blue-300/20 hover:shadow-blue-400 hover:scale-115 transition-all duration-300 p-2 rounded-full active:shadow-blue-400 active:scale-115" title="TailWindCSS">
                             <img src="/images/Tail.jpg" className="w-6 h-6" />
                         </div>
-                        <div className="shadow-lg shadow-blue-500/20 hover:shadow-blue-500/60 hover:scale-115 transition-all duration-300 p-2 rounded-full active:shadow-blue-500/60 active:scale-115" title="Typescript">
+                        <div className="shadow-xl shadow-blue-500/20 hover:shadow-blue-500/60 hover:scale-115 transition-all duration-300 p-2 rounded-full active:shadow-blue-500/60 active:scale-115" title="Typescript">
                             <img src="/images/TS.jpg" className="w-6 h-6" />
                         </div>
-                        <div className="shadow-lg shadow-blue-500/20 hover:shadow-blue-500/60 hover:scale-115 transition-all duration-300 p-2 rounded-full active:shadow-blue-500/60 active:scale-115"  title="CSS">      
+                        <div className="shadow-xl shadow-blue-500/20 hover:shadow-blue-500/60 hover:scale-115 transition-all duration-300 p-2 rounded-full active:shadow-blue-500/60 active:scale-115"  title="CSS">      
                             <FaCss3 className="text-blue-400 " size={24} />
                         </div>
                     </div>
@@ -53,7 +53,7 @@ const ProjectsSection: React.FC = () => {
                     </span>
                 </div>
                 {/* Proyecto 2 */}
-                <div className="relative bg-gradient-to-br from-gray-900 to-gray-800 p-6 rounded-xl shadow-lg shadow-green-500/20 hover:shadow-green-500/60 active:shadow-green-500/60 transition-all duration-300 border border-gray-700 group flex flex-col">
+                <div className="relative bg-gradient-to-br from-gray-900 to-gray-800 p-6 rounded-xl shadow-xl shadow-green-500/20 hover:shadow-green-500/60 active:shadow-green-500/60 transition-all duration-300 border border-gray-700 group flex flex-col">
                     <img
                         src="/images/NimbusProject.jpg"
                         alt="App consulta clima"
@@ -68,7 +68,7 @@ const ProjectsSection: React.FC = () => {
                             className="bg-green-500 hover:shadow-green-500/60 hover:scale-110 active:shadow-green-500/60 active:scale-110 transition-all duration-200 p-1 rounded-full"
                             title="Enlace al proyecto"
                         >
-                            <div className="shadow-lg shadow-green-700 hover:shadow-green-500/60 hover:scale-110 active:shadow-green-500/60 active:scale-110 transition-all duration-200 rounded-full" title="DEMO">
+                            <div className="shadow-xl shadow-green-700 hover:shadow-green-500/60 hover:scale-110 active:shadow-green-500/60 active:scale-110 transition-all duration-200 rounded-full" title="DEMO">
                                 <img src="/images/Demo.jpg" className="w-7 h-7" />
                             </div>
                         </a>
@@ -81,16 +81,16 @@ const ProjectsSection: React.FC = () => {
                         <li>- Conexión a BBDD mediante API.</li>
                     </ul>
                     <div className="mt-4 flex justify-center gap-4">
-                        <div className="shadow-lg shadow-blue-300/20 hover:shadow-blue-400/60 hover:scale-115 active:shadow-blue-400/60 active:scale-115 transition-all duration-300 p-2 rounded-full " title="React">
+                        <div className="shadow-xl shadow-blue-300/20 hover:shadow-blue-400/60 hover:scale-115 active:shadow-blue-400/60 active:scale-115 transition-all duration-300 p-2 rounded-full " title="React">
                             <FaReact className="text-blue-300" size={24} />
                         </div>
-                        <div className="shadow-lg shadow-blue-500/20 hover:shadow-blue-500/60 hover:scale-115 active:shadow-blue-500/60 active:scale-115 transition-all duration-300 p-2 rounded-full " title="Typescript">
+                        <div className="shadow-xl shadow-blue-500/20 hover:shadow-blue-500/60 hover:scale-115 active:shadow-blue-500/60 active:scale-115 transition-all duration-300 p-2 rounded-full " title="Typescript">
                             <img src="/images/TS.jpg" className="w-6 h-6" />
                         </div>
-                        <div className="shadow-lg shadow-yellow-500/20 hover:shadow-yellow-500/80 hover:scale-115 active:shadow-yellow-500/80 hovactiveer:scale-115 transition-all duration-300 p-2 rounded-full " title="Python">
+                        <div className="shadow-xl shadow-yellow-500/20 hover:shadow-yellow-500/80 hover:scale-115 active:shadow-yellow-500/80 hovactiveer:scale-115 transition-all duration-300 p-2 rounded-full " title="Python">
                             <FaPython className="text-yellow-400" size={24} />
                         </div>
-                        <div className="shadow-lg shadow-blue-300/20 hover:shadow-blue-400 hover:scale-115 active:shadow-blue-400 active:scale-115 transition-all duration-300 p-2 rounded-full " title="Flask">
+                        <div className="shadow-xl shadow-blue-300/20 hover:shadow-blue-400 hover:scale-115 active:shadow-blue-400 active:scale-115 transition-all duration-300 p-2 rounded-full " title="Flask">
                             <FaFlask className="text-blue-400" size={24} />
                         </div>
                     </div>
@@ -99,7 +99,7 @@ const ProjectsSection: React.FC = () => {
                     </span>
                 </div>
                 {/* Proyecto 3 */}
-                <div className="relative bg-gradient-to-br from-gray-900 to-gray-800 p-6 rounded-xl shadow-lg shadow-purple-500/20 hover:shadow-purple-500/60 active:shadow-purple-500/60 transition-all duration-300 border border-gray-700 group flex flex-col">
+                <div className="relative bg-gradient-to-br from-gray-900 to-gray-800 p-6 rounded-xl shadow-xl shadow-purple-500/20 hover:shadow-purple-500/60 active:shadow-purple-500/60 transition-all duration-300 border border-gray-700 group flex flex-col">
                     <img
                         src="/images/BootstrapProject.jpg"
                         alt="Diseño de website"
@@ -114,7 +114,7 @@ const ProjectsSection: React.FC = () => {
                             className="bg-purple-500 hover:shadow-purple-500/60 hover:scale-110 active:shadow-purple-500/60 active:scale-110 transition-all duration-200 p-1 rounded-full"
                             title="Enlace al proyecto"
                         >
-                            <div className="shadow-lg shadow-purple-500/20 hover:shadow-purple-500/60 hover:scale-110 active:shadow-purple-500/60 active:scale-110 transition-all duration-200 rounded-full" title="DEMO">
+                            <div className="shadow-xl shadow-purple-500/20 hover:shadow-purple-500/60 hover:scale-110 active:shadow-purple-500/60 active:scale-110 transition-all duration-200 rounded-full" title="DEMO">
                                 <img src="/images/Demo.jpg" className="w-7 h-7" />
                             </div>
                         </a>
@@ -125,13 +125,13 @@ const ProjectsSection: React.FC = () => {
                         <li>- Diseño limpio y minimalista.</li>
                     </ul>
                     <div className="mt-4 flex justify-center gap-4 ">
-                        <div className="shadow-lg shadow-orange-500/20 hover:shadow-orange-500/60 hover:scale-115 active:shadow-orange-500/60 active:scale-115 transition-all duration-300 p-2 rounded-full " title="HTML">                            
+                        <div className="shadow-xl shadow-orange-500/20 hover:shadow-orange-500/60 hover:scale-115 active:shadow-orange-500/60 active:scale-115 transition-all duration-300 p-2 rounded-full " title="HTML">                            
                             <FaHtml5 className="text-orange-400 " size={24} />
                         </div>
-                        <div className="shadow-lg shadow-blue-500/20 hover:shadow-blue-500/60 hover:scale-115 active:shadow-blue-500/60 active:scale-115 transition-all duration-300 p-2 rounded-full"  title="CSS">      
+                        <div className="shadow-xl shadow-blue-500/20 hover:shadow-blue-500/60 hover:scale-115 active:shadow-blue-500/60 active:scale-115 transition-all duration-300 p-2 rounded-full"  title="CSS">      
                             <FaCss3 className="text-blue-400 " size={24} />
                         </div>
-                        <div className="shadow-lg shadow-purple-500/20 hover:shadow-purple-500/60 hover:scale-115 active:shadow-purple-500/60 active:scale-115 transition-all duration-300 p-2 rounded-full" title="Bootstrap">      
+                        <div className="shadow-xl shadow-purple-500/20 hover:shadow-purple-500/60 hover:scale-115 active:shadow-purple-500/60 active:scale-115 transition-all duration-300 p-2 rounded-full" title="Bootstrap">      
                             <FaBootstrap className="text-purple-400" size={24} />
                         </div>
                     </div>

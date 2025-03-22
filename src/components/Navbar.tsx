@@ -41,7 +41,7 @@ const Navbar: React.FC = () => {
     };
 
     return (
-        <nav className={`min-w-90 md:min-w-[768px] lg:min-w-240 mt-6 mx-auto w-4/5 p-4 bg-gray-700/30 backdrop-blur-lg rounded-2xl shadow-lg sticky top-6 z-50 border-2 border-gray-700 shadow-blue-500/20 hover:shadow-blue-500/60 active:shadow-blue-500/60 transition-all duration-300 ${isScrolled ? 'scale-90 py-3 -translate-y-4' : 'scale-100 py-3 translate-y-0'}`}>
+        <nav className={`min-w-90 md:min-w-[768px] lg:min-w-240 mt-6 mx-auto w-4/5 p-4 bg-gray-700/30 backdrop-blur-lg rounded-2xl shadow-lg sticky top-6 z-50 border-2 border-gray-700 shadow-blue-500/40 hover:shadow-blue-500/60 active:shadow-blue-500/60 transition-all duration-300 ${isScrolled ? 'scale-90 py-3 -translate-y-4' : 'scale-100 py-3 translate-y-0'}`}>
             <div className="flex items-center justify-between max-w-7xl mx-auto lg:grid lg:grid-cols-3">
                 {/* Columna izquierda: Botón hamburguesa y nombre */}
                 <div className="flex items-center space-x-4 shrink-0 lg:shrink lg:justify-self-start">
@@ -66,7 +66,7 @@ const Navbar: React.FC = () => {
                 <ul
                     className={`${
                         isOpen
-                            ? 'left-0 bg-gradient-to-br from-gray-950 via-gray-900 to-blue-950 mt-1 scale-90'
+                            ? 'left-0 bg-gradient-to-br shadow-xl shadow-blue-500/40 from-gray-950 via-gray-900 to-blue-950 mt-1 scale-90'
                             : '-left-full bg-transparent scale-100'
                     } lg:flex lg:border-hidden border border-gray-700 -ml-2 lg:space-x-6 fixed lg:static top-[4.5rem] h-auto w-40 lg:w-auto rounded-2xl p-4 lg:p-0 transition-all duration-300 ease-in-out z-40 space-y-4 lg:space-y-0 lg:justify-self-center lg:text-center lg:whitespace-nowrap lg:opacity-100`}
                 >
