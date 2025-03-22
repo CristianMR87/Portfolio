@@ -3,6 +3,7 @@ import { FaLinkedin, FaGithub, } from 'react-icons/fa';
 import EmailSection from './EmailSection'
 import Button from './Button';
 
+
 const Navbar: React.FC = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
