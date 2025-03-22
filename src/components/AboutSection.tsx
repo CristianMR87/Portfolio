@@ -1,5 +1,5 @@
 import React from 'react';
-import fotoCristian from '../assets/images/Perfil1.jpg'
+import fotoCristian from '/src/assets/images/Perfil1.jpg'
 import { FaLinkedin, FaGithub, FaCopy} from 'react-icons/fa';
 import Button from './Button';
 import { useState } from 'react';

@@ -115,7 +115,7 @@ const ProjectsSection: React.FC = () => {
                             title="Enlace al proyecto"
                         >
                             <div className="shadow-lg shadow-purple-500/20 hover:shadow-purple-500/60 hover:scale-110 transition-all duration-200 rounded-full" title="DEMO">
-                                <img src="/src/assets/images/Demo.jpg" className="w-7 h-7" />
+                                <img src="../public/assets/images/Demo.jpg" className="w-7 h-7" />
                             </div>
                         </a>
                     </div>
