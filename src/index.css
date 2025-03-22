@@ -34,10 +34,11 @@ a img {
 }
 
 nav {
-  background-color: rgba(46, 46, 46, 0.3); 
-  backdrop-filter: blur(10px); 
-  -webkit-backdrop-filter: blur(10px); 
+  background-color: rgba(46, 46, 46, 0.5);
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
 }
+
 @supports not (backdrop-filter: blur(10px)) {
   nav {
     background-color: rgba(46, 46, 46, 0.7); /* Fondo más opaco como fallback */
