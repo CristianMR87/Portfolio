@@ -3,7 +3,7 @@ import { FaReact, FaPython, FaBootstrap, FaHtml5, FaCss3, FaFlask} from 'react-i
 
 const ProjectsSection: React.FC = () => {
     return (
-        <section className="min-w-95 lg:min-w-[1024px] p-4 mt-16 mx-auto w-3/5 rounded-lg">
+        <section className="min-w-95 md:min-w-[600px] md:max-w-[500px] lg:min-w-[1024px] p-4 mt-16 mx-auto w-4/5">
             <h2 className="text-5xl font-bold text-blue-400 text-center mb-8">Proyectos</h2>
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
                 {/* Proyecto 1 */}
