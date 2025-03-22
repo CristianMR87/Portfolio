@@ -9,7 +9,7 @@ const ProjectsSection: React.FC = () => {
                 {/* Proyecto 1 */}
                 <div className="relative bg-gradient-to-br from-gray-900 to-gray-800 p-6 rounded-xl shadow-lg shadow-blue-500/20 hover:shadow-blue-500/60 transition-all duration-300 border border-gray-700 group flex flex-col">
                     <img
-                        src="/src/assets/images/Portfolio.jpg"
+                        src="/images/Portfolio.jpg"
                         alt="Portfolio Personal"
                         className="w-full h-48 object-cover rounded-t-xl"
                     />
@@ -23,7 +23,7 @@ const ProjectsSection: React.FC = () => {
                             title="Enlace al proyecto"
                         >
                             <div className="shadow-lg shadow-blue-500/20 hover:shadow-blue-500/60 hover:scale-110 transition-all duration-300 rounded-full " title="DEMO">
-                                <img src="/src/assets/images/Demo.jpg" className="w-7 h-7" />
+                                <img src="/images/Demo.jpg" className="w-7 h-7" />
                             </div>
                         </a>*/}
                     </div>
@@ -39,10 +39,10 @@ const ProjectsSection: React.FC = () => {
                             <FaReact className="text-blue-400" size={24} />
                         </div>
                         <div className="shadow-lg shadow-blue-300/20 hover:shadow-blue-400 hover:scale-115 transition-all duration-300 p-2 rounded-full " title="TailWindCSS">
-                            <img src="/src/assets/images/Tail.jpg" className="w-6 h-6" />
+                            <img src="/images/Tail.jpg" className="w-6 h-6" />
                         </div>
                         <div className="shadow-lg shadow-blue-500/20 hover:shadow-blue-500/60 hover:scale-115 transition-all duration-300 p-2 rounded-full " title="Typescript">
-                            <img src="/src/assets/images/TS.jpg" className="w-6 h-6" />
+                            <img src="/images/TS.jpg" className="w-6 h-6" />
                         </div>
                         <div className="shadow-lg shadow-blue-500/20 hover:shadow-blue-500/60 hover:scale-115 transition-all duration-300 p-2 rounded-full"  title="CSS">      
                             <FaCss3 className="text-blue-400 " size={24} />
@@ -55,7 +55,7 @@ const ProjectsSection: React.FC = () => {
                 {/* Proyecto 2 */}
                 <div className="relative bg-gradient-to-br from-gray-900 to-gray-800 p-6 rounded-xl shadow-lg shadow-green-500/20 hover:shadow-green-500/60 transition-all duration-300 border border-gray-700 group flex flex-col">
                     <img
-                        src="/src/assets/images/NimbusProject.jpg"
+                        src="/images/NimbusProject.jpg"
                         alt="App consulta clima"
                         className="w-full h-48 object-cover rounded-t-xl"
                     />
@@ -69,7 +69,7 @@ const ProjectsSection: React.FC = () => {
                             title="Enlace al proyecto"
                         >
                             <div className="shadow-lg shadow-green-700 hover:shadow-green-500/60 hover:scale-110 transition-all duration-200 rounded-full" title="DEMO">
-                                <img src="/src/assets/images/Demo.jpg" className="w-7 h-7" />
+                                <img src="/images/Demo.jpg" className="w-7 h-7" />
                             </div>
                         </a>
                     </div>
@@ -85,7 +85,7 @@ const ProjectsSection: React.FC = () => {
                             <FaReact className="text-blue-300" size={24} />
                         </div>
                         <div className="shadow-lg shadow-blue-500/20 hover:shadow-blue-500/60 hover:scale-115 transition-all duration-300 p-2 rounded-full " title="Typescript">
-                            <img src="/src/assets/images/TS.jpg" className="w-6 h-6" />
+                            <img src="/images/TS.jpg" className="w-6 h-6" />
                         </div>
                         <div className="shadow-lg shadow-yellow-500/20 hover:shadow-yellow-500/80 hover:scale-115 transition-all duration-300 p-2 rounded-full " title="Python">
                             <FaPython className="text-yellow-400" size={24} />
@@ -101,7 +101,7 @@ const ProjectsSection: React.FC = () => {
                 {/* Proyecto 3 */}
                 <div className="relative bg-gradient-to-br from-gray-900 to-gray-800 p-6 rounded-xl shadow-lg shadow-purple-500/20 hover:shadow-purple-500/60 transition-all duration-300 border border-gray-700 group flex flex-col">
                     <img
-                        src="/src/assets/images/BootstrapProject.jpg"
+                        src="/images/BootstrapProject.jpg"
                         alt="Diseño de website"
                         className="w-full h-48 object-cover rounded-t-xl"
                     />
@@ -115,7 +115,7 @@ const ProjectsSection: React.FC = () => {
                             title="Enlace al proyecto"
                         >
                             <div className="shadow-lg shadow-purple-500/20 hover:shadow-purple-500/60 hover:scale-110 transition-all duration-200 rounded-full" title="DEMO">
-                                <img src="../public/assets/images/Demo.jpg" className="w-7 h-7" />
+                                <img src="/images/Demo.jpg" className="w-7 h-7" />
                             </div>
                         </a>
                     </div>

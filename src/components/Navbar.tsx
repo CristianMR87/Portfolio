@@ -57,7 +57,7 @@ const Navbar: React.FC = () => {
                     </svg>
                 </Button>
                     <img 
-                        src="/src/assets/images/1.png"
+                        src="/images/1.png"
                         className="hidden lg:block lg:w-[50px] lg:h-[50px] rounded-full object-cover border-2 border-gray-700" />
                 </div>
 

@@ -1,5 +1,4 @@
 import React from 'react';
-import fotoCristian from '/src/assets/images/Perfil1.jpg'
 import { FaLinkedin, FaGithub, FaCopy} from 'react-icons/fa';
 import Button from './Button';
 import { useState } from 'react';
@@ -70,7 +69,7 @@ const AboutSection: React.FC = () => {
                 {/* Imagen */}
                 <div className="shrink-0">
                     <img
-                        src={fotoCristian}
+                        src="/images/Perfil1.jpg"
                         alt="Foto de Cristian"
                         className="w-50 h-50 md:w-60 md:h-60 lg:w-[300px] lg:h-[300px] rounded-full object-cover border-2 border-gray-700"
                     />
