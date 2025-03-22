@@ -37,7 +37,7 @@ const AboutSection: React.FC = () => {
                         <p className="my-3 mr-2">Cristian.morano@hotmail.com</p>
                         <div className="relative" title="Copiar email">
                             <Button onClick={copyEmail} className="!w-8 !h-8">
-                                <FaCopy size={14} className="hover:text-blue-500 shadow-lg hover:shadow-blue-500/40 transition-all duration-300" />
+                                <FaCopy size={14} className="hover:text-blue-500 hover:shadow-blue-500/40 active:text-blue-500 active:shadow-blue-500/40 shadow-lg transition-all duration-300" />
                             </Button>
                             {copied && (
                                 <span className="absolute -bottom-11 left-1/2 transform -translate-x-1/2 bg-gray-800 text-white text-xs py-1 px-2 border border-gray-700 rounded">
@@ -54,7 +54,7 @@ const AboutSection: React.FC = () => {
                             target="_blank"
                             rel="noopener noreferrer"
                         >
-                            <FaLinkedin size={24} className="hover:text-blue-500 shadow-lg mr-4 hover:shadow-blue-500/40 transition-all duration-300"/>
+                            <FaLinkedin size={24} className="hover:text-blue-500 hover:shadow-blue-500/40 active:text-blue-500 active:shadow-blue-500/40 shadow-lg mr-4 transition-all duration-300"/>
                         </a>
                         <a
                             title="GitHub"
@@ -62,7 +62,7 @@ const AboutSection: React.FC = () => {
                             target="_blank"
                             rel="noopener noreferrer"
                         >
-                            <FaGithub size={24} className="text-white hover:text-blue-500 shadow-lg hover:shadow-blue-500/40 transition-all duration-300"/>
+                            <FaGithub size={24} className="text-white hover:text-blue-500 hover:shadow-blue-500/40 active:text-blue-500 active:shadow-blue-500/40 shadow-lg rounded-full transition-all duration-300"/>
                         </a>
                     </div>
                 </div>
