@@ -18,14 +18,14 @@ const AboutSection: React.FC = () => {
     };
 
     return (
-        <section className="min-w-80 lg:min-w-240 p-4 mt-16 mx-auto w-3/5 rounded-lg ">           
+        <section className="min-w-100 lg:min-w-240 p-4 mt-16 mx-auto w-3/5 rounded-lg ">           
             <div className="flex flex-col lg:flex-row items-center lg:items-start gap-4 md:gap-8 lg:gap-12">                
                 {/* Texto */}
                 <div className="flex-1 text-white lg:text-left text-center">
                     <p className="text-4xl font-bold text-blue-400">¡Hola! Soy Cristian.</p>
                     <p className="text-4xl font-bold">Desarrollador Full-Stack.</p>
                     <p className="text-gray-300 text-lg mt-8 text-justify">
-                        ¡Hola! Soy Cristian, estudiante de DAW y futuro desarrollador Full-Stack.
+                        Actualmente estudiante de DAW y futuro desarrollador Full-Stack.
                         Apasionado por la tecnología y el mundo del desarrollo web. Con más de un año de formación autodidacta y actualmente estudiando DAW, centro mis conocimientos en tecnologías como Java, Python, Oracle SQL, React, Bootstrap, Ubuntu. He desarrollado varios proyectos personales aplicando estas tecnologías, desde su creación hasta su despliegue final.
                     </p>
                     {/* Banner "Disponible" */}
