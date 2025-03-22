@@ -41,7 +41,7 @@ const Navbar: React.FC = () => {
     };
 
     return (
-        <nav className={`min-w-80 lg:min-w-240 mt-6 mx-auto w-3/5 p-4 backdrop-filter:blur(10px) rounded-2xl shadow-lg sticky top-6 z-50 border-2 border-gray-700 shadow-blue-500/20 hover:shadow-blue-500/60 transition-all duration-300 ${isScrolled ? 'scale-90 py-3 -translate-y-4' : 'scale-100 py-3 translate-y-0'}`}>
+        <nav className={`min-w-80 lg:min-w-240 mt-6 mx-auto w-3/5 p-4 bg-gray-700/30 backdrop-blur-lg rounded-2xl shadow-lg sticky top-6 z-50 border-2 border-gray-700 shadow-blue-500/20 hover:shadow-blue-500/60 transition-all duration-300 ${isScrolled ? 'scale-90 py-3 -translate-y-4' : 'scale-100 py-3 translate-y-0'}`}>
             <div className="flex items-center justify-between max-w-7xl mx-auto lg:grid lg:grid-cols-3">
                 {/* Columna izquierda: Botón hamburguesa y nombre */}
                 <div className="flex items-center space-x-4 shrink-0 lg:shrink lg:justify-self-start">
