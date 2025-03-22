@@ -64,10 +64,10 @@ const Navbar: React.FC = () => {
 
                 {/* Columna central: Menú de navegación */}
                 <ul
-                    className={`${isOpen ? 'left-0 bg-gradient-to-br from-gray-950 via-gray-900 to-blue-950 bg-opacity-0 mt-1 scale-90' : '-left-full bg-opacity-0 sopacity-0 cale-100'} lg:flex lg:border-hidden border border-gray-700 -ml-2 lg:space-x-6 fixed lg:static top-[4.5rem] h-auto w-40 lg:w-auto lg:bg-transparent rounded-2xl p-4 lg:p-0 transition-all duration-300 ease-in-out z-40 space-y-4  lg:space-y-0 lg:justify-self-center lg:text-center lg:whitespace-nowrap lg:opacity-100 `}
+                    className={`${isOpen ? 'left-0 bg-gradient-to-br from-gray-950 via-gray-900 to-blue-950 bg-transparent mt-1 scale-90' : '-left-full bg-transparent cale-100'} lg:flex lg:border-hidden border border-gray-700 -ml-2 lg:space-x-6 fixed lg:static top-[4.5rem] h-auto w-40 lg:w-auto lg:bg-transparent rounded-2xl p-4 lg:p-0 transition-all duration-300 ease-in-out z-40 space-y-4  lg:space-y-0 lg:justify-self-center lg:text-center lg:whitespace-nowrap lg:opacity-100 `}
                 >
                     <li className="group relative">
-                        <a href="#home" className="text-white shadow-lg shadow-blue-500/20 transition-all duration-400 block lg:inline underline-from-left bg-opacity-0 gradient-text">Inicio</a>
+                        <a href="#home" className="text-white shadow-lg shadow-blue-500/20 transition-all duration-400 block lg:inline underline-from-left bg-transparent gradient-text">Inicio</a>
                     </li>
                     <li className="group relative">
                         <a href="#about" className="text-white shadow-lg shadow-blue-500/20 transition-all duration-400 block lg:inline underline-from-left gradient-text">Experiencia</a>
