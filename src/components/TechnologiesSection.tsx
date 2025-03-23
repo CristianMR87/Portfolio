@@ -22,23 +22,23 @@ const TechnologiesSection: React.FC = () => {
 
     // Tecnologías con íconos, sombras y efectos redondeados solo para los íconos
     const frontend = [
-        { name: '', icon: <FaHtml5 className="text-orange-500" size={25} />, shadow: 'shadow-lg shadow-orange-500/70', hover: 'hover:shadow-xl hover:shadow-orange-600/80 hover:scale-115', active: 'active:shadow-xl active:shadow-orange-600/80', title: 'HTML5' },
-        { name: '', icon: <FaCss3Alt className="text-blue-500" size={25} />, shadow: 'shadow-lg shadow-blue-500/70', hover: 'hover:shadow-xl hover:shadow-blue-600/80 hover:scale-115', active: 'active:shadow-xl active:shadow-blue-600/80', title: 'CSS3' },
-        { name: '', icon: <FaReact className="text-cyan-500" size={25} />, shadow: 'shadow-lg shadow-cyan-500/70', hover: 'hover:shadow-xl hover:shadow-cyan-600/80 hover:scale-115', active: 'active:shadow-xl active:shadow-cyan-600/80', title: 'React' },
-        { name: '', icon: <SiTailwindcss className="text-teal-500" size={25} />, shadow: 'shadow-lg shadow-teal-500/70', hover: 'hover:shadow-xl hover:shadow-teal-600/80 hover:scale-115', active: 'active:shadow-xl active:shadow-teal-600/80', title: 'TailwindCSS' },
-        { name: '', icon: <SiBootstrap className="text-purple-600" size={25} />, shadow: 'shadow-lg shadow-purple-600/70', hover: 'hover:shadow-xl hover:shadow-purple-700/80 hover:scale-115', active: 'active:shadow-xl active:shadow-purple-700/80', title: 'Bootstrap' },
+        { name: '', icon: <FaHtml5 className="text-orange-500" size={35} />, shadow: 'shadow-lg shadow-orange-500/70', hover: 'hover:shadow-xl hover:shadow-orange-600/80 hover:scale-115', active: 'active:shadow-xl active:shadow-orange-600/80', title: 'HTML5' },
+        { name: '', icon: <FaCss3Alt className="text-blue-500" size={35} />, shadow: 'shadow-lg shadow-blue-500/70', hover: 'hover:shadow-xl hover:shadow-blue-600/80 hover:scale-115', active: 'active:shadow-xl active:shadow-blue-600/80', title: 'CSS3' },
+        { name: '', icon: <FaReact className="text-cyan-500" size={35} />, shadow: 'shadow-lg shadow-cyan-500/70', hover: 'hover:shadow-xl hover:shadow-cyan-600/80 hover:scale-115', active: 'active:shadow-xl active:shadow-cyan-600/80', title: 'React' },
+        { name: '', icon: <SiTailwindcss className="text-teal-500" size={35} />, shadow: 'shadow-lg shadow-teal-500/70', hover: 'hover:shadow-xl hover:shadow-teal-600/80 hover:scale-115', active: 'active:shadow-xl active:shadow-teal-600/80', title: 'TailwindCSS' },
+        { name: '', icon: <SiBootstrap className="text-purple-600" size={35} />, shadow: 'shadow-lg shadow-purple-600/70', hover: 'hover:shadow-xl hover:shadow-purple-700/80 hover:scale-115', active: 'active:shadow-xl active:shadow-purple-700/80', title: 'Bootstrap' },
     ];
 
     const backend = [
-        { name: '', icon: <FaJava className="text-red-600" size={25} />, shadow: 'shadow-lg shadow-red-600/70', hover: 'hover:shadow-xl hover:shadow-red-700/80 hover:scale-115', active: 'active:shadow-xl active:shadow-red-700/80', title: 'JAVA' },
-        { name: '', icon: <FaPython className="text-blue-500" size={25} />, shadow: 'shadow-lg shadow-blue-500/70', hover: 'hover:shadow-xl hover:shadow-blue-600/80 hover:scale-115', active: 'active:shadow-xl active:shadow-blue-600/80', title: 'Python' },
-        { name: '', icon: <SiOracle className="text-red-700" size={25} />, shadow: 'shadow-lg shadow-red-700/70', hover: 'hover:shadow-xl hover:shadow-red-800/80 hover:scale-115', active: 'active:shadow-xl active:shadow-red-800/80', title: 'Oracle' },
+        { name: '', icon: <FaJava className="text-red-600" size={35} />, shadow: 'shadow-lg shadow-red-600/70', hover: 'hover:shadow-xl hover:shadow-red-700/80 hover:scale-115', active: 'active:shadow-xl active:shadow-red-700/80', title: 'JAVA' },
+        { name: '', icon: <FaPython className="text-blue-500" size={35} />, shadow: 'shadow-lg shadow-blue-500/70', hover: 'hover:shadow-xl hover:shadow-blue-600/80 hover:scale-115', active: 'active:shadow-xl active:shadow-blue-600/80', title: 'Python' },
+        { name: '', icon: <SiOracle className="text-red-700" size={35} />, shadow: 'shadow-lg shadow-red-700/70', hover: 'hover:shadow-xl hover:shadow-red-800/80 hover:scale-115', active: 'active:shadow-xl active:shadow-red-800/80', title: 'Oracle' },
     ];
 
     const complementos = [
-        { name: '', icon: <FaGitAlt className="text-orange-600" size={25} />, shadow: 'shadow-lg shadow-orange-600/70', hover: 'hover:shadow-xl hover:shadow-orange-700/80 hover:scale-115', active: 'active:shadow-xl active:shadow-orange-700/80', title: 'Git' },
-        { name: '', icon: <FaGithub className="text-gray-300" size={25} />, shadow: 'shadow-lg shadow-gray-300/70', hover: 'hover:shadow-xl hover:shadow-gray-400/80 hover:scale-115', active: 'active:shadow-xl active:shadow-gray-400/80', title: 'GitHub' },
-        { name: '', icon: <FaCode className="text-blue-500" size={25} />, shadow: 'shadow-lg shadow-blue-500/70', hover: 'hover:shadow-xl hover:shadow-blue-600/80 hover:scale-115', active: 'active:shadow-xl active:shadow-blue-600/80', title: 'VSCode' },
+        { name: '', icon: <FaGitAlt className="text-orange-600" size={35} />, shadow: 'shadow-lg shadow-orange-600/70', hover: 'hover:shadow-xl hover:shadow-orange-700/80 hover:scale-115', active: 'active:shadow-xl active:shadow-orange-700/80', title: 'Git' },
+        { name: '', icon: <FaGithub className="text-gray-300" size={35} />, shadow: 'shadow-lg shadow-gray-300/70', hover: 'hover:shadow-xl hover:shadow-gray-400/80 hover:scale-115', active: 'active:shadow-xl active:shadow-gray-400/80', title: 'GitHub' },
+        { name: '', icon: <FaCode className="text-blue-500" size={35} />, shadow: 'shadow-lg shadow-blue-500/70', hover: 'hover:shadow-xl hover:shadow-blue-600/80 hover:scale-115', active: 'active:shadow-xl active:shadow-blue-600/80', title: 'VSCode' },
     ];
 
     useEffect(() => {
