@@ -86,7 +86,7 @@ const ProjectCard: React.FC<ProjectCardProps & { isVisible?: boolean }> = ({
                 <img 
                     src={imageSrc} 
                     alt={imageAlt} 
-                    className="w-full h-48 object-cover rounded-xl border border-blue-950 transition-opacity duration-300 group-hover:opacity-50" 
+                    className="w-full h-48 object-cover rounded-xl border border-blue-950 transition-opacity duration-300 group-hover:opacity-30" 
                 />
                 {link && (
                     <a
@@ -202,10 +202,10 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ className }) => {
                         '- Integración de las tres tecnologías para un proyecto sólido y escalable.',
                     ]}
                     techIcons={[
-                        { component: <FaReact className="text-blue-300" size={24} />, shadow: 'shadow-blue-300/40', hover: 'hover:shadow-blue-400/60', active: 'active:shadow-blue-400/80', title: 'React' },
-                        { component: <img src="/images/Tail.jpg" className="w-6 h-6" />, shadow: 'shadow-blue-300/40', hover: 'hover:shadow-blue-400', active: 'active:shadow-blue-400', title: 'TailWindCSS' },
-                        { component: <img src="/images/TS.jpg" className="w-6 h-6" />, shadow: 'shadow-blue-500/40', hover: 'hover:shadow-blue-500/60', active: 'active:shadow-blue-500/80', title: 'Typescript' },
-                        { component: <FaCss3 className="text-blue-400" size={24} />, shadow: 'shadow-blue-500/40', hover: 'hover:shadow-blue-500/60', active: 'active:shadow-blue-500/80', title: 'CSS' },
+                        { component: <FaReact className="text-blue-300" size={24} />, shadow: 'shadow-blue-300/40', hover: 'hover:shadow-blue-400/60 hover:scale-115', active: 'active:shadow-blue-400/80 hover:scale-115', title: 'React' },
+                        { component: <img src="/images/Tail.jpg" className="w-6 h-6" />, shadow: 'shadow-blue-300/40', hover: 'hover:shadow-blue-400 hover:scale-115', active: 'active:shadow-blue-400 hover:scale-115', title: 'TailWindCSS' },
+                        { component: <img src="/images/TS.jpg" className="w-6 h-6" />, shadow: 'shadow-blue-500/40', hover: 'hover:shadow-blue-500/60 hover:scale-115', active: 'active:shadow-blue-500/80 hover:scale-115', title: 'Typescript' },
+                        { component: <FaCss3 className="text-blue-400" size={24} />, shadow: 'shadow-blue-500/40', hover: 'hover:shadow-blue-500/60 hover:scale-115', active: 'active:shadow-blue-500/80 hover:scale-115', title: 'CSS' },
                     ]}
                     badgeText="Website"
                     badgeColor={{ shadow: 'shadow-blue-500/40', hover: 'hover:shadow-blue-500/80', active: 'active:shadow-blue-500/80', bg: 'bg-blue-500', badge: 'bg-blue-600' }}
@@ -224,10 +224,10 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ className }) => {
                         '- Conexión a BBDD mediante API.',
                     ]}
                     techIcons={[
-                        { component: <FaReact className="text-blue-300" size={24} />, shadow: 'shadow-blue-300/60', hover: 'hover:shadow-blue-400/80', active: 'active:shadow-blue-400/60', title: 'React' },
-                        { component: <img src="/images/TS.jpg" className="w-6 h-6" />, shadow: 'shadow-blue-500/60', hover: 'hover:shadow-blue-500/80', active: 'active:shadow-blue-500/60', title: 'Typescript' },
-                        { component: <FaPython className="text-yellow-400" size={24} />, shadow: 'shadow-yellow-400/60', hover: 'hover:shadow-yellow-500', active: 'active:shadow-yellow-500/80', title: 'Python' },
-                        { component: <FaFlask className="text-blue-400" size={24} />, shadow: 'shadow-blue-300/60', hover: 'hover:shadow-blue-400', active: 'active:shadow-blue-400', title: 'Flask' },
+                        { component: <FaReact className="text-blue-300" size={24} />, shadow: 'shadow-blue-300/60', hover: 'hover:shadow-blue-400/80 hover:scale-115', active: 'active:shadow-blue-400/60 hover:scale-115', title: 'React' },
+                        { component: <img src="/images/TS.jpg" className="w-6 h-6" />, shadow: 'shadow-blue-500/60', hover: 'hover:shadow-blue-500/80 hover:scale-115', active: 'active:shadow-blue-500/60 hover:scale-115', title: 'Typescript' },
+                        { component: <FaPython className="text-yellow-400" size={24} />, shadow: 'shadow-yellow-400/60', hover: 'hover:shadow-yellow-500 hover:scale-115', active: 'active:shadow-yellow-500/80 hover:scale-115', title: 'Python' },
+                        { component: <FaFlask className="text-blue-400" size={24} />, shadow: 'shadow-blue-300/60', hover: 'hover:shadow-blue-400 hover:scale-115', active: 'active:shadow-blue-400 hover:scale-115', title: 'Flask' },
                     ]}
                     link="https://nimbus-weather.vercel.app/"
                     badgeText="App web"
@@ -245,9 +245,9 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ className }) => {
                         '- Diseño limpio y minimalista.',
                     ]}
                     techIcons={[
-                        { component: <FaHtml5 className="text-orange-400" size={24} />, shadow: 'shadow-orange-400/60', hover: 'hover:shadow-orange-400/80', active: 'active:shadow-orange-400/80', title: 'HTML' },
-                        { component: <FaCss3 className="text-blue-400" size={24} />, shadow: 'shadow-blue-500/60', hover: 'hover:shadow-blue-500/80', active: 'active:shadow-blue-500/80', title: 'CSS' },
-                        { component: <FaBootstrap className="text-purple-400" size={24} />, shadow: 'shadow-purple-500/60', hover: 'hover:shadow-purple-500/80', active: 'active:shadow-purple-500/80', title: 'Bootstrap' },
+                        { component: <FaHtml5 className="text-orange-400" size={24} />, shadow: 'shadow-orange-400/60', hover: 'hover:shadow-orange-400/80 hover:scale-115', active: 'active:shadow-orange-400/80 hover:scale-115', title: 'HTML' },
+                        { component: <FaCss3 className="text-blue-400" size={24} />, shadow: 'shadow-blue-500/60', hover: 'hover:shadow-blue-500/80 hover:scale-115', active: 'active:shadow-blue-500/80 hover:scale-115', title: 'CSS' },
+                        { component: <FaBootstrap className="text-purple-400" size={24} />, shadow: 'shadow-purple-500/60', hover: 'hover:shadow-purple-500/80 hover:scale-115', active: 'active:shadow-purple-500/80 hover:scale-115', title: 'Bootstrap' },
                     ]}
                     link="https://cristian-estudios.vercel.app/"
                     badgeText="Website"

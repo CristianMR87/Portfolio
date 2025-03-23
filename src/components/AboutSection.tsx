@@ -41,7 +41,7 @@ const AboutSection: React.FC = () => {
                                 <FaCopy size={14} className="hover:text-blue-500 hover:shadow-blue-500/40 active:text-blue-500 active:shadow-blue-500/40 shadow-lg transition-all duration-300" />
                             </Button>
                             {copied && (
-                                <span className="absolute -bottom-11 left-1/2 transform -translate-x-1/2 bg-gray-800 text-white text-xs py-1 px-2 border border-gray-700 rounded">
+                                <span className="absolute -bottom-11 left-1/2 transform -translate-x-1/2 bg-blue-950 text-white text-xs py-1 px-2 border border-gray-700 rounded-2xl">
                                     ¡Email Copiado!
                                 </span>
                             )}
@@ -77,9 +77,9 @@ const AboutSection: React.FC = () => {
                     <a
                         href="/cv.pdf"
                         download="CV_CristianMorano.pdf"
-                        className="mt-10 inline-block bg-blue-500 hover:text-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors duration-300"
+                        className="mt-8 inline-block text-white bg-gradient-to-br from-gray-950 to-blue-950 border border-cyan-400/30 rounded-full shadow-lg shadow-blue-500/40 hover:shadow-blue-500/80 transition-all duration-300 cursor-pointer px-4 py-2 underline-from-left gradient-text"
                     >
-                        CV
+                        Descargar CV
                     </a>
                 </div>
             </div>
