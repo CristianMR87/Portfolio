@@ -12,10 +12,7 @@ import {
 import {
     SiTailwindcss,
     SiBootstrap,
-    SiSpringboot,
-    SiFlask,
     SiOracle,
-    SiMysql,
 } from 'react-icons/si';
 
 const TechnologiesSection: React.FC = () => {
@@ -25,26 +22,23 @@ const TechnologiesSection: React.FC = () => {
 
     // Tecnologías con íconos, sombras y efectos redondeados solo para los íconos
     const frontend = [
-        { name: '', icon: <FaHtml5 className="text-orange-500" size={40} />, shadow: 'shadow-lg shadow-orange-500/70', hover: 'hover:shadow-xl hover:shadow-orange-600/80 hover:scale-115', active: 'active:shadow-xl active:shadow-orange-600/80', title: 'HTML5' },
-        { name: '', icon: <FaCss3Alt className="text-blue-500" size={40} />, shadow: 'shadow-lg shadow-blue-500/70', hover: 'hover:shadow-xl hover:shadow-blue-600/80 hover:scale-115', active: 'active:shadow-xl active:shadow-blue-600/80', title: 'CSS3' },
-        { name: '', icon: <FaReact className="text-cyan-500" size={40} />, shadow: 'shadow-lg shadow-cyan-500/70', hover: 'hover:shadow-xl hover:shadow-cyan-600/80 hover:scale-115', active: 'active:shadow-xl active:shadow-cyan-600/80', title: 'React' },
-        { name: '', icon: <SiTailwindcss className="text-teal-500" size={40} />, shadow: 'shadow-lg shadow-teal-500/70', hover: 'hover:shadow-xl hover:shadow-teal-600/80 hover:scale-115', active: 'active:shadow-xl active:shadow-teal-600/80', title: 'TailwindCSS' },
-        { name: '', icon: <SiBootstrap className="text-purple-600" size={40} />, shadow: 'shadow-lg shadow-purple-600/70', hover: 'hover:shadow-xl hover:shadow-purple-700/80 hover:scale-115', active: 'active:shadow-xl active:shadow-purple-700/80', title: 'Bootstrap' },
+        { name: '', icon: <FaHtml5 className="text-orange-500" size={25} />, shadow: 'shadow-lg shadow-orange-500/70', hover: 'hover:shadow-xl hover:shadow-orange-600/80 hover:scale-115', active: 'active:shadow-xl active:shadow-orange-600/80', title: 'HTML5' },
+        { name: '', icon: <FaCss3Alt className="text-blue-500" size={25} />, shadow: 'shadow-lg shadow-blue-500/70', hover: 'hover:shadow-xl hover:shadow-blue-600/80 hover:scale-115', active: 'active:shadow-xl active:shadow-blue-600/80', title: 'CSS3' },
+        { name: '', icon: <FaReact className="text-cyan-500" size={25} />, shadow: 'shadow-lg shadow-cyan-500/70', hover: 'hover:shadow-xl hover:shadow-cyan-600/80 hover:scale-115', active: 'active:shadow-xl active:shadow-cyan-600/80', title: 'React' },
+        { name: '', icon: <SiTailwindcss className="text-teal-500" size={25} />, shadow: 'shadow-lg shadow-teal-500/70', hover: 'hover:shadow-xl hover:shadow-teal-600/80 hover:scale-115', active: 'active:shadow-xl active:shadow-teal-600/80', title: 'TailwindCSS' },
+        { name: '', icon: <SiBootstrap className="text-purple-600" size={25} />, shadow: 'shadow-lg shadow-purple-600/70', hover: 'hover:shadow-xl hover:shadow-purple-700/80 hover:scale-115', active: 'active:shadow-xl active:shadow-purple-700/80', title: 'Bootstrap' },
     ];
 
     const backend = [
-        { name: '', icon: <FaJava className="text-red-600" size={40} />, shadow: 'shadow-lg shadow-red-600/70', hover: 'hover:shadow-xl hover:shadow-red-700/80 hover:scale-115', active: 'active:shadow-xl active:shadow-red-700/80', title: 'JAVA' },
-        { name: '', icon: <FaPython className="text-blue-500" size={40} />, shadow: 'shadow-lg shadow-blue-500/70', hover: 'hover:shadow-xl hover:shadow-blue-600/80 hover:scale-115', active: 'active:shadow-xl active:shadow-blue-600/80', title: 'Python' },
-        { name: '', icon: <SiSpringboot className="text-green-600" size={40} />, shadow: 'shadow-lg shadow-green-600/70', hover: 'hover:shadow-xl hover:shadow-green-700/80 hover:scale-115', active: 'active:shadow-xl active:shadow-green-700/80', title: 'SpringBoot' },
-        { name: '', icon: <SiFlask className="text-gray-300" size={40} />, shadow: 'shadow-lg shadow-gray-300/70', hover: 'hover:shadow-xl hover:shadow-gray-400/80 hover:scale-115', active: 'active:shadow-xl active:shadow-gray-400/80', title: 'Flask' },
-        { name: '', icon: <SiOracle className="text-red-700" size={40} />, shadow: 'shadow-lg shadow-red-700/70', hover: 'hover:shadow-xl hover:shadow-red-800/80 hover:scale-115', active: 'active:shadow-xl active:shadow-red-800/80', title: 'Oracle' },
-        { name: '', icon: <SiMysql className="text-blue-600" size={40} />, shadow: 'shadow-lg shadow-blue-600/70', hover: 'hover:shadow-xl hover:shadow-blue-700/80 hover:scale-115', active: 'active:shadow-xl active:shadow-blue-700/80', title: 'MySQL' },
+        { name: '', icon: <FaJava className="text-red-600" size={25} />, shadow: 'shadow-lg shadow-red-600/70', hover: 'hover:shadow-xl hover:shadow-red-700/80 hover:scale-115', active: 'active:shadow-xl active:shadow-red-700/80', title: 'JAVA' },
+        { name: '', icon: <FaPython className="text-blue-500" size={25} />, shadow: 'shadow-lg shadow-blue-500/70', hover: 'hover:shadow-xl hover:shadow-blue-600/80 hover:scale-115', active: 'active:shadow-xl active:shadow-blue-600/80', title: 'Python' },
+        { name: '', icon: <SiOracle className="text-red-700" size={25} />, shadow: 'shadow-lg shadow-red-700/70', hover: 'hover:shadow-xl hover:shadow-red-800/80 hover:scale-115', active: 'active:shadow-xl active:shadow-red-800/80', title: 'Oracle' },
     ];
 
     const complementos = [
-        { name: '', icon: <FaGitAlt className="text-orange-600" size={40} />, shadow: 'shadow-lg shadow-orange-600/70', hover: 'hover:shadow-xl hover:shadow-orange-700/80 hover:scale-115', active: 'active:shadow-xl active:shadow-orange-700/80', title: 'Git' },
-        { name: '', icon: <FaGithub className="text-gray-300" size={40} />, shadow: 'shadow-lg shadow-gray-300/70', hover: 'hover:shadow-xl hover:shadow-gray-400/80 hover:scale-115', active: 'active:shadow-xl active:shadow-gray-400/80', title: 'GitHub' },
-        { name: '', icon: <FaCode className="text-blue-500" size={40} />, shadow: 'shadow-lg shadow-blue-500/70', hover: 'hover:shadow-xl hover:shadow-blue-600/80 hover:scale-115', active: 'active:shadow-xl active:shadow-blue-600/80', title: 'VSCode' },
+        { name: '', icon: <FaGitAlt className="text-orange-600" size={25} />, shadow: 'shadow-lg shadow-orange-600/70', hover: 'hover:shadow-xl hover:shadow-orange-700/80 hover:scale-115', active: 'active:shadow-xl active:shadow-orange-700/80', title: 'Git' },
+        { name: '', icon: <FaGithub className="text-gray-300" size={25} />, shadow: 'shadow-lg shadow-gray-300/70', hover: 'hover:shadow-xl hover:shadow-gray-400/80 hover:scale-115', active: 'active:shadow-xl active:shadow-gray-400/80', title: 'GitHub' },
+        { name: '', icon: <FaCode className="text-blue-500" size={25} />, shadow: 'shadow-lg shadow-blue-500/70', hover: 'hover:shadow-xl hover:shadow-blue-600/80 hover:scale-115', active: 'active:shadow-xl active:shadow-blue-600/80', title: 'VSCode' },
     ];
 
     useEffect(() => {
@@ -69,9 +63,6 @@ const TechnologiesSection: React.FC = () => {
             observer.observe(sectionRef.current);
         }
 
-        return () => {
-            if (sectionRef.current) observer.unobserve(sectionRef.current);
-        };
     }, []);
 
     const getAnimationClasses = (position: 'left' | 'center' | 'right') => {
@@ -102,7 +93,7 @@ const TechnologiesSection: React.FC = () => {
                 <div className="grid md:grid-cols-3 lg:grid-cols-3 gap-7">
                     {/* Columna Frontend (izquierda) */}
                     <div
-                        className={`p-6 transition-all duration-700 ease-in-out ${getAnimationClasses('left')}`}
+                        className={`p-6 transition-all duration-700 ease-in-out bg-gradient-to-br from-neutral-950 to-blue-950 rounded-xl shadow-lg shadow-blue-500/50 hover:shadow-xl hover:shadow-blue-600/70 ${getAnimationClasses('left')}`}
                     >
                         <h3 className="text-xl font-semibold text-white mb-6 text-center">Frontend</h3>
                         <div className="grid grid-cols-2 gap-6">
@@ -123,7 +114,7 @@ const TechnologiesSection: React.FC = () => {
 
                     {/* Columna Backend (centro) */}
                     <div
-                        className={`p-6 transition-all duration-700 ease-in-out ${getAnimationClasses('center')}`}
+                        className={`p-6 transition-all duration-700 ease-in-out bg-gradient-to-br from-neutral-950 to-blue-950 rounded-xl shadow-lg shadow-green-500/50 hover:shadow-xl hover:shadow-green-600/70 ${getAnimationClasses('center')}`}
                     >
                         <h3 className="text-xl font-semibold text-white mb-6 text-center">Backend</h3>
                         <div className="grid grid-cols-2 gap-6">
@@ -144,7 +135,7 @@ const TechnologiesSection: React.FC = () => {
 
                     {/* Columna Complementos (derecha) */}
                     <div
-                        className={`p-6 transition-all duration-700 ease-in-out ${getAnimationClasses('right')}`}
+                        className={`p-6 transition-all duration-700 ease-in-out bg-gradient-to-br from-neutral-950 to-blue-950 rounded-xl shadow-lg shadow-purple-500/50 hover:shadow-xl hover:shadow-purple-600/70 ${getAnimationClasses('right')}`}
                     >
                         <h3 className="text-xl font-semibold text-white mb-6 text-center">Complementos</h3>
                         <div className="grid grid-cols-2 gap-6">
