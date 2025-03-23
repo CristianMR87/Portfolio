@@ -8,6 +8,7 @@ import {
     FaGitAlt,
     FaGithub,
     FaCode,
+    FaUbuntu,
 } from 'react-icons/fa';
 import {
     SiTailwindcss,
@@ -39,6 +40,7 @@ const TechnologiesSection: React.FC = () => {
         { name: '', icon: <FaGitAlt className="text-orange-600" size={35} />, shadow: 'shadow-lg shadow-orange-600/70', hover: 'hover:shadow-xl hover:shadow-orange-700/80 hover:scale-115', active: 'active:shadow-xl active:shadow-orange-700/80', title: 'Git' },
         { name: '', icon: <FaGithub className="text-gray-300" size={35} />, shadow: 'shadow-lg shadow-gray-300/70', hover: 'hover:shadow-xl hover:shadow-gray-400/80 hover:scale-115', active: 'active:shadow-xl active:shadow-gray-400/80', title: 'GitHub' },
         { name: '', icon: <FaCode className="text-blue-500" size={35} />, shadow: 'shadow-lg shadow-blue-500/70', hover: 'hover:shadow-xl hover:shadow-blue-600/80 hover:scale-115', active: 'active:shadow-xl active:shadow-blue-600/80', title: 'VSCode' },
+        { name: '', icon: <FaUbuntu className="text-orange-600" size={35} />, shadow: 'shadow-lg shadow-orange-600/70', hover: 'hover:shadow-xl hover:shadow-orange-700/80 hover:scale-115', active: 'active:shadow-xl active:shadow-orange-700/80', title: 'Ubuntu' },
     ];
 
     useEffect(() => {
@@ -63,6 +65,9 @@ const TechnologiesSection: React.FC = () => {
             observer.observe(sectionRef.current);
         }
 
+        return () => {
+            if (sectionRef.current) observer.unobserve(sectionRef.current);
+        };
     }, []);
 
     const getAnimationClasses = (position: 'left' | 'center' | 'right') => {
@@ -93,7 +98,7 @@ const TechnologiesSection: React.FC = () => {
                 <div className="grid md:grid-cols-3 lg:grid-cols-3 gap-7">
                     {/* Columna Frontend (izquierda) */}
                     <div
-                        className={`p-6 transition-all duration-700 ease-in-out  ${getAnimationClasses('left')}`}
+                        className={`p-6 transition-all duration-700 ease-in-out ${getAnimationClasses('left')}`}
                     >
                         <h3 className="text-xl font-semibold text-white mb-6 text-center">Frontend</h3>
                         <div className="grid grid-cols-2 gap-6">
@@ -103,7 +108,9 @@ const TechnologiesSection: React.FC = () => {
                                     title={tech.title}
                                     className="flex items-center justify-center gap-3 text-gray-300 hover:text-white transition-all duration-300"
                                 >
-                                    <span className={`p-3 rounded-full bg-neutral-950 ${tech.shadow} ${tech.hover} ${tech.active}`}>
+                                    <span
+                                        className={`p-3 rounded-full bg-neutral-950 ${tech.shadow} ${tech.hover} ${tech.active} transition-all duration-300 ease-in-out`}
+                                    >
                                         {tech.icon}
                                     </span>
                                     <span>{tech.name}</span>
@@ -124,7 +131,9 @@ const TechnologiesSection: React.FC = () => {
                                     title={tech.title}
                                     className="flex items-center justify-center gap-3 text-gray-300 hover:text-white transition-all duration-300"
                                 >
-                                    <span className={`p-3 rounded-full bg-neutral-950 ${tech.shadow} ${tech.hover} ${tech.active}`}>
+                                    <span
+                                        className={`p-3 rounded-full bg-neutral-950 ${tech.shadow} ${tech.hover} ${tech.active} transition-all duration-300 ease-in-out`}
+                                    >
                                         {tech.icon}
                                     </span>
                                     <span>{tech.name}</span>
@@ -145,7 +154,9 @@ const TechnologiesSection: React.FC = () => {
                                     title={tech.title}
                                     className="flex items-center justify-center gap-3 text-gray-300 hover:text-white transition-all duration-300"
                                 >
-                                    <span className={`p-3 rounded-full bg-neutral-950 ${tech.shadow} ${tech.hover} ${tech.active}`}>
+                                    <span
+                                        className={`p-3 rounded-full bg-neutral-950 ${tech.shadow} ${tech.hover} ${tech.active} transition-all duration-300 ease-in-out`}
+                                    >
                                         {tech.icon}
                                     </span>
                                     <span>{tech.name}</span>
