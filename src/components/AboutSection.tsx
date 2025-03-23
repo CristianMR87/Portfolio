@@ -1,11 +1,9 @@
 import React from 'react';
-import { FaLinkedin, FaGithub, FaCopy} from 'react-icons/fa';
+import { FaLinkedin, FaGithub, FaCopy } from 'react-icons/fa';
 import Button from './Button';
 import { useState } from 'react';
 
-
 const AboutSection: React.FC = () => {
-
     const [copied, setCopied] = useState(false);
 
     const copyEmail = () => {
@@ -70,12 +68,19 @@ const AboutSection: React.FC = () => {
                     </div>
                 </div>
                 {/* Imagen */}
-                <div className="shrink-0">
+                <div className="flex flex-col shrink-0 items-center justify-center lg:mt-10 mt-5">
                     <img
                         src="/images/Perfil1.jpg"
                         alt="Foto de Cristian"
                         className="w-50 h-50 md:w-60 md:h-60 lg:w-[300px] lg:h-[300px] rounded-full object-cover border-2 border-gray-700"
                     />
+                    <a
+                        href="/cv.pdf"
+                        download="CV_CristianMorano.pdf"
+                        className="mt-10 inline-block bg-blue-500 hover:text-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors duration-300"
+                    >
+                        CV
+                    </a>
                 </div>
             </div>
         </section>
