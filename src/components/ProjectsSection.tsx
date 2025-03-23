@@ -80,7 +80,7 @@ const ProjectCard: React.FC<ProjectCardProps & { isVisible?: boolean }> = ({
     return (
         <div
             ref={cardRef}
-            className={`relative bg-gradient-to-br from-neutral-950 to-blue-950 p-6 rounded-xl shadow-xl ${badgeColor.shadow} hover:${badgeColor.hover} active:${badgeColor.active} transition-all duration-700 ease-in-out ${getAnimationClasses()} flex flex-col`}
+            className={`relative bg-gradient-to-br from-neutral-950 to-blue-950 p-6 rounded-xl shadow-xl ${badgeColor.shadow} ${badgeColor.hover} ${badgeColor.active} transition-all duration-700 ease-in-out ${getAnimationClasses()} flex flex-col`}
         >
             <div className="relative group">
                 <img 
@@ -133,7 +133,7 @@ const ProjectCard: React.FC<ProjectCardProps & { isVisible?: boolean }> = ({
                 {techIcons.map((icon, index) => (
                     <div
                         key={index}
-                        className={`shadow-lg ${icon.shadow} hover:${icon.hover} hover:scale-115 active:${icon.active} active:scale-115 transition-all duration-300 p-2 rounded-full`}
+                        className={`shadow-lg ${icon.shadow} ${icon.hover} ${icon.active} transition-all duration-300 p-2 rounded-full`}
                         title={icon.title}
                     >
                         {icon.component}
@@ -202,13 +202,13 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ className }) => {
                         '- Integración de las tres tecnologías para un proyecto sólido y escalable.',
                     ]}
                     techIcons={[
-                        { component: <FaReact className="text-blue-300" size={24} />, shadow: 'shadow-blue-300/40', hover: 'shadow-blue-400/60', active: 'shadow-blue-400/80', title: 'React' },
-                        { component: <img src="/images/Tail.jpg" className="w-6 h-6" />, shadow: 'shadow-blue-300/40', hover: 'shadow-blue-400', active: 'shadow-blue-400', title: 'TailWindCSS' },
-                        { component: <img src="/images/TS.jpg" className="w-6 h-6" />, shadow: 'shadow-blue-500/40', hover: 'shadow-blue-500/60', active: 'shadow-blue-500/80', title: 'Typescript' },
-                        { component: <FaCss3 className="text-blue-400" size={24} />, shadow: 'shadow-blue-500/40', hover: 'shadow-blue-500/60', active: 'shadow-blue-500/80', title: 'CSS' },
+                        { component: <FaReact className="text-blue-300" size={24} />, shadow: 'shadow-blue-300/40', hover: 'hover:shadow-blue-400/60', active: 'active:shadow-blue-400/80', title: 'React' },
+                        { component: <img src="/images/Tail.jpg" className="w-6 h-6" />, shadow: 'shadow-blue-300/40', hover: 'hover:shadow-blue-400', active: 'active:shadow-blue-400', title: 'TailWindCSS' },
+                        { component: <img src="/images/TS.jpg" className="w-6 h-6" />, shadow: 'shadow-blue-500/40', hover: 'hover:shadow-blue-500/60', active: 'active:shadow-blue-500/80', title: 'Typescript' },
+                        { component: <FaCss3 className="text-blue-400" size={24} />, shadow: 'shadow-blue-500/40', hover: 'hover:shadow-blue-500/60', active: 'active:shadow-blue-500/80', title: 'CSS' },
                     ]}
                     badgeText="Website"
-                    badgeColor={{ shadow: 'shadow-blue-500/40', hover: 'shadow-blue-500/80', active: 'shadow-blue-500/80', bg: 'bg-blue-500', badge: 'bg-blue-600' }}
+                    badgeColor={{ shadow: 'shadow-blue-500/40', hover: 'hover:shadow-blue-500/80', active: 'active:shadow-blue-500/80', bg: 'bg-blue-500', badge: 'bg-blue-600' }}
                     isVisible={isVisible}
                     position="left"
                 />
@@ -224,14 +224,14 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ className }) => {
                         '- Conexión a BBDD mediante API.',
                     ]}
                     techIcons={[
-                        { component: <FaReact className="text-blue-300" size={24} />, shadow: 'shadow-blue-300/60', hover: 'shadow-blue-400/80', active: 'shadow-blue-400/60', title: 'React' },
-                        { component: <img src="/images/TS.jpg" className="w-6 h-6" />, shadow: 'shadow-blue-500/60', hover: 'shadow-blue-500/80', active: 'shadow-blue-500/60', title: 'Typescript' },
-                        { component: <FaPython className="text-yellow-400" size={24} />, shadow: 'shadow-yellow-400/60', hover: 'shadow-yellow-500', active: 'shadow-yellow-500/80', title: 'Python' },
-                        { component: <FaFlask className="text-blue-400" size={24} />, shadow: 'shadow-blue-300/60', hover: 'shadow-blue-400', active: 'shadow-blue-400', title: 'Flask' },
+                        { component: <FaReact className="text-blue-300" size={24} />, shadow: 'shadow-blue-300/60', hover: 'hover:shadow-blue-400/80', active: 'active:shadow-blue-400/60', title: 'React' },
+                        { component: <img src="/images/TS.jpg" className="w-6 h-6" />, shadow: 'shadow-blue-500/60', hover: 'hover:shadow-blue-500/80', active: 'active:shadow-blue-500/60', title: 'Typescript' },
+                        { component: <FaPython className="text-yellow-400" size={24} />, shadow: 'shadow-yellow-400/60', hover: 'hover:shadow-yellow-500', active: 'active:shadow-yellow-500/80', title: 'Python' },
+                        { component: <FaFlask className="text-blue-400" size={24} />, shadow: 'shadow-blue-300/60', hover: 'hover:shadow-blue-400', active: 'active:shadow-blue-400', title: 'Flask' },
                     ]}
                     link="https://nimbus-weather.vercel.app/"
                     badgeText="App web"
-                    badgeColor={{ shadow: 'shadow-green-500/40', hover: 'shadow-green-500/80', active: 'shadow-green-500/80', bg: 'bg-green-500', badge: 'bg-green-600' }}
+                    badgeColor={{ shadow: 'shadow-green-500/40', hover: 'hover:shadow-green-500/80', active: 'active:shadow-green-500/80', bg: 'bg-green-500', badge: 'bg-green-600' }}
                     isVisible={isVisible}
                     position="center"
                 />
@@ -245,13 +245,13 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ className }) => {
                         '- Diseño limpio y minimalista.',
                     ]}
                     techIcons={[
-                        { component: <FaHtml5 className="text-orange-400" size={24} />, shadow: 'shadow-orange-400/60', hover: 'shadow-orange-400/80', active: 'shadow-orange-400/80', title: 'HTML' },
-                        { component: <FaCss3 className="text-blue-400" size={24} />, shadow: 'shadow-blue-500/60', hover: 'shadow-blue-500/80', active: 'shadow-blue-500/80', title: 'CSS' },
-                        { component: <FaBootstrap className="text-purple-400" size={24} />, shadow: 'shadow-purple-500/60', hover: 'shadow-purple-500/80', active: 'shadow-purple-500/80', title: 'Bootstrap' },
+                        { component: <FaHtml5 className="text-orange-400" size={24} />, shadow: 'shadow-orange-400/60', hover: 'hover:shadow-orange-400/80', active: 'active:shadow-orange-400/80', title: 'HTML' },
+                        { component: <FaCss3 className="text-blue-400" size={24} />, shadow: 'shadow-blue-500/60', hover: 'hover:shadow-blue-500/80', active: 'active:shadow-blue-500/80', title: 'CSS' },
+                        { component: <FaBootstrap className="text-purple-400" size={24} />, shadow: 'shadow-purple-500/60', hover: 'hover:shadow-purple-500/80', active: 'active:shadow-purple-500/80', title: 'Bootstrap' },
                     ]}
                     link="https://cristian-estudios.vercel.app/"
                     badgeText="Website"
-                    badgeColor={{ shadow: 'shadow-purple-500/40', hover: 'shadow-purple-500/80', active: 'shadow-purple-500/80', bg: 'bg-purple-500', badge: 'bg-purple-600' }}
+                    badgeColor={{ shadow: 'shadow-purple-500/40', hover: 'hover:shadow-purple-500/80', active: 'active:shadow-purple-500/80', bg: 'bg-purple-500', badge: 'bg-purple-600' }}
                     isVisible={isVisible}
                     position="right"
                 />
