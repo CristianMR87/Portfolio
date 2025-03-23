@@ -93,7 +93,7 @@ const TechnologiesSection: React.FC = () => {
                 <div className="grid md:grid-cols-3 lg:grid-cols-3 gap-7">
                     {/* Columna Frontend (izquierda) */}
                     <div
-                        className={`p-6 transition-all duration-700 ease-in-out bg-gradient-to-br from-neutral-950 to-blue-950 rounded-xl shadow-lg shadow-blue-500/50 hover:shadow-xl hover:shadow-blue-600/70 ${getAnimationClasses('left')}`}
+                        className={`p-6 transition-all duration-700 ease-in-out  ${getAnimationClasses('left')}`}
                     >
                         <h3 className="text-xl font-semibold text-white mb-6 text-center">Frontend</h3>
                         <div className="grid grid-cols-2 gap-6">
@@ -114,7 +114,7 @@ const TechnologiesSection: React.FC = () => {
 
                     {/* Columna Backend (centro) */}
                     <div
-                        className={`p-6 transition-all duration-700 ease-in-out bg-gradient-to-br from-neutral-950 to-blue-950 rounded-xl shadow-lg shadow-green-500/50 hover:shadow-xl hover:shadow-green-600/70 ${getAnimationClasses('center')}`}
+                        className={`p-6 transition-all duration-700 ease-in-out ${getAnimationClasses('center')}`}
                     >
                         <h3 className="text-xl font-semibold text-white mb-6 text-center">Backend</h3>
                         <div className="grid grid-cols-2 gap-6">
@@ -135,7 +135,7 @@ const TechnologiesSection: React.FC = () => {
 
                     {/* Columna Complementos (derecha) */}
                     <div
-                        className={`p-6 transition-all duration-700 ease-in-out bg-gradient-to-br from-neutral-950 to-blue-950 rounded-xl shadow-lg shadow-purple-500/50 hover:shadow-xl hover:shadow-purple-600/70 ${getAnimationClasses('right')}`}
+                        className={`p-6 transition-all duration-700 ease-in-out ${getAnimationClasses('right')}`}
                     >
                         <h3 className="text-xl font-semibold text-white mb-6 text-center">Complementos</h3>
                         <div className="grid grid-cols-2 gap-6">
