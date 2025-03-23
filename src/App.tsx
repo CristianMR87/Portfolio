@@ -3,6 +3,8 @@ import Navbar from './components/Navbar'
 import AboutSection from './components/AboutSection';
 import ExperienceSection from './components/ExperienceSection';
 import ProjectsSection from './components/ProjectsSection';
+import TechnologiesSection from './components/TechnologiesSection';
+
 
 function App() {
 
@@ -15,9 +17,11 @@ function App() {
 
 			<ExperienceSection />
 
+			<TechnologiesSection />
+
 			<ProjectsSection />
 
-			
+
 		</div>
 	)
 }

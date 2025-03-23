@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { FaLinkedin, FaGithub } from 'react-icons/fa';
 import EmailSection from './EmailSection';
 import Button from './Button';
@@ -7,6 +7,7 @@ const Navbar: React.FC = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
     const [shouldCloseEmail, setShouldCloseEmail] = useState(false);
+    const menuRef = useRef<HTMLUListElement>(null);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -25,18 +26,35 @@ const Navbar: React.FC = () => {
             }
         };
 
+        const handleClickOutside = (event: MouseEvent) => {
+            if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+                setIsMenuOpen(false);
+            }
+        };
+
         window.addEventListener('scroll', handleScroll);
         window.addEventListener('resize', handleResize);
+        if (isMenuOpen) {
+            document.addEventListener('mousedown', handleClickOutside);
+        }
+
         handleResize();
 
         return () => {
             window.removeEventListener('scroll', handleScroll);
             window.removeEventListener('resize', handleResize);
+            document.removeEventListener('mousedown', handleClickOutside);
         };
-    }, );
+    },);
 
     const toggleMenu = () => {
-        setIsMenuOpen(!isMenuOpen);
+        // Depuración para verificar el estado antes y después
+        console.log('Estado antes del clic:', isMenuOpen);
+        setIsMenuOpen((prev) => {
+            const newState = !prev;
+            console.log('Nuevo estado:', newState);
+            return newState;
+        });
         setShouldCloseEmail(false); // Resetear al abrir/cerrar manualmente
     };
 
@@ -68,34 +86,55 @@ const Navbar: React.FC = () => {
                     />
                 </div>
                 <ul
+                    ref={menuRef} // Asignamos la referencia al menú desplegable
                     className={`${
                         isMenuOpen
                             ? 'left-0 bg-gradient-to-br shadow-xl shadow-blue-500/40 from-gray-950 via-gray-900 to-blue-950 mt-1 scale-90'
                             : '-left-full bg-transparent scale-100'
-                    } lg:flex lg:border-hidden border border-gray-700 -ml-2 lg:space-x-6 fixed lg:static top-[4.5rem] h-auto w-40 lg:w-auto rounded-2xl p-4 lg:p-0 transition-all duration-300 ease-in-out z-40 space-y-4 lg:space-y-0 lg:justify-self-center lg:text-center lg:whitespace-nowrap lg:opacity-100`}
+                    } lg:flex lg:border-hidden border border-gray-700 -ml-2 lg:space-x-6 fixed lg:static top-15 h-auto w-40 lg:w-auto rounded-2xl p-4 lg:p-0 transition-all duration-500 ease-in-out z-40 space-y-4 lg:space-y-0 lg:justify-self-center lg:text-center lg:whitespace-nowrap lg:opacity-100`}
                 >
                     <li className="group relative">
-                        <a href="#home" className="text-white transition-all duration-400 block lg:inline underline-from-left gradient-text">
+                        <a
+                            href="#home"
+                            className="text-white transition-all duration-400 block lg:inline underline-from-left gradient-text"
+                            onClick={() => setIsMenuOpen(false)} // Cierra el menú al hacer clic en un enlace
+                        >
                             Inicio
                         </a>
                     </li>
                     <li className="group relative bg-transparent">
-                        <a href="#about" className="text-white transition-all duration-400 block lg:inline underline-from-left gradient-text">
+                        <a
+                            href="#about"
+                            className="text-white transition-all duration-400 block lg:inline underline-from-left gradient-text"
+                            onClick={() => setIsMenuOpen(false)}
+                        >
                             Experiencia
                         </a>
                     </li>
                     <li className="group relative bg-transparent">
-                        <a href="#projects" className="text-white transition-all duration-400 block lg:inline underline-from-left gradient-text">
+                        <a
+                            href="#projects"
+                            className="text-white transition-all duration-400 block lg:inline underline-from-left gradient-text"
+                            onClick={() => setIsMenuOpen(false)}
+                        >
                             Proyectos
                         </a>
                     </li>
                     <li className="group relative bg-transparent">
-                        <a href="#contact" className="text-white transition-all duration-400 block lg:inline underline-from-left gradient-text">
+                        <a
+                            href="#contact"
+                            className="text-white transition-all duration-400 block lg:inline underline-from-left gradient-text"
+                            onClick={() => setIsMenuOpen(false)}
+                        >
                             Formación
                         </a>
                     </li>
                     <li className="group relative bg-transparent">
-                        <a href="#contact" className="text-white transition-all duration-400 block lg:inline underline-from-left gradient-text">
+                        <a
+                            href="#contact"
+                            className="text-white transition-all duration-400 block lg:inline underline-from-left gradient-text"
+                            onClick={() => setIsMenuOpen(false)}
+                        >
                             Contacto
                         </a>
                     </li>

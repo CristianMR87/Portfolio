@@ -116,7 +116,7 @@ const ProjectCard: React.FC<ProjectCardProps & { isVisible?: boolean }> = ({
             </ul>
             <button
                 onClick={toggleExpand}
-                className="md:hidden text-green-400 hover:text-green-500 font-semibold flex items-center justify-center gap-1 mt-4 transition-colors duration-700 w-full"
+                className="md:hidden text-green-400 hover:text-green-500 font-semibold flex items-center justify-center gap-1 mt-4 transition-colors duration-700 mx-auto cursor-pointer"
             >
                 {isExpanded ? 'Ocultar' : 'Detalles'}
                 <svg

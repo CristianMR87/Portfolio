@@ -1,5 +1,5 @@
 import { FaEnvelope, FaCopy, FaPaperPlane } from 'react-icons/fa';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Button from './Button';
 
 interface EmailSectionProps {
@@ -9,12 +9,29 @@ interface EmailSectionProps {
 function EmailSection({ closeOnScroll }: EmailSectionProps) {
     const [isOpen, setIsOpen] = useState(false);
     const [copied, setCopied] = useState(false);
+    const emailSectionRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
         if (closeOnScroll) {
             setIsOpen(false);
         }
     }, [closeOnScroll]);
+
+    useEffect(() => {
+        const handleClickOutside = (event: MouseEvent) => {
+            if (emailSectionRef.current && !emailSectionRef.current.contains(event.target as Node)) {
+                setIsOpen(false);
+            }
+        };
+
+        if (isOpen) {
+            document.addEventListener('mousedown', handleClickOutside);
+        }
+
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, [isOpen]);
 
     const toggleOptions = () => {
         setIsOpen(!isOpen);
@@ -31,13 +48,19 @@ function EmailSection({ closeOnScroll }: EmailSectionProps) {
     };
 
     return (
-        <div className="flex shrink-0 ml-auto lg:ml-0 lg:justify-self-end relative" title="Contacto">
+        <div
+            ref={emailSectionRef}
+            className="flex shrink-0 ml-auto lg:ml-0 lg:justify-self-end relative"
+            title="Contacto"
+        >
             {/* Botón principal */}
             <Button onClick={toggleOptions}>
-                <FaEnvelope size={24} className="text-white hover:text-blue-500 active:text-blue-400 transition-all duration-300" />
+                <FaEnvelope
+                    size={24}
+                    className="text-white hover:text-blue-500 active:text-blue-400 transition-all duration-300"
+                />
             </Button>
 
-            {/* Opciones que aparecen al hacer clic */}
             {isOpen && (
                 <div
                     title="Copiar email"
@@ -63,7 +86,10 @@ function EmailSection({ closeOnScroll }: EmailSectionProps) {
                         aria-label="Enviar email"
                         onClick={() => setIsOpen(false)}
                     >
-                        <FaPaperPlane size={16} className="text-white hover:text-blue-500 active:text-blue-400 transition-all duration-300" />
+                        <FaPaperPlane
+                            size={16}
+                            className="text-white hover:text-blue-500 active:text-blue-400 transition-all duration-300"
+                        />
                     </a>
                 </div>
             )}
