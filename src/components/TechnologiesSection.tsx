@@ -65,9 +65,6 @@ const TechnologiesSection: React.FC = () => {
             observer.observe(sectionRef.current);
         }
 
-        return () => {
-            if (sectionRef.current) observer.unobserve(sectionRef.current);
-        };
     }, []);
 
     const getAnimationClasses = (position: 'left' | 'center' | 'right') => {

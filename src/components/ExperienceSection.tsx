@@ -95,7 +95,7 @@ const ExperienceSection: React.FC<ExperienceSectionProps> = ({ className }) => {
     return (
         <section
             ref={sectionRef}
-            className={`min-w-95 md:w-full lg:w-[1024px] w-4/5 p-4 lg:mt-25 mt-1 mx-auto ${className || ''} transition-all duration-700 ease-in-out ${
+            className={`min-w-95 md:w-full lg:w-[1024px] w-4/5 p-4 lg:mt-25 mt-5 mx-auto ${className || ''} transition-all duration-700 ease-in-out ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'
             }`}
         >
