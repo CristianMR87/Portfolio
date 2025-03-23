@@ -185,7 +185,7 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ className }) => {
     return (
         <section
             ref={sectionRef}
-            className={`min-w-95 md:w-full lg:w-[1024px] w-4/5 mx-auto p-4 mt-16 ${className || ''} transition-all duration-700 ease-in-out ${
+            className={`min-w-95 md:w-full lg:w-[1024px] w-4/5 mx-auto p-4 mt-10 ${className || ''} transition-all duration-700 ease-in-out ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'
             }`}
         >
