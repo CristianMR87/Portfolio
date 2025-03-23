@@ -8,7 +8,7 @@ function App() {
 
 	
 	return (
-		<div className="bg-gradient-to-b from-black via-gray-900 to-purple-950 min-h-screen">
+		<div className="bg-gradient-to-b from-neutral-950 via-blue-950/20 to-purple-950 min-h-screen">
 			<Navbar />
 
 			<AboutSection />

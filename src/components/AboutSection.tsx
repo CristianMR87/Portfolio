@@ -18,7 +18,7 @@ const AboutSection: React.FC = () => {
     };
 
     return (
-        <section className="min-w-95 lg:w-[1024px] p-4 mt-16 mx-auto w-4/5 rounded-lg ">           
+        <section className="min-w-95 lg:w-[1024px] p-4 md:my-20 mt-12 mx-auto w-3/4 rounded-lg ">           
             <div className="flex flex-col lg:flex-row items-center lg:items-start gap-4 md:gap-8 lg:gap-12">                
                 {/* Texto */}
                 <div className="flex-1 text-white lg:text-left text-center">
@@ -27,6 +27,9 @@ const AboutSection: React.FC = () => {
                     <p className="text-gray-300 text-lg mt-8 text-justify">
                         Actualmente estudiante de DAW y futuro desarrollador Full-Stack.
                         Apasionado por la tecnología y el mundo del desarrollo web. Con más de un año de formación autodidacta y actualmente estudiando DAW, centro mis conocimientos en tecnologías como Java, Python, Oracle SQL, React, Bootstrap, Ubuntu. He desarrollado varios proyectos personales aplicando estas tecnologías, desde su creación hasta su despliegue final.
+                    </p>
+                    <p className="text-gray-300 text-lg mt-8 text-justify">
+                        Siéntete libre de contactarme para cualquier información extra.
                     </p>
                     {/* Banner "Disponible" */}
                     <div className="inline-block border-2 border-green-600 text-green-600 text-sm mt-7 font-semibold py-3 px-7 rounded-full">
