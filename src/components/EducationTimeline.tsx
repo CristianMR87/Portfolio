@@ -85,7 +85,7 @@ const EducationTimeline: React.FC = () => {
             title: "CFGS Desarrollo de App Web (DAW)",
             period: "2024 - Actualidad",
             institution: "I.E.S. San Clemente",
-            listItems: ["- Especialización en Desarrollo Web", "- Back end: Java y Python", "- BBDD: OracleSQL", "- Despliegue mediante Ubuntu", "- Front ends responsivos (Bootstrap, MediaQuerys)"],
+            listItems: ["- Especialización en Desarrollo Web", "- Back end: Java y Python", "- BBDD: OracleSQL", "- Despliegue mediante Ubuntu", "- Front ends responsivos (Bootstrap, media queries)"],
             badgeText: "CFGS",
             badgeColor: "bg-blue-600",
             shadowColor: "shadow-blue-500/40",
