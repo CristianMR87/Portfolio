@@ -70,11 +70,11 @@ const Navbar: React.FC<NavbarProps> = ({ scrollToSection, refs }) => {
     };
 
     return (
-        <nav
-            className={`min-w-90 lg:w-[1000px] md:mt-6 mx-auto w-3/4 p-4 bg-blue-950/30 backdrop-blur-lg rounded-2xl shadow-lg sticky top-6 z-50 border-2 border-gray-700 shadow-blue-500/40 hover:shadow-blue-500/60 active:shadow-blue-500/60 transition-all duration-300 ${
-                isScrolled ? 'scale-90 py-3 -translate-y-4' : 'scale-100 py-3 translate-y-4'
-            }`}
-        >
+<nav
+    className={`lg:max-w-[1000px] w-9/10 mt-2 mx-auto p-4 bg-blue-950/30 backdrop-blur-lg rounded-2xl shadow-lg fixed top-0 left-0 right-0 z-50 border-2 border-gray-700 shadow-blue-500/40 hover:shadow-blue-500/60 active:shadow-blue-500/60 transition-all duration-300 ${
+        isScrolled ? 'scale-90 py-3 translate-y-2' : 'scale-100 py-3 translate-y-4'
+    }`}
+>
             <div className="flex items-center justify-between max-w-7xl mx-auto lg:grid lg:grid-cols-3">
                 <div className="flex items-center space-x-4 shrink-0 lg:shrink lg:justify-self-start">
                     <Button onClick={toggleMenu} className="lg:hidden">

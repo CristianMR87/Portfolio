@@ -6,7 +6,7 @@ html, body {
   padding: 0;
   height: 100%;
   width: 100%;
-  min-height: 100vh; /* Esto asegura que el body ocupe al menos la pantalla, pero no afecta al div principal con h-auto */
+  min-height: 100vh; 
   background: #040313  !important;
 }
 
