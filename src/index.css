@@ -154,7 +154,7 @@ html, body {
 }
 
 .neon-bg {
-  animation: neonFlow 4s linear infinite;
+  animation: neonFlow 2s linear infinite;
   position: relative;
 }
 

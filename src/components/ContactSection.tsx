@@ -85,7 +85,7 @@ const ContactSection: React.FC = () => {
             }`}
         >
             <h2 className="text-5xl font-bold text-blue-400 text-center mb-12">Contáctame</h2>
-            <div className="bg-gradient-to-br from-neutral-950 to-blue-950 p-8 rounded-xl shadow-lg shadow-blue-500/40 hover:shadow-blue-500/60 active:shadow-blue-500/60 transition-all duration-300 border border-gray-700">
+            <div className="bg-gradient-to-br from-black to-blue-950 p-8 rounded-xl shadow-lg shadow-blue-500/40 hover:shadow-blue-500/60 active:shadow-blue-500/60 transition-all duration-300 border border-gray-700">
                 <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
@@ -146,7 +146,7 @@ const ContactSection: React.FC = () => {
                             <button
                                 type="button"
                                 onClick={handleCancel}
-                                className="flex items-center justify-center w-32 h-12 bg-gradient-to-br from-gray-950 to-blue-950 border border-cyan-400/30 rounded-full shadow-lg shadow-blue-500/40 hover:text-blue-500 hover:shadow-blue-500/40 active:text-blue-500 active:shadow-blue-500/40 cursor-pointer font-semibold text-white transition-all duration-400 lg:inline gradient-text"
+                                className="flex items-center justify-center w-32 h-12 bg-gradient-to-br from-black to-blue-950 border border-cyan-400/30 rounded-full shadow-lg shadow-blue-500/40 hover:text-blue-500 hover:shadow-blue-500/40 active:text-blue-500 active:shadow-blue-500/40 cursor-pointer font-semibold text-white transition-all duration-400 lg:inline gradient-text"
                                 disabled={isSubmitting}
                             >
                                 Cancelar
@@ -155,7 +155,7 @@ const ContactSection: React.FC = () => {
                         <div className='group2'>
                         <button
                             type="submit"
-                            className="flex items-center justify-center w-32 h-12 bg-gradient-to-br from-gray-950 to-blue-950 border border-cyan-400/30 rounded-full shadow-lg shadow-blue-500/40 hover:text-blue-500 hover:shadow-blue-500/40 active:text-blue-500 active:shadow-blue-500/40 cursor-pointer font-semibold text-white transition-all duration-400 lg:inline gradient-text"
+                            className="flex items-center justify-center w-32 h-12 bg-gradient-to-br from-black to-blue-950 border border-cyan-400/30 rounded-full shadow-lg shadow-blue-500/40 hover:text-blue-500 hover:shadow-blue-500/40 active:text-blue-500 active:shadow-blue-500/40 cursor-pointer font-semibold text-white transition-all duration-400 lg:inline gradient-text"
                             disabled={isSubmitting}
                         >
                             {isSubmitting ? 'Enviando...' : 'Enviar Mensaje'}

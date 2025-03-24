@@ -27,7 +27,7 @@ const EducationCard: React.FC<EducationCardProps> = ({
 
     return (
         <div
-            className={`relative min-w-80 bg-gradient-to-br from-neutral-950 to-blue-950 p-4 rounded-xl shadow-xl ${shadowColor} transition-all duration-300 border border-gray-700 group ${
+            className={`relative min-w-80 bg-gradient-to-br from-black to-blue-950 p-4 rounded-xl shadow-xl ${shadowColor} transition-all duration-300 border border-gray-700 group ${
                 hoverShadowColor === 'shadow-blue-500/80' ? 'hover:shadow-blue-500/80' :
                 hoverShadowColor === 'shadow-green-500/80' ? 'hover:shadow-green-500/80' :
                 hoverShadowColor === 'shadow-purple-500/80' ? 'hover:shadow-purple-500/80' :
@@ -189,7 +189,7 @@ const EducationTimeline: React.FC = () => {
             </h2>
             <div className="relative min-h-auto max-h-auto">
                 <div
-                    className={`absolute left-0 md:left-1/2 transform md:-translate-x-1/2 w-1 bg-gradient-to-b from-blue-950/80 via-blue-950 to-purple-950 h-full transition-all duration-700 ease-in-out ${
+                    className={`absolute left-0 md:left-1/2 transform md:-translate-x-1/2 w-1 bg-gradient-to-b from-blue-950 to-purple-950 h-full transition-all duration-700 ease-in-out ${
                         isSectionVisible ? 'opacity-100' : 'opacity-0'
                     }`}
                 ></div>
@@ -229,7 +229,7 @@ const EducationTimeline: React.FC = () => {
                                     />
                                 </div>
                             </div>
-                            <div className="w-2 h-2 bg-blue-400 rounded-full z-10"></div>
+                            <div className="w-2 h-2 bg-teal-500 rounded-full z-10"></div>
                             <div className="hidden md:block md:w-5/12"></div>
                         </div>
                     ))}

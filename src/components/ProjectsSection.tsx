@@ -80,7 +80,7 @@ const ProjectCard: React.FC<ProjectCardProps & { isVisible?: boolean }> = ({
     return (
         <div
             ref={cardRef}
-            className={`relative bg-gradient-to-br from-neutral-950 to-blue-950 p-6 rounded-xl shadow-lg ${badgeColor.shadow} ${badgeColor.hover} ${badgeColor.active} transition-all duration-700 ease-in-out border border-gray-800 ${getAnimationClasses()} flex flex-col`}
+            className={`relative bg-gradient-to-br from-black to-blue-950 p-6 rounded-xl shadow-lg ${badgeColor.shadow} ${badgeColor.hover} ${badgeColor.active} transition-all duration-700 ease-in-out border border-gray-800 ${getAnimationClasses()} flex flex-col`}
         >
             <div className="relative group">
                 <img 
@@ -99,7 +99,7 @@ const ProjectCard: React.FC<ProjectCardProps & { isVisible?: boolean }> = ({
                         title="Enlace al proyecto"
                     >
                         <img src="/images/Demo.jpg" className="w-6 h-6" />
-                        <span className="text-white font-semibold text-sm md:inline hidden">DEMO</span>
+                        <span className="text-black font-bold text-sm md:inline hidden">DEMO</span>
                     </a>
                 )}
             </div>
@@ -193,9 +193,9 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ className }) => {
             <h2 className="text-5xl font-bold text-blue-400 text-center mb-8">Proyectos</h2>
             <div className="grid md:grid-cols-3 lg:grid-cols-3 md:gap-3 gap-6">
                 <ProjectCard
-                    title="Portfolio Personal"
-                    imageSrc="/images/Portfolio.jpg"
-                    imageAlt="Portfolio Personal"
+                    title="Portafolio Personal"
+                    imageSrc="/images/Portfolio.png"
+                    imageAlt="Portafolio Personal"
                     date="Marzo 2025"
                     listItems={[
                         '- Sitio web responsivo hecho con React, TypeScript y Tailwind CSS.',

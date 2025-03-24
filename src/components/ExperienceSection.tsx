@@ -15,7 +15,7 @@ interface ExperienceCardProps {
 
 const ExperienceCard: React.FC<ExperienceCardProps> = ({ title, period, company, listItems, badgeText, badgeColor, shadowColor, hoverShadowColor }) => {
     return (
-        <div className={`relative min-w-80 bg-gradient-to-br from-neutral-950 to-blue-950 p-6 rounded-xl shadow-lg ${shadowColor} hover:${hoverShadowColor} transition-all duration-300 border border-gray-700 group h-full`}>
+        <div className={`relative min-w-80 bg-gradient-to-br from-black to-blue-950 p-6 rounded-xl shadow-lg ${shadowColor} hover:${hoverShadowColor} transition-all duration-300 border border-gray-700 group h-full`}>
             <h3 className="text-xl font-semibold text-white">{title}</h3>
             <p className="text-gray-400 text-sm mt-1">{period}</p>
             <p className="text-gray-400 mt-1">{company}</p>

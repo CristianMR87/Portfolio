@@ -67,16 +67,16 @@ const AboutSection: React.FC = () => {
                 <div className="flex flex-col shrink-0 items-center justify-center lg:mt-10 mt-5">
                     <div className="neon-bg w-56 h-56 md:w-64 md:h-64 lg:w-[320px] lg:h-[320px] rounded-full flex items-center justify-center">
                         <img
-                            src="/images/Perfil1.jpg"
+                            src="/images/Perfil2.jpg"
                             alt="Foto de Cristian"
-                            className="w-50 h-50 md:w-60 md:h-60 lg:w-[300px] lg:h-[300px] rounded-full object-cover border-2 border-gray-700"
+                            className="w-50 h-50 md:w-60 md:h-60 lg:w-[320px] lg:h-[320px] rounded-full object-cover "
                         />
                     </div>
                     <div className="group">
                         <a
                             href=""
                             download="CV_CristianMorano.pdf"
-                            className="mt-8 inline-block bg-gradient-to-br from-gray-950 to-blue-950 border border-cyan-400/30 rounded-full shadow-lg shadow-blue-500/40 hover:shadow-blue-500/80 transition-all duration-300 cursor-pointer px-4 py-2 gradient-text"
+                            className="mt-8 inline-block bg-gradient-to-br from-black to-blue-950 border border-cyan-400/30 rounded-full shadow-lg shadow-blue-500/40 hover:shadow-blue-500/80 transition-all duration-300 cursor-pointer px-4 py-2 gradient-text"
                         >
                             Descargar CV
                         </a>

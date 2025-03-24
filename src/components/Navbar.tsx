@@ -100,7 +100,7 @@ const Navbar: React.FC<NavbarProps> = ({ scrollToSection, refs }) => {
                     ref={menuRef}
                     className={`${
                         isMenuOpen
-                            ? 'left-0 bg-gradient-to-br shadow-lg shadow-blue-500/40 from-gray-950 via-gray-900 to-blue-950 mt-1 scale-90'
+                            ? 'left-0 bg-gradient-to-br from-black to-blue-950 shadow-lg shadow-blue-500/40 mt-1 scale-90'
                             : '-left-full bg-transparent scale-100'
                     } lg:flex lg:border-hidden border border-gray-700 -ml-2 lg:space-x-6 fixed lg:static top-15 h-auto w-40 lg:w-auto rounded-2xl p-4 lg:p-0 transition-all duration-500 ease-in-out z-40 space-y-4 lg:space-y-0 lg:justify-self-center lg:text-center lg:whitespace-nowrap lg:opacity-100`}
                 >
