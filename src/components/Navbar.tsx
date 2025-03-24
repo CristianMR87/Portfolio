@@ -3,7 +3,19 @@ import { FaLinkedin, FaGithub } from 'react-icons/fa';
 import EmailSection from './EmailSection';
 import Button from './Button';
 
-const Navbar: React.FC = () => {
+interface NavbarProps {
+    scrollToSection: (ref: React.RefObject<HTMLDivElement | null>) => void;
+    refs: {
+        aboutRef: React.RefObject<HTMLDivElement | null>;
+        experienceRef: React.RefObject<HTMLDivElement | null>;
+        technologiesRef: React.RefObject<HTMLDivElement | null>;
+        projectsRef: React.RefObject<HTMLDivElement | null>;
+        educationRef: React.RefObject<HTMLDivElement | null>;
+        contactRef: React.RefObject<HTMLDivElement | null>;
+    };
+}
+
+const Navbar: React.FC<NavbarProps> = ({ scrollToSection, refs }) => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
     const [shouldCloseEmail, setShouldCloseEmail] = useState(false);
@@ -45,17 +57,16 @@ const Navbar: React.FC = () => {
             window.removeEventListener('resize', handleResize);
             document.removeEventListener('mousedown', handleClickOutside);
         };
-    },);
+    }, [isMenuOpen, shouldCloseEmail]);
 
     const toggleMenu = () => {
-        // Depuración para verificar el estado antes y después
         console.log('Estado antes del clic:', isMenuOpen);
         setIsMenuOpen((prev) => {
             const newState = !prev;
             console.log('Nuevo estado:', newState);
             return newState;
         });
-        setShouldCloseEmail(false); // Resetear al abrir/cerrar manualmente
+        setShouldCloseEmail(false);
     };
 
     return (
@@ -86,7 +97,7 @@ const Navbar: React.FC = () => {
                     />
                 </div>
                 <ul
-                    ref={menuRef} // Asignamos la referencia al menú desplegable
+                    ref={menuRef}
                     className={`${
                         isMenuOpen
                             ? 'left-0 bg-gradient-to-br shadow-lg shadow-blue-500/40 from-gray-950 via-gray-900 to-blue-950 mt-1 scale-90'
@@ -95,36 +106,65 @@ const Navbar: React.FC = () => {
                 >
                     <li className="group relative">
                         <a
-                            href="#home"
+                            href="#about"
                             className="text-white transition-all duration-400 block lg:inline underline-from-left gradient-text"
-                            onClick={() => setIsMenuOpen(false)} // Cierra el menú al hacer clic en un enlace
+                            onClick={(e) => {
+                                e.preventDefault();
+                                scrollToSection(refs.aboutRef);
+                                setIsMenuOpen(false);
+                            }}
                         >
-                            Inicio
+                            Sobre mí
                         </a>
                     </li>
                     <li className="group relative bg-transparent">
                         <a
-                            href="#about"
+                            href="#experience"
                             className="text-white transition-all duration-400 block lg:inline underline-from-left gradient-text"
-                            onClick={() => setIsMenuOpen(false)}
+                            onClick={(e) => {
+                                e.preventDefault();
+                                scrollToSection(refs.experienceRef);
+                                setIsMenuOpen(false);
+                            }}
                         >
                             Experiencia
                         </a>
                     </li>
                     <li className="group relative bg-transparent">
                         <a
+                            href="#technologies"
+                            className="text-white transition-all duration-400 block lg:inline underline-from-left gradient-text"
+                            onClick={(e) => {
+                                e.preventDefault();
+                                scrollToSection(refs.technologiesRef);
+                                setIsMenuOpen(false);
+                            }}
+                        >
+                            Tecnologías
+                        </a>
+                    </li>
+                    <li className="group relative bg-transparent">
+                        <a
                             href="#projects"
                             className="text-white transition-all duration-400 block lg:inline underline-from-left gradient-text"
-                            onClick={() => setIsMenuOpen(false)}
+                            onClick={(e) => {
+                                e.preventDefault();
+                                scrollToSection(refs.projectsRef);
+                                setIsMenuOpen(false);
+                            }}
                         >
                             Proyectos
                         </a>
                     </li>
                     <li className="group relative bg-transparent">
                         <a
-                            href="#contact"
+                            href="#education"
                             className="text-white transition-all duration-400 block lg:inline underline-from-left gradient-text"
-                            onClick={() => setIsMenuOpen(false)}
+                            onClick={(e) => {
+                                e.preventDefault();
+                                scrollToSection(refs.educationRef);
+                                setIsMenuOpen(false);
+                            }}
                         >
                             Formación
                         </a>
@@ -133,7 +173,11 @@ const Navbar: React.FC = () => {
                         <a
                             href="#contact"
                             className="text-white transition-all duration-400 block lg:inline underline-from-left gradient-text"
-                            onClick={() => setIsMenuOpen(false)}
+                            onClick={(e) => {
+                                e.preventDefault();
+                                scrollToSection(refs.contactRef);
+                                setIsMenuOpen(false);
+                            }}
                         >
                             Contacto
                         </a>
@@ -145,7 +189,6 @@ const Navbar: React.FC = () => {
                         href="https://linkedin.com/in/tu-linkedin"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className=""
                     >
                         <FaLinkedin
                             size={24}
@@ -157,7 +200,6 @@ const Navbar: React.FC = () => {
                         href="https://github.com/CristianMR87"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className=""
                     >
                         <FaGithub
                             size={24}

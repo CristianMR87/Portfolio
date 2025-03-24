@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import emailjs from '@emailjs/browser'; 
 
 const ContactSection: React.FC = () => {
     const [isVisible, setIsVisible] = useState(false);
@@ -10,6 +11,8 @@ const ContactSection: React.FC = () => {
         subject: '',
         message: ''
     });
+    const [isSubmitting, setIsSubmitting] = useState(false); 
+    const [submitMessage, setSubmitMessage] = useState(''); 
 
     useEffect(() => {
         const observer = new IntersectionObserver(
@@ -40,14 +43,38 @@ const ContactSection: React.FC = () => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        console.log('Formulario enviado:', formData);
-        setFormData({ name: '', email: '', subject: '', message: '' });
+        setIsSubmitting(true);
+        setSubmitMessage('');
+
+        // Credenciales de EmailJS
+        const serviceID = 'service_avcu49n'; 
+        const templateID = 'template_j1s77ro'; 
+        const publicKey = 'du9rumdEVCYsSxF4F'; 
+
+        try {
+            const templateParams = {
+                name: formData.name,
+                email: formData.email,
+                subject: formData.subject,
+                message: formData.message
+            };
+
+            await emailjs.send(serviceID, templateID, templateParams, publicKey);
+            setSubmitMessage('¡Mensaje enviado con éxito! Te contactaré pronto.');
+            setFormData({ name: '', email: '', subject: '', message: '' });
+        } catch (error) {
+            console.error('Error al enviar el formulario:', error);
+            setSubmitMessage('Hubo un error al enviar el mensaje. Por favor, intenta de nuevo.');
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     const handleCancel = () => {
         setFormData({ name: '', email: '', subject: '', message: '' });
+        setSubmitMessage('');
     };
 
     return (
@@ -110,7 +137,7 @@ const ContactSection: React.FC = () => {
                             onChange={handleChange}
                             className="w-full mt-1 p-3 bg-neutral-900/50 border border-gray-700 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-blue-400 transition-all duration-300 resize-y"
                             rows={4}
-                            placeholder="Escribe tu mensaje aquí..."
+                            placeholder="Escribe aquí tu mensaje ..."
                             required
                         />
                     </div>
@@ -119,16 +146,23 @@ const ContactSection: React.FC = () => {
                             type="button"
                             onClick={handleCancel}
                             className="flex items-center justify-center w-32 h-12 bg-gradient-to-br from-gray-950 to-blue-950 border border-cyan-400/30 rounded-full shadow-lg shadow-blue-500/40 hover:shadow-blue-400/60 active:shadow-blue-400/60 transition-all duration-300 cursor-pointer text-white font-semibold"
+                            disabled={isSubmitting}
                         >
                             Cancelar
                         </button>
                         <button
                             type="submit"
                             className="flex items-center justify-center w-32 h-12 bg-gradient-to-br from-gray-950 to-blue-950 border border-cyan-400/30 rounded-full shadow-lg shadow-blue-500/40 hover:shadow-blue-400/60 active:shadow-blue-400/60 transition-all duration-300 cursor-pointer text-white font-semibold"
+                            disabled={isSubmitting}
                         >
-                            Enviar Mensaje
+                            {isSubmitting ? 'Enviando...' : 'Enviar Mensaje'}
                         </button>
                     </div>
+                    {submitMessage && (
+                        <p className={`text-center mt-4 ${submitMessage.includes('éxito') ? 'text-green-400' : 'text-red-400'}`}>
+                            {submitMessage}
+                        </p>
+                    )}
                 </form>
             </div>
         </section>

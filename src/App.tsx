@@ -1,5 +1,6 @@
-import './index.css'
-import Navbar from './components/Navbar'
+import './index.css';
+import { useRef } from 'react';
+import Navbar from './components/Navbar';
 import AboutSection from './components/AboutSection';
 import ExperienceSection from './components/ExperienceSection';
 import ProjectsSection from './components/ProjectsSection';
@@ -8,30 +9,54 @@ import EducationTimeline from './components/EducationTimeline';
 import ContactSection from './components/ContactSection';
 import FooterSection from './components/FooterSection';
 
-
 function App() {
+    const aboutRef = useRef<HTMLDivElement>(null);
+    const experienceRef = useRef<HTMLDivElement>(null);
+    const technologiesRef = useRef<HTMLDivElement>(null);
+    const projectsRef = useRef<HTMLDivElement>(null);
+    const educationRef = useRef<HTMLDivElement>(null);
+    const contactRef = useRef<HTMLDivElement>(null);
 
-	
-	return (
-		<div className="bg-gradient-to-b from-neutral-950 via-blue-950/20 to-purple-950/20 min-h-screen">
-			<Navbar />
+    const scrollToSection = (ref: React.RefObject<HTMLDivElement | null>) => {
+        if (ref.current) {
+            ref.current.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
 
-			<AboutSection />
+    return (
+        <div className="bg-gradient-to-b from-neutral-950 via-blue-950/20 to-purple-950/20 min-h-screen">
+            <Navbar
+                scrollToSection={scrollToSection}
+                refs={{ aboutRef, experienceRef, technologiesRef, projectsRef, educationRef, contactRef }}
+            />
 
-			<ExperienceSection />
+            <div ref={aboutRef} id="about">
+                <AboutSection />
+            </div>
 
-			<TechnologiesSection />
+            <div ref={experienceRef} id="experience">
+                <ExperienceSection />
+            </div>
 
-			<ProjectsSection />
+            <div ref={technologiesRef} id="technologies">
+                <TechnologiesSection />
+            </div>
 
-			<EducationTimeline />
+            <div ref={projectsRef} id="projects">
+                <ProjectsSection />
+            </div>
 
-			<ContactSection />
+            <div ref={educationRef} id="education">
+                <EducationTimeline />
+            </div>
 
-			<FooterSection />
+            <div ref={contactRef} id="contact">
+                <ContactSection />
+            </div>
 
-		</div>
-	)
+            <FooterSection />
+        </div>
+    );
 }
 
-export default App
+export default App;

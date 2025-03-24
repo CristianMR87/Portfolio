@@ -25,7 +25,7 @@ const EducationCard: React.FC<EducationCardProps> = ({
 
     return (
         <div
-            className={`relative min-w-80 bg-gradient-to-br from-neutral-950 to-blue-950 p-6 rounded-xl shadow-xl ${shadowColor} transition-all duration-300 border border-gray-700 group ${
+            className={`relative min-w-80 bg-gradient-to-br from-neutral-950 to-blue-950 p-4 rounded-xl shadow-xl ${shadowColor} transition-all duration-300 border border-gray-700 group ${
                 hoverShadowColor === 'shadow-blue-500/80' ? 'hover:shadow-blue-500/80' :
                 hoverShadowColor === 'shadow-green-500/80' ? 'hover:shadow-green-500/80' :
                 hoverShadowColor === 'shadow-purple-500/80' ? 'hover:shadow-purple-500/80' :
@@ -76,44 +76,44 @@ const EducationTimeline: React.FC = () => {
 
     const educationData = [
         {
-            title: "Grado en Ingeniería Informática",
-            period: "2018 - 2022",
-            institution: "Universidad de Example",
+            title: "CFGS Desarrollo de App Web (DAW)",
+            period: "2024 - Actualidad",
+            institution: "I.E.S. San Clemente",
             listItems: ["- Especialización en Desarrollo Web", "- Proyecto final sobresaliente"],
-            badgeText: "Título",
+            badgeText: "CFGS",
             badgeColor: "bg-blue-600",
             shadowColor: "shadow-blue-500/40",
             hoverShadowColor: "shadow-blue-500/80",
             isLeft: true
         },
         {
-            title: "Curso Full Stack Developer",
-            period: "2023",
-            institution: "Plataforma Online",
-            listItems: ["- React y Node.js", "- 120 horas de formación"],
-            badgeText: "Certificado",
+            title: "Autodidacta / Freelance",
+            period: "2024 - Actualidad",
+            institution: "Online",
+            listItems: ["- edX - HarvardX: CS50's","- FreeCodecamp (HTML, CSS)", "- LeetCode", "- Proyectos de código abierto"],
+            badgeText: "Autodidacta",
             badgeColor: "bg-green-800",
             shadowColor: "shadow-green-500/40",
             hoverShadowColor: "shadow-green-500/80",
             isLeft: false
         },
         {
-            title: "Máster en Inteligencia Artificial",
-            period: "2024",
-            institution: "Instituto Tecnológico",
+            title: "Grado en ADE",
+            period: "2009 - 2015",
+            institution: "Universidad de Santiago de compostela",
             listItems: ["- Machine Learning avanzado", "- Certificación en IA"],
-            badgeText: "Máster",
+            badgeText: "Grado",
             badgeColor: "bg-purple-600",
             shadowColor: "shadow-purple-500/40",
             hoverShadowColor: "shadow-purple-500/80",
             isLeft: true
         },
         {
-            title: "Bootcamp de Ciberseguridad",
-            period: "2025",
-            institution: "Cyber Academy",
+            title: "CFGS Comercio Internacional",
+            period: "2007 - 2009",
+            institution: "I.E.S. Pontepedriña",
             listItems: ["- Ethical Hacking", "- 80 horas intensivas"],
-            badgeText: "Certificado",
+            badgeText: "CFGS",
             badgeColor: "bg-orange-600",
             shadowColor: "shadow-orange-500/40",
             hoverShadowColor: "shadow-orange-500/80",
@@ -168,7 +168,7 @@ const EducationTimeline: React.FC = () => {
     return (
         <section
             ref={sectionRef}
-            className="min-w-95 md:w-full lg:w-[1024px] w-19/20 p-4 mt-10 mx-auto"
+            className="min-w-95 lg:w-[1024px] w-19/20 p-4 mt-10 mx-auto"
         >
             <h2
                 className={`text-5xl font-bold text-blue-400 text-center mb-12 transition-all duration-700 ease-in-out ${
@@ -195,7 +195,7 @@ const EducationTimeline: React.FC = () => {
                                 }}
                                 className={`w-full md:w-5/12 transition-all duration-700 ease-in-out ${
                                     visibleCards[index]
-                                        ? 'opacity-100 translate-x-0'
+                                        ? 'opacity-100 -translate-x-0'
                                         : edu.isLeft
                                             ? 'opacity-0 md:-translate-x-20 translate-x-10'
                                             : 'opacity-0 translate-x-10 md:translate-x-20'
