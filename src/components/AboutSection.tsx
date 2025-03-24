@@ -50,7 +50,7 @@ const AboutSection: React.FC = () => {
                     <div className="flex flex-row text-sm font-semibold rounded-full lg:justify-start justify-center">
                         <a
                             title="Linkedin"
-                            href="https://linkedin.com/in/tu-linkedin"
+                            href="https://www.linkedin.com/in/cristianmoranorodriguez/"
                             target="_blank"
                             rel="noopener noreferrer"
                         >
@@ -72,13 +72,15 @@ const AboutSection: React.FC = () => {
                         alt="Foto de Cristian"
                         className="w-50 h-50 md:w-60 md:h-60 lg:w-[300px] lg:h-[300px] rounded-full object-cover border-2 border-gray-700"
                     />
-                    <a
+                    <div className="group"> {/* Añadimos .group aquí */}
+                        <a
                         href="/cv.pdf"
                         download="CV_CristianMorano.pdf"
-                        className="mt-8 inline-block text-white bg-gradient-to-br from-gray-950 to-blue-950 border border-cyan-400/30 rounded-full shadow-lg shadow-blue-500/40 hover:shadow-blue-500/80 transition-all duration-300 cursor-pointer px-4 py-2 underline-from-left gradient-text"
-                    >
+                        className="mt-8 inline-block bg-gradient-to-br from-gray-950 to-blue-950 border border-cyan-400/30 rounded-full shadow-lg shadow-blue-500/40 hover:shadow-blue-500/80 transition-all duration-300 cursor-pointer px-4 py-2 gradient-text"
+                        >
                         Descargar CV
-                    </a>
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>

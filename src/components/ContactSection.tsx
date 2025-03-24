@@ -89,7 +89,7 @@ const ContactSection: React.FC = () => {
                 <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
-                            <label htmlFor="name" className="text-gray-300 text-sm">Nombre</label>
+                            <label htmlFor="name" className="text-gray-100 text-sm">Nombre</label>
                             <input
                                 type="text"
                                 id="name"
@@ -97,12 +97,12 @@ const ContactSection: React.FC = () => {
                                 value={formData.name}
                                 onChange={handleChange}
                                 className="w-full mt-1 p-3 bg-neutral-900/50 border border-gray-700 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-blue-400 transition-all duration-300"
-                                placeholder="Tu nombre"
+                                placeholder="Introduce tu nombre"
                                 required
                             />
                         </div>
                         <div>
-                            <label htmlFor="email" className="text-gray-300 text-sm">Email</label>
+                            <label htmlFor="email" className="text-gray-100 text-sm">Email</label>
                             <input
                                 type="email"
                                 id="email"
@@ -110,13 +110,13 @@ const ContactSection: React.FC = () => {
                                 value={formData.email}
                                 onChange={handleChange}
                                 className="w-full mt-1 p-3 bg-neutral-900/50 border border-gray-700 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-blue-400 transition-all duration-300"
-                                placeholder="tu@email.com"
+                                placeholder="Introduce tu email"
                                 required
                             />
                         </div>
                     </div>
                     <div>
-                        <label htmlFor="subject" className="text-gray-300 text-sm">Asunto</label>
+                        <label htmlFor="subject" className="text-gray-100 text-sm">Asunto</label>
                         <input
                             type="text"
                             id="subject"
@@ -129,7 +129,7 @@ const ContactSection: React.FC = () => {
                         />
                     </div>
                     <div>
-                        <label htmlFor="message" className="text-gray-300 text-sm">Mensaje</label>
+                        <label htmlFor="message" className="text-gray-100 text-sm">Mensaje</label>
                         <textarea
                             id="message"
                             name="message"
@@ -142,21 +142,25 @@ const ContactSection: React.FC = () => {
                         />
                     </div>
                     <div className="flex justify-between sm:justify-end gap-4 mt-6">
-                        <button
-                            type="button"
-                            onClick={handleCancel}
-                            className="flex items-center justify-center w-32 h-12 bg-gradient-to-br from-gray-950 to-blue-950 border border-cyan-400/30 rounded-full shadow-lg shadow-blue-500/40 hover:shadow-blue-400/60 active:shadow-blue-400/60 transition-all duration-300 cursor-pointer text-white font-semibold"
-                            disabled={isSubmitting}
-                        >
-                            Cancelar
-                        </button>
+                        <div className='group2'>
+                            <button
+                                type="button"
+                                onClick={handleCancel}
+                                className="flex items-center justify-center w-32 h-12 bg-gradient-to-br from-gray-950 to-blue-950 border border-cyan-400/30 rounded-full shadow-lg shadow-blue-500/40 hover:text-blue-500 hover:shadow-blue-500/40 active:text-blue-500 active:shadow-blue-500/40 cursor-pointer font-semibold text-white transition-all duration-400 lg:inline gradient-text"
+                                disabled={isSubmitting}
+                            >
+                                Cancelar
+                            </button>
+                        </div>
+                        <div className='group2'>
                         <button
                             type="submit"
-                            className="flex items-center justify-center w-32 h-12 bg-gradient-to-br from-gray-950 to-blue-950 border border-cyan-400/30 rounded-full shadow-lg shadow-blue-500/40 hover:shadow-blue-400/60 active:shadow-blue-400/60 transition-all duration-300 cursor-pointer text-white font-semibold"
+                            className="flex items-center justify-center w-32 h-12 bg-gradient-to-br from-gray-950 to-blue-950 border border-cyan-400/30 rounded-full shadow-lg shadow-blue-500/40 hover:text-blue-500 hover:shadow-blue-500/40 active:text-blue-500 active:shadow-blue-500/40 cursor-pointer font-semibold text-white transition-all duration-400 lg:inline gradient-text"
                             disabled={isSubmitting}
                         >
                             {isSubmitting ? 'Enviando...' : 'Enviar Mensaje'}
                         </button>
+                        </div>
                     </div>
                     {submitMessage && (
                         <p className={`text-center mt-4 ${submitMessage.includes('éxito') ? 'text-green-400' : 'text-red-400'}`}>

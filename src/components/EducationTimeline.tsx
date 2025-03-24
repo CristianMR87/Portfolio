@@ -9,6 +9,7 @@ interface EducationCardProps {
     badgeColor: string;
     shadowColor: string;
     hoverShadowColor: string;
+    activeShadowColor: string;
 }
 
 const EducationCard: React.FC<EducationCardProps> = ({
@@ -19,7 +20,8 @@ const EducationCard: React.FC<EducationCardProps> = ({
     badgeText,
     badgeColor,
     shadowColor,
-    hoverShadowColor
+    hoverShadowColor,
+    activeShadowColor
 }) => {
     const [isExpanded, setIsExpanded] = useState(false);
 
@@ -30,6 +32,11 @@ const EducationCard: React.FC<EducationCardProps> = ({
                 hoverShadowColor === 'shadow-green-500/80' ? 'hover:shadow-green-500/80' :
                 hoverShadowColor === 'shadow-purple-500/80' ? 'hover:shadow-purple-500/80' :
                 hoverShadowColor === 'shadow-orange-500/80' ? 'hover:shadow-orange-500/80' : ''
+            } ${
+                activeShadowColor === 'shadow-blue-500/80' ? 'active:shadow-blue-500/80' :
+                activeShadowColor === 'shadow-green-500/80' ? 'active:shadow-green-500/80' :
+                activeShadowColor === 'shadow-purple-500/80' ? 'active:shadow-purple-500/80' :
+                activeShadowColor === 'shadow-orange-500/80' ? 'active:shadow-orange-500/80' : ''
             }`}
         >
             <h3 className="text-xl font-semibold text-white">{title}</h3>
@@ -59,7 +66,7 @@ const EducationCard: React.FC<EducationCardProps> = ({
                 </svg>
             </button>
             <span
-                className={`absolute top-2 right-2 ${badgeColor} text-white text-xs py-1 px-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300`}
+                className={`absolute top-2 right-2 ${badgeColor} text-white text-xs py-1 px-2 rounded-full opacity-0 group-hover:opacity-100 group-active:opacity-100 transition-opacity duration-300`}
             >
                 {badgeText}
             </span>
@@ -69,7 +76,6 @@ const EducationCard: React.FC<EducationCardProps> = ({
 
 const EducationTimeline: React.FC = () => {
     const sectionRef = useRef<HTMLElement>(null);
-    // Tipamos explícitamente el useRef para evitar el error "any"
     const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
     const [visibleCards, setVisibleCards] = useState<boolean[]>([]);
     const [isSectionVisible, setIsSectionVisible] = useState(false);
@@ -79,44 +85,48 @@ const EducationTimeline: React.FC = () => {
             title: "CFGS Desarrollo de App Web (DAW)",
             period: "2024 - Actualidad",
             institution: "I.E.S. San Clemente",
-            listItems: ["- Especialización en Desarrollo Web", "- Proyecto final sobresaliente"],
+            listItems: ["- Especialización en Desarrollo Web", "- Back end: Java y Python", "- BBDD: OracleSQL", "- Despliegue mediante Ubuntu", "- Front ends responsivos (Bootstrap, MediaQuerys)"],
             badgeText: "CFGS",
             badgeColor: "bg-blue-600",
             shadowColor: "shadow-blue-500/40",
             hoverShadowColor: "shadow-blue-500/80",
+            activeShadowColor: "shadow-blue-500/80",
             isLeft: true
         },
         {
             title: "Autodidacta / Freelance",
             period: "2024 - Actualidad",
             institution: "Online",
-            listItems: ["- edX - HarvardX: CS50's","- FreeCodecamp (HTML, CSS)", "- LeetCode", "- Proyectos de código abierto"],
+            listItems: ["- edX - HarvardX: CS50's","- FreeCodecamp (HTML, CSS)", "- LeetCode", "- Colaboración en proyectos de código abierto"],
             badgeText: "Autodidacta",
             badgeColor: "bg-green-800",
             shadowColor: "shadow-green-500/40",
             hoverShadowColor: "shadow-green-500/80",
+            activeShadowColor:"shadow-green-500/80",
             isLeft: false
         },
         {
             title: "Grado en ADE",
             period: "2009 - 2015",
             institution: "Universidad de Santiago de compostela",
-            listItems: ["- Machine Learning avanzado", "- Certificación en IA"],
+            listItems: ["- Gran aprendizaje de negocio", "- Gestión de proyectos", "- Mejora de SoftSkills a nivel empresarial", "- TFG: Creación de empresa"],
             badgeText: "Grado",
             badgeColor: "bg-purple-600",
             shadowColor: "shadow-purple-500/40",
             hoverShadowColor: "shadow-purple-500/80",
+            activeShadowColor: "shadow-purple-500/80",
             isLeft: true
         },
         {
             title: "CFGS Comercio Internacional",
             period: "2007 - 2009",
             institution: "I.E.S. Pontepedriña",
-            listItems: ["- Ethical Hacking", "- 80 horas intensivas"],
+            listItems: ["- Márketing, comercio y empresa", "- Inglés avanzado"],
             badgeText: "CFGS",
             badgeColor: "bg-orange-600",
             shadowColor: "shadow-orange-500/40",
             hoverShadowColor: "shadow-orange-500/80",
+            activeShadowColor:"shadow-orange-500/80",
             isLeft: false
         }
     ];
@@ -177,7 +187,7 @@ const EducationTimeline: React.FC = () => {
             >
                 Formación
             </h2>
-            <div className="relative min-h-[100vh]">
+            <div className="relative min-h-auto max-h-auto">
                 <div
                     className={`absolute left-0 md:left-1/2 transform md:-translate-x-1/2 w-1 bg-gradient-to-b from-blue-950/80 via-blue-950 to-purple-950 h-full transition-all duration-700 ease-in-out ${
                         isSectionVisible ? 'opacity-100' : 'opacity-0'
@@ -215,6 +225,7 @@ const EducationTimeline: React.FC = () => {
                                         badgeColor={edu.badgeColor}
                                         shadowColor={edu.shadowColor}
                                         hoverShadowColor={edu.hoverShadowColor}
+                                        activeShadowColor={edu.activeShadowColor}
                                     />
                                 </div>
                             </div>

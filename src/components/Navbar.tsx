@@ -186,7 +186,7 @@ const Navbar: React.FC<NavbarProps> = ({ scrollToSection, refs }) => {
                 <div className="flex space-x-4 shrink-0 ml-auto lg:ml-0 lg:justify-self-end items-center justify-center">
                     <a
                         title="Linkedin"
-                        href="https://linkedin.com/in/tu-linkedin"
+                        href="https://www.linkedin.com/in/cristianmoranorodriguez/"
                         target="_blank"
                         rel="noopener noreferrer"
                     >
