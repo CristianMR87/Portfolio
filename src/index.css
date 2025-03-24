@@ -10,6 +10,154 @@ html, body {
   background: #040313  !important;
 }
 
+@keyframes neonFlow {
+  0%, 100% {
+    box-shadow: 
+      0 0 8px rgba(0, 119, 255, 0.6),
+      0 0 20px rgba(0, 119, 255, 0.4),
+      0 0 35px rgba(0, 253, 156, 0.3);
+    background: radial-gradient(circle, rgba(0, 119, 255, 0.2), transparent 70%);
+  }
+  5% {
+    box-shadow: 
+      0 0 8.5px rgba(0, 119, 255, 0.61),
+      0 0 21px rgba(0, 119, 255, 0.41),
+      0 0 36px rgba(0, 253, 156, 0.31);
+    background: radial-gradient(circle, rgba(0, 124, 255, 0.2), transparent 70%);
+  }
+  10% {
+    box-shadow: 
+      0 0 9px rgba(0, 119, 255, 0.62),
+      0 0 22px rgba(0, 119, 255, 0.42),
+      0 0 37px rgba(0, 253, 156, 0.32);
+    background: radial-gradient(circle, rgba(0, 130, 255, 0.2), transparent 70%);
+  }
+  15% {
+    box-shadow: 
+      0 0 9.5px rgba(0, 119, 255, 0.63),
+      0 0 23px rgba(0, 119, 255, 0.43),
+      0 0 38px rgba(0, 253, 156, 0.33);
+    background: radial-gradient(circle, rgba(0, 135, 255, 0.2), transparent 70%);
+  }
+  20% {
+    box-shadow: 
+      0 0 10px rgba(0, 119, 255, 0.64),
+      0 0 24px rgba(0, 119, 255, 0.44),
+      0 0 39px rgba(0, 253, 156, 0.34);
+    background: radial-gradient(circle, rgba(0, 140, 255, 0.2), transparent 70%);
+  }
+  25% {
+    box-shadow: 
+      0 0 10.5px rgba(0, 119, 255, 0.65),
+      0 0 25px rgba(0, 119, 255, 0.45),
+      0 0 40px rgba(0, 253, 156, 0.35);
+    background: radial-gradient(circle, rgba(0, 145, 255, 0.2), transparent 70%);
+  }
+  30% {
+    box-shadow: 
+      0 0 11px rgba(0, 119, 255, 0.66),
+      0 0 26px rgba(0, 119, 255, 0.46),
+      0 0 41px rgba(0, 253, 156, 0.36);
+    background: radial-gradient(circle, rgba(0, 150, 255, 0.2), transparent 70%);
+  }
+  35% {
+    box-shadow: 
+      0 0 11.5px rgba(0, 119, 255, 0.67),
+      0 0 27px rgba(0, 119, 255, 0.47),
+      0 0 42px rgba(0, 253, 156, 0.37);
+    background: radial-gradient(circle, rgba(0, 155, 255, 0.2), transparent 70%);
+  }
+  40% {
+    box-shadow: 
+      0 0 12px rgba(0, 119, 255, 0.68),
+      0 0 28px rgba(0, 119, 255, 0.48),
+      0 0 43px rgba(0, 253, 156, 0.38);
+    background: radial-gradient(circle, rgba(0, 160, 255, 0.2), transparent 70%);
+  }
+  45% {
+    box-shadow: 
+      0 0 13px rgba(0, 119, 255, 0.7),
+      0 0 30px rgba(0, 119, 255, 0.5),
+      0 0 45px rgba(0, 253, 156, 0.4);
+    background: radial-gradient(circle, rgba(0, 170, 255, 0.2), transparent 70%);
+  }
+  50% {
+    box-shadow: 
+      0 0 14px rgba(0, 119, 255, 0.72),
+      0 0 32px rgba(0, 119, 255, 0.52),
+      0 0 47px rgba(0, 253, 156, 0.42);
+    background: radial-gradient(circle, rgba(0, 180, 255, 0.2), transparent 70%);
+  }
+  55% {
+    box-shadow: 
+      0 0 13px rgba(0, 119, 255, 0.7),
+      0 0 30px rgba(0, 119, 255, 0.5),
+      0 0 45px rgba(0, 253, 156, 0.4);
+    background: radial-gradient(circle, rgba(0, 170, 255, 0.2), transparent 70%);
+  }
+  60% {
+    box-shadow: 
+      0 0 12.5px rgba(0, 119, 255, 0.69),
+      0 0 29px rgba(0, 119, 255, 0.49),
+      0 0 44px rgba(0, 253, 156, 0.39);
+    background: radial-gradient(circle, rgba(0, 165, 255, 0.2), transparent 70%);
+  }
+  65% {
+    box-shadow: 
+      0 0 12px rgba(0, 119, 255, 0.68),
+      0 0 28px rgba(0, 119, 255, 0.48),
+      0 0 43px rgba(0, 253, 156, 0.38);
+    background: radial-gradient(circle, rgba(0, 160, 255, 0.2), transparent 70%);
+  }
+  70% {
+    box-shadow: 
+      0 0 11.5px rgba(0, 119, 255, 0.67),
+      0 0 27px rgba(0, 119, 255, 0.47),
+      0 0 42px rgba(0, 253, 156, 0.37);
+    background: radial-gradient(circle, rgba(0, 155, 255, 0.2), transparent 70%);
+  }
+  75% {
+    box-shadow: 
+      0 0 11px rgba(0, 119, 255, 0.66),
+      0 0 26px rgba(0, 119, 255, 0.46),
+      0 0 41px rgba(0, 253, 156, 0.36);
+    background: radial-gradient(circle, rgba(0, 150, 255, 0.2), transparent 70%);
+  }
+  80% {
+    box-shadow: 
+      0 0 10.5px rgba(0, 119, 255, 0.65),
+      0 0 25px rgba(0, 119, 255, 0.45),
+      0 0 40px rgba(0, 253, 156, 0.35);
+    background: radial-gradient(circle, rgba(0, 145, 255, 0.2), transparent 70%);
+  }
+  85% {
+    box-shadow: 
+      0 0 10px rgba(0, 119, 255, 0.64),
+      0 0 24px rgba(0, 119, 255, 0.44),
+      0 0 39px rgba(0, 253, 156, 0.34);
+    background: radial-gradient(circle, rgba(0, 140, 255, 0.2), transparent 70%);
+  }
+  90% {
+    box-shadow: 
+      0 0 9.5px rgba(0, 119, 255, 0.63),
+      0 0 23px rgba(0, 119, 255, 0.43),
+      0 0 38px rgba(0, 253, 156, 0.33);
+    background: radial-gradient(circle, rgba(0, 135, 255, 0.2), transparent 70%);
+  }
+  95% {
+    box-shadow: 
+      0 0 9px rgba(0, 119, 255, 0.62),
+      0 0 22px rgba(0, 119, 255, 0.42),
+      0 0 37px rgba(0, 253, 156, 0.32);
+    background: radial-gradient(circle, rgba(0, 130, 255, 0.2), transparent 70%);
+  }
+}
+
+.neon-bg {
+  animation: neonFlow 4s linear infinite;
+  position: relative;
+}
+
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
