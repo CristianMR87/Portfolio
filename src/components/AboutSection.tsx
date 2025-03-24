@@ -19,7 +19,7 @@ const AboutSection: React.FC = () => {
         <section className="min-w-95 lg:w-[1024px] p-4 md:mt-30 mt-20 mx-auto w-3/4 rounded-lg ">           
             <div className="flex flex-col lg:flex-row items-center lg:items-start gap-4 md:gap-8 lg:gap-12">                
                 <div className="flex-1 text-white lg:text-left text-center">
-                    <p className="text-4xl font-bold text-blue-400">¡Hola! Soy Cristian.</p>
+                    <p className="text-4xl font-bold text-green-600">¡Hola! Soy Cristian.</p>
                     <p className="text-4xl font-bold">Desarrollador Full-Stack.</p>
                     <p className="text-gray-300 text-lg mt-8 text-justify">
                         Actualmente estudiante de DAW y futuro desarrollador Full-Stack.

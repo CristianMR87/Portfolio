@@ -21,6 +21,10 @@ html, body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+h2{ 
+  color: #00a63e ;
+}
+
 body {
   place-items: center;
   min-width: 320px;
