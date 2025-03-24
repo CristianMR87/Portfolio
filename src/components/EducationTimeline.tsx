@@ -69,6 +69,7 @@ const EducationCard: React.FC<EducationCardProps> = ({
 
 const EducationTimeline: React.FC = () => {
     const sectionRef = useRef<HTMLElement>(null);
+    // Tipamos explícitamente el useRef para evitar el error "any"
     const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
     const [visibleCards, setVisibleCards] = useState<boolean[]>([]);
     const [isSectionVisible, setIsSectionVisible] = useState(false);
@@ -186,7 +187,7 @@ const EducationTimeline: React.FC = () => {
                     {educationData.map((edu, index) => (
                         <div
                             key={index}
-                            className={`flex flex-row-reverse md:${edu.isLeft ? 'flex-row' : 'flex-row-reverse'} items-center justify-between`}
+                            className={`flex ${edu.isLeft ? 'md:flex-row flex-row-reverse' : 'md:flex-row-reverse flex-row-reverse'} items-center justify-between`}
                         >
                             <div
                                 ref={(el) => {
@@ -202,7 +203,7 @@ const EducationTimeline: React.FC = () => {
                             >
                                 <div
                                     className={`md:transform ${
-                                        edu.isLeft ? 'md:origin-left md:scale-x-110 ' : 'md:origin-right md:scale-x-110 '
+                                        edu.isLeft ? 'md:origin-left md:scale-x-110' : 'md:origin-right md:scale-x-110'
                                     }`}
                                 >
                                     <EducationCard 
