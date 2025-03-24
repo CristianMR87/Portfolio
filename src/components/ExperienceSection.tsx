@@ -21,15 +21,15 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({ title, period, company,
 
     return (
         <div
-            className={`relative min-w-80 bg-gradient-to-br from-neutral-950 to-blue-950 p-6 rounded-xl shadow-xl ${shadowColor} hover:${hoverShadowColor} active:${hoverShadowColor} transition-all duration-300 border border-gray-700 group`}
+            className={`relative min-w-80 bg-gradient-to-br from-neutral-950 to-blue-950 p-6 rounded-xl shadow-lg ${shadowColor} hover:${hoverShadowColor} active:${hoverShadowColor} transition-all duration-300 border border-gray-700 group h-full`}
         >
             <h3 className="text-xl font-semibold text-white">{title}</h3>
             <p className="text-gray-400 text-sm mt-1">{period}</p>
             <p className="text-gray-400 mt-1">{company}</p>
             <ul
-                className={`text-gray-300 text-sm mt-4 space-y-2 overflow-hidden transition-all duration-700 ease-in-out ${
-                    isExpanded ? 'max-h-48' : 'max-h-0 md:max-h-48'
-                }`}
+                className={`text-gray-300 text-sm mt-4 space-y-2 transition-all duration-700 ease-in-out ${
+                    isExpanded ? 'max-h-none' : 'max-h-0 md:max-h-none'
+                } overflow-hidden`}
             >
                 {listItems.map((item, index) => (
                     <li key={index}>{item}</li>
@@ -64,91 +64,123 @@ interface ExperienceSectionProps {
 }
 
 const ExperienceSection: React.FC<ExperienceSectionProps> = ({ className }) => {
-    const [isVisible, setIsVisible] = useState(false);
     const sectionRef = useRef<HTMLElement>(null);
+    const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
+    const [visibleCards, setVisibleCards] = useState<boolean[]>([]);
     const lastScrollY = useRef(window.scrollY);
 
+    const experienceData = [
+        {
+            title: "Desarrollador Full-Stack",
+            period: "Marzo 2024 - Actualidad",
+            company: "Desarrollador Freelancer",
+            listItems: [
+                '- Formación continua en tecnologías web a través del FP de DAW y cursos avanzados, con enfoque en front-end y back-end.',
+                '- Desarrollo de proyectos full-stack aplicando principios de arquitectura y buenas prácticas.',
+                '- Conocimientos en bases de datos, lógica de programación, despliegue de aplicaciones web y frameworks, con especialización en Java y Python.',
+            ],
+            badgeText: "Autodidacta",
+            badgeColor: "bg-blue-600",
+            shadowColor: "shadow-blue-500/40",
+            hoverShadowColor: "shadow-blue-500/80",
+            isLeft: true,
+        },
+        {
+            title: "SDR / AE",
+            period: "Agosto 2021 - Agosto 2023",
+            company: "Teimas",
+            listItems: [
+                '- Experiencia en el sector tecnológico, trabajando con software en la nube (SaaS)',
+                '- Colaboración con equipos técnicos para la comercialización y demostración de software.',
+                '- Conocimiento del ciclo de vida del producto digital, desde su desarrollo hasta su implementación.',
+                '- Análisis de necesidades del cliente y adaptación de soluciones tecnológicas.',
+                '- Habilidades en comunicación, gestión de clientes y resolución de problemas.',
+            ],
+            badgeText: "Empresa",
+            badgeColor: "bg-green-800",
+            shadowColor: "shadow-green-500/40",
+            hoverShadowColor: "shadow-green-500/80",
+            isLeft: false,
+        },
+    ];
+
     useEffect(() => {
-        const observer = new IntersectionObserver(
+        if (visibleCards.length !== experienceData.length) {
+            setVisibleCards(new Array(experienceData.length).fill(false));
+        }
+
+        const cardObserver = new IntersectionObserver(
             (entries) => {
-                const entry = entries[0];
                 const currentScrollY = window.scrollY;
                 const isScrollingUp = currentScrollY < lastScrollY.current;
 
-                if (entry.isIntersecting) {
-                    setIsVisible(true);
-                } else if (isScrollingUp && !entry.isIntersecting) {
-                    setIsVisible(false);
-                }
+                entries.forEach((entry) => {
+                    const index = cardRefs.current.indexOf(entry.target as HTMLDivElement);
+                    if (index !== -1) {
+                        if (entry.isIntersecting) {
+                            setVisibleCards((prev) => {
+                                const newVisible = [...prev];
+                                newVisible[index] = true;
+                                return newVisible;
+                            });
+                        } else if (isScrollingUp && !entry.isIntersecting) {
+                            setVisibleCards((prev) => {
+                                const newVisible = [...prev];
+                                newVisible[index] = false;
+                                return newVisible;
+                            });
+                        }
+                    }
+                });
 
                 lastScrollY.current = currentScrollY;
             },
-            { threshold: 0.3 }
+            { threshold: 0.3, rootMargin: "0px" }
         );
 
-        if (sectionRef.current) {
-            observer.observe(sectionRef.current);
-        }
+        cardRefs.current.forEach((card) => {
+            if (card) cardObserver.observe(card);
+        });
 
-    }, []);
+        return () => {
+            cardObserver.disconnect();
+        };
+    }, [visibleCards.length, experienceData.length]);
 
     return (
         <section
             ref={sectionRef}
-            className={`min-w-95 md:w-full lg:w-[1024px] w-4/5 p-4 lg:mt-25 mt-5 mx-auto ${className || ''} transition-all duration-700 ease-in-out ${
-                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'
-            }`}
+            className={`min-w-95 md:w-full lg:w-[1024px] w-4/5 p-4 lg:mt-25 mt-5 mx-auto ${className || ''}`}
         >
             <h2 className="text-5xl font-bold text-blue-400 text-center lg:text-center mb-8">Experiencia</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-                <div
-                    className={`md:transition-all md:duration-700 md:ease-in-out ${
-                        isVisible ? 'md:opacity-100 md:translate-x-0' : 'md:opacity-0 md:-translate-x-20'
-                    }`}
-                >
-                    <ExperienceCard
-                        title="Desarrollador Full-Stack"
-                        period="Marzo 2024 - Actualidad"
-                        company="Desarrollador Freelancer"
-                        listItems={[
-                            '- bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla .',
-                            '- bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla .',
-                            '- bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla .',
-                            '- bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla .',
-                            '- bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla .',
-                            '- bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla .',
-                        ]}
-                        badgeText="Autodidacta"
-                        badgeColor="bg-blue-600"
-                        shadowColor="shadow-blue-500/40"
-                        hoverShadowColor="shadow-blue-500/80"
-                        isLeft={true}
-                    />
-                </div>
-                <div
-                    className={`md:transition-all md:duration-700 md:ease-in-out ${
-                        isVisible ? 'md:opacity-100 md:translate-x-0' : 'md:opacity-0 md:translate-x-20'
-                    }`}
-                >
-                    <ExperienceCard
-                        title="SDR / AE"
-                        period="Agosto 2021 - Agosto 2023"
-                        company="Teimas"
-                        listItems={[
-                            '- bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla .',
-                            '- bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla .',
-                            '- bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla .',
-                            '- bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla .',
-                            '- bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla .',
-                            '- bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla .',
-                        ]}
-                        badgeText="Empresa"
-                        badgeColor="bg-green-800"
-                        shadowColor="shadow-green-500/40"
-                        hoverShadowColor="shadow-green-500/80"
-                        isLeft={false}
-                    />
-                </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
+                {experienceData.map((exp, index) => (
+                    <div
+                        key={index}
+                        ref={(el) => {
+                            cardRefs.current[index] = el;
+                        }}
+                        className={`transition-all duration-700 ease-in-out ${
+                            visibleCards[index]
+                                ? 'opacity-100 translate-x-0'
+                                : exp.isLeft
+                                ? 'opacity-0 -translate-x-20'
+                                : 'opacity-0 translate-x-20'
+                        }`}
+                    >
+                        <ExperienceCard
+                            title={exp.title}
+                            period={exp.period}
+                            company={exp.company}
+                            listItems={exp.listItems}
+                            badgeText={exp.badgeText}
+                            badgeColor={exp.badgeColor}
+                            shadowColor={exp.shadowColor}
+                            hoverShadowColor={exp.hoverShadowColor}
+                            isLeft={exp.isLeft}
+                        />
+                    </div>
+                ))}
             </div>
         </section>
     );

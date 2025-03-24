@@ -80,7 +80,7 @@ const ProjectCard: React.FC<ProjectCardProps & { isVisible?: boolean }> = ({
     return (
         <div
             ref={cardRef}
-            className={`relative bg-gradient-to-br from-neutral-950 to-blue-950 p-6 rounded-xl shadow-xl ${badgeColor.shadow} ${badgeColor.hover} ${badgeColor.active} transition-all duration-700 ease-in-out ${getAnimationClasses()} flex flex-col`}
+            className={`relative bg-gradient-to-br from-neutral-950 to-blue-950 p-6 rounded-xl shadow-lg ${badgeColor.shadow} ${badgeColor.hover} ${badgeColor.active} transition-all duration-700 ease-in-out ${getAnimationClasses()} flex flex-col`}
         >
             <div className="relative group">
                 <img 
@@ -190,7 +190,7 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ className }) => {
             }`}
         >
             <h2 className="text-5xl font-bold text-blue-400 text-center mb-8">Proyectos</h2>
-            <div className="grid md:grid-cols-3 lg:grid-cols-3 gap-3">
+            <div className="grid md:grid-cols-3 lg:grid-cols-3 md:gap-3 gap-6">
                 <ProjectCard
                     title="Portfolio Personal"
                     imageSrc="/images/Portfolio.jpg"

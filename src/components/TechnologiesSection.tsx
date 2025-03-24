@@ -16,13 +16,11 @@ import {
     SiOracle,
 } from 'react-icons/si';
 
-// Interfaz para las propiedades del ícono
 interface IconProps {
     className?: string;
     size?: number | string;
 }
 
-// Interfaz para las propiedades de cada tecnología
 interface Technology {
     icon: React.ReactNode;
     shadow: string;
@@ -36,7 +34,6 @@ const TechnologiesSection: React.FC = () => {
     const sectionRef = useRef<HTMLElement>(null);
     const lastScrollY = useRef<number>(window.scrollY);
 
-    // Tecnologías con tipado
     const frontend: Technology[] = [
         { icon: <FaHtml5 className="text-orange-500" size={35} />, shadow: 'shadow-lg shadow-orange-500/70', hover: 'hover:shadow-xl hover:shadow-orange-600/80 hover:scale-115', active: 'active:shadow-xl active:shadow-orange-600/80', title: 'HTML5' },
         { icon: <FaCss3Alt className="text-blue-500" size={35} />, shadow: 'shadow-lg shadow-blue-500/70', hover: 'hover:shadow-xl hover:shadow-blue-600/80 hover:scale-115', active: 'active:shadow-xl active:shadow-blue-600/80', title: 'CSS3' },
@@ -112,7 +109,7 @@ const TechnologiesSection: React.FC = () => {
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'
             }`}
         >
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="">
                 <h2 className="text-5xl font-bold text-blue-400 text-center mb-8">Tecnologías</h2>
                 <div className="gap-3 grid md:grid-cols-3 justify-center">
                     {/* Columna Frontend (izquierda) */}
