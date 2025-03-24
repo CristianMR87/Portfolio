@@ -24,7 +24,7 @@ function App() {
     };
 
     return (
-        <div className="bg-gradient-to-b from-neutral-950 via-blue-950/20 to-purple-950/20 w-full min-h-screen flex flex-col min-w-[100vw]">
+        <div className="bg-gradient-to-b from-black via-neutral-950 to-blue-950/20 w-full min-h-screen flex flex-col min-w-[100vw]">
             <Navbar
                 scrollToSection={scrollToSection}
                 refs={{ aboutRef, experienceRef, technologiesRef, projectsRef, educationRef, contactRef }}

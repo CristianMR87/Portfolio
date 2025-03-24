@@ -21,9 +21,6 @@ html, body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-h2{ 
-  color: #00a63e ;
-}
 
 body {
   place-items: center;
@@ -53,14 +50,12 @@ button:focus-visible {
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
-    background-color: #ffffff;
+
   }
   a:hover {
     color: #747bff;
   }
-  button {
-    background-color: #f9f9f9;
-  }
+
   button, a {
     border-color: #64748b;
   }
