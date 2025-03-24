@@ -88,15 +88,16 @@ const TechnologiesSection: React.FC = () => {
                             y: i === 2 ? 100 : 0, 
                         }}
                         animate={isVisible ? { opacity: 1, x: 0, y: 0 } : {}}
-                        transition={{ duration: 0.5, ease: 'easeOut', }}
+                        transition={{ duration: 0.5, ease: 'easeOut' }}
+                        className="flex flex-col items-center" // Añadimos flex y centrado
                     >
-                        <h3 className="text-xl font-semibold text-white mb-6 text-center">
+                        <h3 className="text-xl font-semibold text-white md:mb-12 mb-8"> {/* Ajustamos el margen */}
                             {i === 0 ? 'Frontend' : i === 1 ? 'Backend' : 'Complementos'}
                         </h3>
-                        <div className="flex flex-wrap justify-center gap-8 mb-5 min-w-45 max-w-64">
+                        <div className="flex flex-wrap justify-center md:gap-10 gap-8 mb-5 min-w-45 max-w-64">
                             {category.map((tech, index) => (
-                                <div key={index} className="flex flex-col items-center justify-center group transition-all duration-300 relative">
-                                    <span className={`p-3 rounded-full bg-neutral-950 shadow-lg ${tech.shadow} ${tech.hover} ${tech.active} transition-all duration-300 ease-in-out`}>
+                                <div key={index} className="flex flex-col items-center md:-mt-5 justify-center group transition-all duration-300 relative">
+                                    <span className={`p-3 rounded-full bg-neutral-950  shadow-lg ${tech.shadow} ${tech.hover} ${tech.active} transition-all duration-300 ease-in-out`}>
                                         {tech.icon}
                                     </span>
                                     <span className={`text-sm absolute bottom-[-2rem] opacity-0 group-hover:opacity-100 group-active:opacity-100 transition-opacity duration-300 bg-gray-900 px-2 py-1 rounded border border-gray-500 z-10 whitespace-nowrap ${tech.textColor}`}>
