@@ -69,7 +69,7 @@ const AboutSection: React.FC = () => {
                         <img
                             src="/images/Perfil2.png"
                             alt="Foto de Cristian"
-                            className="w-50 h-50 md:w-60 md:h-60 lg:w-[320px] lg:h-[320px] rounded-full object-cover "
+                            className="w-56 h-56 md:w-64 md:h-64 lg:w-[320px] lg:h-[320px] rounded-full object-cover "
                         />
                     </div>
                     <div className="group">
