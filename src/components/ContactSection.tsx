@@ -47,12 +47,12 @@ const ContactSection: React.FC = () => {
         e.preventDefault();
         setIsSubmitting(true);
         setSubmitMessage('');
-
-        // Credenciales de EmailJS
-        const serviceID = 'service_v3y7fdh'; 
-        const templateID = 'template_j1s77ro'; 
-        const publicKey = 'du9rumdEVCYsSxF4F'; 
-
+    
+        const serviceID = 'service_v3y7fdh';
+        const templateIDAuto = 'template_j1s77ro'; // Plantilla actual (respuesta automática)
+        const templateIDNotif = 'template_kporxfp'; // Nueva plantilla (para ti)
+        const publicKey = 'du9rumdEVCYsSxF4F';
+    
         try {
             const templateParams = {
                 name: formData.name,
@@ -60,8 +60,13 @@ const ContactSection: React.FC = () => {
                 subject: formData.subject,
                 message: formData.message
             };
-
-            await emailjs.send(serviceID, templateID, templateParams, publicKey);
+    
+            // Envío 1: Respuesta automática al remitente
+            await emailjs.send(serviceID, templateIDAuto, templateParams, publicKey);
+    
+            // Envío 2: Notificación a tu correo
+            await emailjs.send(serviceID, templateIDNotif, templateParams, publicKey);
+    
             setSubmitMessage('¡Mensaje enviado con éxito! Te contactaré pronto.');
             setFormData({ name: '', email: '', subject: '', message: '' });
         } catch (error) {
