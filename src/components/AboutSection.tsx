@@ -7,7 +7,7 @@ const AboutSection: React.FC = () => {
     const [copied, setCopied] = useState(false);
 
     const copyEmail = () => {
-        navigator.clipboard.writeText('Cristian.morano@hotmail.com').then(() => {
+        navigator.clipboard.writeText('Cristianfmorano@gmail.com').then(() => {
             setCopied(true);
             setTimeout(() => {
                 setCopied(false);
@@ -33,7 +33,7 @@ const AboutSection: React.FC = () => {
                     </div>
                     <br />
                     <div className="position:relative flex flex-row items-center justify-center lg:justify-start gap-2">
-                        <p className="my-3 mr-2">Cristian.morano@hotmail.com</p>
+                        <p className="my-3 mr-2">Cristianfmorano@gmail.com</p>
                         <div className="relative" title="Copiar email">
                             <Button onClick={copyEmail} className="!w-8 !h-8">
                                 <FaCopy size={14} className="hover:text-blue-500 hover:shadow-blue-500/40 active:text-blue-500 active:shadow-blue-500/40 shadow-lg transition-all duration-300" />
@@ -67,7 +67,7 @@ const AboutSection: React.FC = () => {
                 <div className="flex flex-col shrink-0 items-center justify-center lg:mt-10 mt-5">
                     <div className="neon-bg w-56 h-56 md:w-64 md:h-64 lg:w-[320px] lg:h-[320px] rounded-full flex items-center justify-center">
                         <img
-                            src="/images/Perfil2.jpg"
+                            src="/images/Perfil2.png"
                             alt="Foto de Cristian"
                             className="w-50 h-50 md:w-60 md:h-60 lg:w-[320px] lg:h-[320px] rounded-full object-cover "
                         />

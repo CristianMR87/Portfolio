@@ -49,7 +49,7 @@ const ContactSection: React.FC = () => {
         setSubmitMessage('');
 
         // Credenciales de EmailJS
-        const serviceID = 'service_avcu49n'; 
+        const serviceID = 'service_v3y7fdh'; 
         const templateID = 'template_j1s77ro'; 
         const publicKey = 'du9rumdEVCYsSxF4F'; 
 

@@ -38,7 +38,7 @@ function EmailSection({ closeOnScroll }: EmailSectionProps) {
     };
 
     const copyEmail = () => {
-        navigator.clipboard.writeText('Cristian.morano@hotmail.com').then(() => {
+        navigator.clipboard.writeText('Cristianfmorano@gmail.com').then(() => {
             setCopied(true);
             setTimeout(() => {
                 setCopied(false);
@@ -81,7 +81,7 @@ function EmailSection({ closeOnScroll }: EmailSectionProps) {
                     {/* Opción 2: Enviar email */}
                     <a
                         title="Enviar email"
-                        href="mailto:Cristian.morano@hotmail.com"
+                        href="mailto:Cristianfmorano@gmail.com"
                         className="flex items-center justify-center w-10 h-10 bg-gradient-to-br from-black to-blue-950 border border-cyan-400/30 rounded-full shadow-lg shadow-blue-500/40 hover:shadow-blue-400/60 active:shadow-blue-400/60 transition-all duration-300 cursor-pointer"
                         aria-label="Enviar email"
                         onClick={() => setIsOpen(false)}
