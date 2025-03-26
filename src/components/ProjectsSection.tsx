@@ -80,9 +80,9 @@ const ProjectCard: React.FC<ProjectCardProps & { isVisible?: boolean }> = ({
     return (
         <div
             ref={cardRef}
-            className={`relative bg-gradient-to-br from-black to-blue-950 p-6 rounded-xl shadow-lg ${badgeColor.shadow} ${badgeColor.hover} ${badgeColor.active} transition-all duration-700 ease-in-out border border-gray-800 ${getAnimationClasses()} flex flex-col`}
+            className={`relative group bg-gradient-to-br from-black to-blue-950 p-6 rounded-xl shadow-lg ${badgeColor.shadow} ${badgeColor.hover} ${badgeColor.active} transition-all duration-700 ease-in-out border border-gray-800 ${getAnimationClasses()} flex flex-col`}
         >
-            <div className="relative group">
+            <div className="relative">
                 <img 
                     src={imageSrc} 
                     alt={imageAlt} 
