@@ -49,8 +49,8 @@ const ContactSection: React.FC = () => {
         setSubmitMessage('');
     
         const serviceID = 'service_v3y7fdh';
-        const templateIDAuto = 'template_j1s77ro'; // Plantilla actual (respuesta automática)
-        const templateIDNotif = 'template_kporxfp'; // Nueva plantilla (para ti)
+        const templateIDAuto = 'template_j1s77ro'; 
+        const templateIDNotif = 'template_kporxfp'; 
         const publicKey = 'du9rumdEVCYsSxF4F';
     
         try {
@@ -61,10 +61,8 @@ const ContactSection: React.FC = () => {
                 message: formData.message
             };
     
-            // Envío 1: Respuesta automática al remitente
             await emailjs.send(serviceID, templateIDAuto, templateParams, publicKey);
-    
-            // Envío 2: Notificación a tu correo
+
             await emailjs.send(serviceID, templateIDNotif, templateParams, publicKey);
     
             setSubmitMessage('¡Mensaje enviado con éxito! Te contactaré pronto.');
