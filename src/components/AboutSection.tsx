@@ -22,8 +22,8 @@ const AboutSection: React.FC = () => {
                     <p className="text-4xl font-bold text-blue-400">¡Hola! Soy Cristian.</p>
                     <p className="text-4xl font-bold">Desarrollador Full-Stack.</p>
                     <p className="text-gray-300 text-lg mt-8 text-justify">
-                        Actualmente estudiante de DAW y futuro desarrollador Full-Stack.
-                        Apasionado por la tecnología y el mundo del desarrollo web. Con más de un año de formación autodidacta y actualmente estudiando DAW, centro mis conocimientos en tecnologías como Java, Python, Oracle SQL, React, Bootstrap, Ubuntu. He desarrollado varios proyectos personales aplicando estas tecnologías, desde su creación hasta su despliegue final.
+                        Actualmente estudiante de 2º año de DAW y futuro desarrollador Full-Stack.
+                        Apasionado por la tecnología y el mundo del desarrollo web. Con más de un año de formación autodidacta y actualmente estudiando DAW, centro mis conocimientos en tecnologías como Java, Python, Oracle SQL, React, Bootstrap, Ubuntu... He desarrollado varios proyectos personales aplicando estas tecnologías, desde su creación hasta su despliegue final.
                     </p>
                     <p className="text-gray-300 text-lg mt-8 text-justify">
                         Siéntete libre de contactarme para cualquier información extra.

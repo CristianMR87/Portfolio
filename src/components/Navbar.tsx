@@ -70,11 +70,10 @@ const Navbar: React.FC<NavbarProps> = ({ scrollToSection, refs }) => {
     };
 
     return (
-<nav
-    className={`lg:max-w-[1000px] w-9/10 mt-2 mx-auto p-4 bg-blue-950/30 backdrop-blur-lg rounded-2xl shadow-lg fixed top-0 left-0 right-0 z-50 border-2 border-gray-700 shadow-blue-500/40 hover:shadow-blue-500/60 active:shadow-blue-500/60 transition-all duration-300 ${
-        isScrolled ? 'scale-90 py-3 translate-y-2' : 'scale-100 py-3 translate-y-4'
-    }`}
->
+        <nav
+            className={`lg:max-w-[1000px] w-9/10 mt-2 mx-auto p-4 bg-blue-950/30 backdrop-blur-lg rounded-2xl shadow-lg fixed top-0 left-0 right-0 z-50 border-2 border-gray-700 shadow-blue-500/40 hover:shadow-blue-500/60 active:shadow-blue-500/60 transition-all duration-300 ${isScrolled ? 'scale-90 py-3 translate-y-2' : 'scale-100 py-3 translate-y-4'
+                }`}
+        >
             <div className="flex items-center justify-between max-w-7xl mx-auto lg:grid lg:grid-cols-3">
                 <div className="flex items-center space-x-4 shrink-0 lg:shrink lg:justify-self-start">
                     <Button onClick={toggleMenu} className="lg:hidden">
@@ -98,11 +97,10 @@ const Navbar: React.FC<NavbarProps> = ({ scrollToSection, refs }) => {
                 </div>
                 <ul
                     ref={menuRef}
-                    className={`${
-                        isMenuOpen
+                    className={`${isMenuOpen
                             ? 'left-0 bg-gradient-to-br from-black to-blue-950 shadow-lg shadow-blue-500/40 mt-1 scale-90'
                             : '-left-full bg-transparent scale-100'
-                    } lg:flex lg:border-hidden border border-gray-700 -ml-2 lg:space-x-6 fixed lg:static top-15 h-auto w-40 lg:w-auto rounded-2xl p-4 lg:p-0 transition-all duration-500 ease-in-out z-40 space-y-4 lg:space-y-0 lg:justify-self-center lg:text-center lg:whitespace-nowrap lg:opacity-100`}
+                        } lg:flex lg:border-hidden border border-gray-700 -ml-2 lg:space-x-6 fixed lg:static top-15 h-auto w-40 lg:w-auto rounded-2xl p-4 lg:p-0 transition-all duration-500 ease-in-out z-40 space-y-4 lg:space-y-0 lg:justify-self-center lg:text-center lg:whitespace-nowrap lg:opacity-100`}
                 >
                     <li className="group relative">
                         <a

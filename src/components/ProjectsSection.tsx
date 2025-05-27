@@ -83,10 +83,10 @@ const ProjectCard: React.FC<ProjectCardProps & { isVisible?: boolean }> = ({
             className={`relative group bg-gradient-to-br from-black to-blue-950 p-6 rounded-xl shadow-lg ${badgeColor.shadow} ${badgeColor.hover} ${badgeColor.active} transition-all duration-700 ease-in-out border border-gray-800 ${getAnimationClasses()} flex flex-col`}
         >
             <div className="relative">
-                <img 
-                    src={imageSrc} 
-                    alt={imageAlt} 
-                    className="w-full h-48 object-cover rounded-xl border border-gray-800 transition-opacity duration-300 group-hover:opacity-30" 
+                <img
+                    src={imageSrc}
+                    alt={imageAlt}
+                    className="w-full h-48 object-cover rounded-xl border border-gray-800 transition-opacity duration-300 group-hover:opacity-30"
                 />
                 {link && (
                     <a
@@ -108,9 +108,8 @@ const ProjectCard: React.FC<ProjectCardProps & { isVisible?: boolean }> = ({
             </div>
             <p className="text-gray-400 text-sm mt-1">{date}</p>
             <ul
-                className={`text-gray-300 text-sm mt-4 space-y-1 overflow-hidden transition-all duration-700 ease-in-out ${
-                    isExpanded ? 'max-h-40' : 'max-h-0 md:max-h-40'
-                }`}
+                className={`text-gray-300 text-sm mt-4 space-y-1 overflow-hidden transition-all duration-700 ease-in-out ${isExpanded ? 'max-h-40' : 'max-h-0 md:max-h-40'
+                    }`}
             >
                 {listItems.map((item, index) => (
                     <li key={index}>{item}</li>
@@ -186,9 +185,8 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ className }) => {
     return (
         <section
             ref={sectionRef}
-            className={`min-w-95 md:w-full lg:w-[1024px] w-4/5 mx-auto p-4 mt-5 ${className || ''} transition-all duration-700 ease-in-out ${
-                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'
-            }`}
+            className={`min-w-95 md:w-full lg:w-[1024px] w-4/5 mx-auto p-4 mt-5 ${className || ''} transition-all duration-700 ease-in-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'
+                }`}
         >
             <h2 className="text-5xl font-bold text-blue-400 text-center mb-8">Proyectos</h2>
             <div className="grid md:grid-cols-3 lg:grid-cols-3 md:gap-3 gap-6">

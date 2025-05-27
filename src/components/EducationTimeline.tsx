@@ -27,25 +27,22 @@ const EducationCard: React.FC<EducationCardProps> = ({
 
     return (
         <div
-            className={`relative min-w-80 bg-gradient-to-br from-black to-blue-950 p-4 rounded-xl shadow-xl ${shadowColor} transition-all duration-300 border border-gray-700 group ${
-                hoverShadowColor === 'shadow-blue-500/80' ? 'hover:shadow-blue-500/80' :
-                hoverShadowColor === 'shadow-green-500/80' ? 'hover:shadow-green-500/80' :
-                hoverShadowColor === 'shadow-purple-500/80' ? 'hover:shadow-purple-500/80' :
-                hoverShadowColor === 'shadow-orange-500/80' ? 'hover:shadow-orange-500/80' : ''
-            } ${
-                activeShadowColor === 'shadow-blue-500/80' ? 'active:shadow-blue-500/80' :
-                activeShadowColor === 'shadow-green-500/80' ? 'active:shadow-green-500/80' :
-                activeShadowColor === 'shadow-purple-500/80' ? 'active:shadow-purple-500/80' :
-                activeShadowColor === 'shadow-orange-500/80' ? 'active:shadow-orange-500/80' : ''
-            }`}
+            className={`relative min-w-80 bg-gradient-to-br from-black to-blue-950 p-4 rounded-xl shadow-xl ${shadowColor} transition-all duration-300 border border-gray-700 group ${hoverShadowColor === 'shadow-blue-500/80' ? 'hover:shadow-blue-500/80' :
+                    hoverShadowColor === 'shadow-green-500/80' ? 'hover:shadow-green-500/80' :
+                        hoverShadowColor === 'shadow-purple-500/80' ? 'hover:shadow-purple-500/80' :
+                            hoverShadowColor === 'shadow-orange-500/80' ? 'hover:shadow-orange-500/80' : ''
+                } ${activeShadowColor === 'shadow-blue-500/80' ? 'active:shadow-blue-500/80' :
+                    activeShadowColor === 'shadow-green-500/80' ? 'active:shadow-green-500/80' :
+                        activeShadowColor === 'shadow-purple-500/80' ? 'active:shadow-purple-500/80' :
+                            activeShadowColor === 'shadow-orange-500/80' ? 'active:shadow-orange-500/80' : ''
+                }`}
         >
             <h3 className="text-xl font-semibold text-white">{title}</h3>
             <p className="text-gray-400 text-sm mt-1">{period}</p>
             <p className="text-gray-400 mt-1">{institution}</p>
             <ul
-                className={`text-gray-300 text-sm mt-4 space-y-2 overflow-hidden transition-all duration-700 ease-in-out ${
-                    isExpanded ? 'max-h-48' : 'max-h-0 md:max-h-48'
-                }`}
+                className={`text-gray-300 text-sm mt-4 space-y-2 overflow-hidden transition-all duration-700 ease-in-out ${isExpanded ? 'max-h-48' : 'max-h-0 md:max-h-48'
+                    }`}
             >
                 {listItems.map((item, index) => (
                     <li key={index}>{item}</li>
@@ -85,7 +82,7 @@ const EducationTimeline: React.FC = () => {
             title: "CFGS Desarrollo de App Web (DAW)",
             period: "2024 - Actualidad",
             institution: "I.E.S. San Clemente",
-            listItems: ["- Especialización en Desarrollo Web", "- Back end: Java y Python", "- BBDD: OracleSQL", "- Despliegue mediante Ubuntu", "- Front ends responsivos (Bootstrap, media queries)"],
+            listItems: ["- Especialización en Desarrollo Web", "- Back end: Java y Python", "- BBDD: OracleSQL", "- Despliegue mediante Ubuntu", "- Front ends responsivos (Bootstrap, TailWind, media queries)"],
             badgeText: "CFGS",
             badgeColor: "bg-blue-600",
             shadowColor: "shadow-blue-500/40",
@@ -97,19 +94,19 @@ const EducationTimeline: React.FC = () => {
             title: "Autodidacta / Freelance",
             period: "2024 - Actualidad",
             institution: "Online",
-            listItems: ["- edX - HarvardX: CS50's","- FreeCodecamp (HTML, CSS)", "- LeetCode", "- Colaboración en proyectos de código abierto"],
+            listItems: ["- edX - HarvardX: CS50's", "- FreeCodecamp (HTML, CSS)", "- LeetCode", "- Colaboración en diversos proyectos de código abierto"],
             badgeText: "Autodidacta",
             badgeColor: "bg-green-800",
             shadowColor: "shadow-green-500/40",
             hoverShadowColor: "shadow-green-500/80",
-            activeShadowColor:"shadow-green-500/80",
+            activeShadowColor: "shadow-green-500/80",
             isLeft: false
         },
         {
             title: "Grado en ADE",
             period: "2009 - 2015",
             institution: "Universidad de Santiago de compostela",
-            listItems: ["- Gran aprendizaje de negocio", "- Gestión de proyectos", "- Mejora de SoftSkills a nivel empresarial", "- TFG: Creación de empresa"],
+            listItems: ["- Gran aprendizaje de los entornos de negocio", "- Gestión de proyectos empresariales", "- Mejora de SoftSkills a nivel laboral", "- TFG: Creación de empresa"],
             badgeText: "Grado",
             badgeColor: "bg-purple-600",
             shadowColor: "shadow-purple-500/40",
@@ -121,12 +118,12 @@ const EducationTimeline: React.FC = () => {
             title: "CFGS Comercio Internacional",
             period: "2007 - 2009",
             institution: "I.E.S. Pontepedriña",
-            listItems: ["- Márketing, comercio y empresa", "- Inglés avanzado"],
+            listItems: ["- Márketing, comercio y empresa", "- Inglés avanzado", "- Gestión y relación con clientes/proveedores."],
             badgeText: "CFGS",
             badgeColor: "bg-orange-600",
             shadowColor: "shadow-orange-500/40",
             hoverShadowColor: "shadow-orange-500/80",
-            activeShadowColor:"shadow-orange-500/80",
+            activeShadowColor: "shadow-orange-500/80",
             isLeft: false
         }
     ];
@@ -181,17 +178,15 @@ const EducationTimeline: React.FC = () => {
             className="min-w-95 lg:w-[1024px] w-19/20 p-4 mt-10 mx-auto"
         >
             <h2
-                className={`text-5xl font-bold text-blue-400 text-center mb-12 transition-all duration-700 ease-in-out ${
-                    isSectionVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-10'
-                }`}
+                className={`text-5xl font-bold text-blue-400 text-center mb-12 transition-all duration-700 ease-in-out ${isSectionVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-10'
+                    }`}
             >
                 Formación
             </h2>
             <div className="relative min-h-auto max-h-auto">
                 <div
-                    className={`absolute left-0 md:left-1/2 transform md:-translate-x-1/2 w-1 bg-gradient-to-b from-blue-950 to-purple-950 h-full transition-all duration-700 ease-in-out ${
-                        isSectionVisible ? 'opacity-100' : 'opacity-0'
-                    }`}
+                    className={`absolute left-0 md:left-1/2 transform md:-translate-x-1/2 w-1 bg-gradient-to-b from-blue-950 to-purple-950 h-full transition-all duration-700 ease-in-out ${isSectionVisible ? 'opacity-100' : 'opacity-0'
+                        }`}
                 ></div>
                 <div className="space-y-16">
                     {educationData.map((edu, index) => (
@@ -203,20 +198,18 @@ const EducationTimeline: React.FC = () => {
                                 ref={(el) => {
                                     cardRefs.current[index] = el;
                                 }}
-                                className={`w-full md:w-5/12 transition-all duration-700 ease-in-out ${
-                                    visibleCards[index]
+                                className={`w-full md:w-5/12 transition-all duration-700 ease-in-out ${visibleCards[index]
                                         ? 'opacity-100 -translate-x-0'
                                         : edu.isLeft
                                             ? 'opacity-0 md:-translate-x-20 translate-x-10'
                                             : 'opacity-0 translate-x-10 md:translate-x-20'
-                                }`}
+                                    }`}
                             >
                                 <div
-                                    className={`md:transform ${
-                                        edu.isLeft ? 'md:origin-left md:scale-x-110' : 'md:origin-right md:scale-x-110'
-                                    }`}
+                                    className={`md:transform ${edu.isLeft ? 'md:origin-left md:scale-x-110' : 'md:origin-right md:scale-x-110'
+                                        }`}
                                 >
-                                    <EducationCard 
+                                    <EducationCard
                                         title={edu.title}
                                         period={edu.period}
                                         institution={edu.institution}

@@ -72,9 +72,8 @@ const TechnologiesSection: React.FC = () => {
     return (
         <section ref={sectionRef} className="min-w-95 mx-auto lg:w-[860px] md:w-[760px] w-4/5 p-4 mt-10 text-white">
             <h2
-                className={`text-5xl font-bold text-blue-400 text-center mb-8 transition-all duration-700 ease-in-out ${
-                    isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'
-                }`}
+                className={`text-5xl font-bold text-blue-400 text-center mb-8 transition-all duration-700 ease-in-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'
+                    }`}
             >
                 Tecnologías
             </h2>
@@ -85,7 +84,7 @@ const TechnologiesSection: React.FC = () => {
                         initial={{
                             opacity: 0,
                             x: i === 0 ? -100 : i === 1 ? 0 : 100,
-                            y: i === 2 ? 100 : 0, 
+                            y: i === 2 ? 100 : 0,
                         }}
                         animate={isVisible ? { opacity: 1, x: 0, y: 0 } : {}}
                         transition={{ duration: 0.5, ease: 'easeOut' }}

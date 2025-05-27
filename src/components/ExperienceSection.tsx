@@ -40,6 +40,7 @@ const experienceData = [
             '- Formación continua en tecnologías web.',
             '- Desarrollo de proyectos full-stack aplicando buenas prácticas.',
             '- Especialización en Java y Python.',
+            '- Colaboración en proyectos de código abierto.'
         ],
         badgeText: "Autodidacta",
         badgeColor: "bg-blue-600",
@@ -52,9 +53,10 @@ const experienceData = [
         period: "Agosto 2021 - Agosto 2023",
         company: "Teimas",
         listItems: [
-            '- Experiencia en software en la nube (SaaS).',
+            '- Experiencia trabajando con software en la nube (SaaS).',
             '- Colaboración con equipos técnicos.',
             '- Análisis de necesidades del cliente.',
+            '- Dinámica y entorno de trabajo en equipo.'
         ],
         badgeText: "Empresa",
         badgeColor: "bg-green-800",
@@ -67,33 +69,33 @@ const experienceData = [
 const ExperienceSection: React.FC = () => {
     const sectionRef = useRef(null);
     const [isVisible, setIsVisible] = useState(false);
-    
+
     const lastScrollY = useRef<number>(0); // To detect scroll direction
 
     useEffect(() => {
         const section = sectionRef.current;
-    
+
         const observer = new IntersectionObserver(
             (entries: IntersectionObserverEntry[]) => {
                 const entry = entries[0];
                 const currentScrollY = window.scrollY;
                 const isScrollingUp = currentScrollY < lastScrollY.current;
-    
+
                 if (entry.isIntersecting) {
                     setIsVisible(true);
                 } else if (isScrollingUp) {
                     setIsVisible(false);
                 }
-    
-                lastScrollY.current = currentScrollY; 
+
+                lastScrollY.current = currentScrollY;
             },
             { threshold: 0.5 }
         );
-    
+
         if (section) {
             observer.observe(section);
         }
-    
+
         return () => {
             if (section) {
                 observer.unobserve(section);

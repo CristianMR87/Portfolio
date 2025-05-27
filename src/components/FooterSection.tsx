@@ -12,7 +12,7 @@ const Footer: React.FC = () => {
                         target="_blank"
                         rel="noopener noreferrer"
                     >
-                        <FaLinkedin size={20} className="hover:text-blue-500 hover:shadow-blue-500/40 active:text-blue-500 active:shadow-blue-500/40 shadow-lg transition-all duration-300"/>
+                        <FaLinkedin size={20} className="hover:text-blue-500 hover:shadow-blue-500/40 active:text-blue-500 active:shadow-blue-500/40 shadow-lg transition-all duration-300" />
                     </a>
                     <a
                         title="GitHub"
@@ -20,7 +20,7 @@ const Footer: React.FC = () => {
                         target="_blank"
                         rel="noopener noreferrer"
                     >
-                        <FaGithub size={20} className="text-white hover:text-blue-500 hover:shadow-blue-500/40 active:text-blue-500 active:shadow-blue-500/40 shadow-lg rounded-full transition-all duration-300"/>
+                        <FaGithub size={20} className="text-white hover:text-blue-500 hover:shadow-blue-500/40 active:text-blue-500 active:shadow-blue-500/40 shadow-lg rounded-full transition-all duration-300" />
                     </a>
 
                 </div>
