@@ -1,4 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { useLanguage } from '../contextLanguage';
+import { translations } from '../i18n';
 
 interface EducationCardProps {
     title: string;
@@ -76,14 +78,12 @@ const EducationTimeline: React.FC = () => {
     const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
     const [visibleCards, setVisibleCards] = useState<boolean[]>([]);
     const [isSectionVisible, setIsSectionVisible] = useState(false);
+    const { language } = useLanguage();
+    const t = translations[language].education;
 
-    const educationData = [
+    // Helper: asignar colores y posición a cada tarjeta
+    const cardMeta = [
         {
-            title: "CFGS Desarrollo de App Web (DAW)",
-            period: "2024 - Actualidad",
-            institution: "I.E.S. San Clemente",
-            listItems: ["- Especialización en Desarrollo Web", "- Back end: Java y Python", "- BBDD: OracleSQL", "- Despliegue mediante Ubuntu", "- Front ends responsivos (Bootstrap, TailWind, media queries)"],
-            badgeText: "CFGS",
             badgeColor: "bg-blue-600",
             shadowColor: "shadow-blue-500/40",
             hoverShadowColor: "shadow-blue-500/80",
@@ -91,11 +91,6 @@ const EducationTimeline: React.FC = () => {
             isLeft: true
         },
         {
-            title: "Autodidacta / Freelance",
-            period: "2024 - Actualidad",
-            institution: "Online",
-            listItems: ["- edX - HarvardX: CS50's", "- FreeCodecamp (HTML, CSS)", "- LeetCode", "- Colaboración en diversos proyectos de código abierto"],
-            badgeText: "Autodidacta",
             badgeColor: "bg-green-800",
             shadowColor: "shadow-green-500/40",
             hoverShadowColor: "shadow-green-500/80",
@@ -103,11 +98,6 @@ const EducationTimeline: React.FC = () => {
             isLeft: false
         },
         {
-            title: "Grado en ADE",
-            period: "2009 - 2015",
-            institution: "Universidad de Santiago de compostela",
-            listItems: ["- Gran aprendizaje de los entornos de negocio", "- Gestión de proyectos empresariales", "- Mejora de SoftSkills a nivel laboral", "- TFG: Creación de empresa"],
-            badgeText: "Grado",
             badgeColor: "bg-purple-600",
             shadowColor: "shadow-purple-500/40",
             hoverShadowColor: "shadow-purple-500/80",
@@ -115,11 +105,6 @@ const EducationTimeline: React.FC = () => {
             isLeft: true
         },
         {
-            title: "CFGS Comercio Internacional",
-            period: "2007 - 2009",
-            institution: "I.E.S. Pontepedriña",
-            listItems: ["- Márketing, comercio y empresa", "- Inglés avanzado", "- Gestión y relación con clientes/proveedores."],
-            badgeText: "CFGS",
             badgeColor: "bg-orange-600",
             shadowColor: "shadow-orange-500/40",
             hoverShadowColor: "shadow-orange-500/80",
@@ -129,8 +114,8 @@ const EducationTimeline: React.FC = () => {
     ];
 
     useEffect(() => {
-        if (visibleCards.length !== educationData.length) {
-            setVisibleCards(new Array(educationData.length).fill(false));
+        if (visibleCards.length !== t.items.length) {
+            setVisibleCards(new Array(t.items.length).fill(false));
         }
 
         const sectionObserver = new IntersectionObserver(
@@ -170,7 +155,7 @@ const EducationTimeline: React.FC = () => {
             sectionObserver.disconnect();
             cardObserver.disconnect();
         };
-    }, [visibleCards.length, educationData.length]);
+    }, [visibleCards.length, t.items.length]);
 
     return (
         <section
@@ -181,7 +166,7 @@ const EducationTimeline: React.FC = () => {
                 className={`text-5xl font-bold text-blue-400 text-center mb-12 transition-all duration-700 ease-in-out ${isSectionVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-10'
                     }`}
             >
-                Formación
+                {t.title}
             </h2>
             <div className="relative min-h-auto max-h-auto">
                 <div
@@ -189,10 +174,10 @@ const EducationTimeline: React.FC = () => {
                         }`}
                 ></div>
                 <div className="space-y-16">
-                    {educationData.map((edu, index) => (
+                    {t.items.map((edu, index) => (
                         <div
                             key={index}
-                            className={`flex ${edu.isLeft ? 'md:flex-row flex-row-reverse' : 'md:flex-row-reverse flex-row-reverse'} items-center justify-between`}
+                            className={`flex ${cardMeta[index].isLeft ? 'md:flex-row flex-row-reverse' : 'md:flex-row-reverse flex-row-reverse'} items-center justify-between`}
                         >
                             <div
                                 ref={(el) => {
@@ -200,13 +185,13 @@ const EducationTimeline: React.FC = () => {
                                 }}
                                 className={`w-full md:w-5/12 transition-all duration-700 ease-in-out ${visibleCards[index]
                                         ? 'opacity-100 -translate-x-0'
-                                        : edu.isLeft
+                                        : cardMeta[index].isLeft
                                             ? 'opacity-0 md:-translate-x-20 translate-x-10'
                                             : 'opacity-0 translate-x-10 md:translate-x-20'
                                     }`}
                             >
                                 <div
-                                    className={`md:transform ${edu.isLeft ? 'md:origin-left md:scale-x-110' : 'md:origin-right md:scale-x-110'
+                                    className={`md:transform ${cardMeta[index].isLeft ? 'md:origin-left md:scale-x-110' : 'md:origin-right md:scale-x-110'
                                         }`}
                                 >
                                     <EducationCard
@@ -215,10 +200,10 @@ const EducationTimeline: React.FC = () => {
                                         institution={edu.institution}
                                         listItems={edu.listItems}
                                         badgeText={edu.badgeText}
-                                        badgeColor={edu.badgeColor}
-                                        shadowColor={edu.shadowColor}
-                                        hoverShadowColor={edu.hoverShadowColor}
-                                        activeShadowColor={edu.activeShadowColor}
+                                        badgeColor={cardMeta[index].badgeColor}
+                                        shadowColor={cardMeta[index].shadowColor}
+                                        hoverShadowColor={cardMeta[index].hoverShadowColor}
+                                        activeShadowColor={cardMeta[index].activeShadowColor}
                                     />
                                 </div>
                             </div>
@@ -232,12 +217,4 @@ const EducationTimeline: React.FC = () => {
     );
 };
 
-const Portfolio: React.FC = () => {
-    return (
-        <div className="min-h-screen">
-            <EducationTimeline />
-        </div>
-    );
-};
-
-export default Portfolio;
+export default EducationTimeline;

@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import emailjs from '@emailjs/browser';
+import { useLanguage } from '../contextLanguage';
+import { translations } from '../i18n';
 
 const ContactSection: React.FC = () => {
     const [isVisible, setIsVisible] = useState(false);
@@ -13,6 +15,8 @@ const ContactSection: React.FC = () => {
     });
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [submitMessage, setSubmitMessage] = useState('');
+    const { language } = useLanguage();
+    const t = translations[language].contact;
 
     useEffect(() => {
         const observer = new IntersectionObserver(
@@ -86,12 +90,12 @@ const ContactSection: React.FC = () => {
             className={`min-w-95 md:w-full md:max-w-[800px] p-4 mt-10 mx-auto transition-all duration-700 ease-in-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'
                 }`}
         >
-            <h2 className="text-5xl font-bold text-blue-400 text-center mb-12">Contáctame</h2>
+            <h2 className="text-5xl font-bold text-blue-400 text-center mb-12">{t.title}</h2>
             <div className="bg-gradient-to-br from-black to-blue-950 p-8 rounded-xl shadow-lg shadow-blue-500/40 hover:shadow-blue-500/60 active:shadow-blue-500/60 transition-all duration-300 border border-gray-700">
                 <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
-                            <label htmlFor="name" className="text-gray-100 text-sm">Nombre</label>
+                            <label htmlFor="name" className="text-gray-100 text-sm">{t.name}</label>
                             <input
                                 type="text"
                                 id="name"
@@ -99,12 +103,12 @@ const ContactSection: React.FC = () => {
                                 value={formData.name}
                                 onChange={handleChange}
                                 className="w-full mt-1 p-3 bg-neutral-900/50 border border-gray-700 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-blue-400 transition-all duration-300"
-                                placeholder="Introduce tu nombre"
+                                placeholder={t.namePlaceholder}
                                 required
                             />
                         </div>
                         <div>
-                            <label htmlFor="email" className="text-gray-100 text-sm">Email</label>
+                            <label htmlFor="email" className="text-gray-100 text-sm">{t.email}</label>
                             <input
                                 type="email"
                                 id="email"
@@ -112,13 +116,13 @@ const ContactSection: React.FC = () => {
                                 value={formData.email}
                                 onChange={handleChange}
                                 className="w-full mt-1 p-3 bg-neutral-900/50 border border-gray-700 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-blue-400 transition-all duration-300"
-                                placeholder="Introduce tu email"
+                                placeholder={t.emailPlaceholder}
                                 required
                             />
                         </div>
                     </div>
                     <div>
-                        <label htmlFor="subject" className="text-gray-100 text-sm">Asunto</label>
+                        <label htmlFor="subject" className="text-gray-100 text-sm">{t.subject}</label>
                         <input
                             type="text"
                             id="subject"
@@ -126,12 +130,12 @@ const ContactSection: React.FC = () => {
                             value={formData.subject}
                             onChange={handleChange}
                             className="w-full mt-1 p-3 bg-neutral-900/50 border border-gray-700 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-blue-400 transition-all duration-300"
-                            placeholder="Motivo del contacto"
+                            placeholder={t.subjectPlaceholder}
                             required
                         />
                     </div>
                     <div>
-                        <label htmlFor="message" className="text-gray-100 text-sm">Mensaje</label>
+                        <label htmlFor="message" className="text-gray-100 text-sm">{t.message}</label>
                         <textarea
                             id="message"
                             name="message"
@@ -139,7 +143,7 @@ const ContactSection: React.FC = () => {
                             onChange={handleChange}
                             className="w-full mt-1 p-3 bg-neutral-900/50 border border-gray-700 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-blue-400 transition-all duration-300 resize-y"
                             rows={4}
-                            placeholder="Escribe aquí tu mensaje ..."
+                            placeholder={t.messagePlaceholder}
                             required
                         />
                     </div>
@@ -151,7 +155,7 @@ const ContactSection: React.FC = () => {
                                 className="flex items-center justify-center w-32 h-12 bg-gradient-to-br from-black to-blue-950 border border-cyan-400/30 rounded-full shadow-lg shadow-blue-500/40 hover:text-blue-500 hover:shadow-blue-500/40 active:text-blue-500 active:shadow-blue-500/40 cursor-pointer font-semibold text-white transition-all duration-400 lg:inline gradient-text"
                                 disabled={isSubmitting}
                             >
-                                Cancelar
+                                {t.cancel}
                             </button>
                         </div>
                         <div className='group2'>
@@ -160,13 +164,13 @@ const ContactSection: React.FC = () => {
                                 className="flex items-center justify-center w-32 h-12 bg-gradient-to-br from-black to-blue-950 border border-cyan-400/30 rounded-full shadow-lg shadow-blue-500/40 hover:text-blue-500 hover:shadow-blue-500/40 active:text-blue-500 active:shadow-blue-500/40 cursor-pointer font-semibold text-white transition-all duration-400 lg:inline gradient-text"
                                 disabled={isSubmitting}
                             >
-                                {isSubmitting ? 'Enviando...' : 'Enviar Mensaje'}
+                                {isSubmitting ? t.sending : t.send}
                             </button>
                         </div>
                     </div>
                     {submitMessage && (
-                        <p className={`text-center mt-4 ${submitMessage.includes('éxito') ? 'text-green-400' : 'text-red-400'}`}>
-                            {submitMessage}
+                        <p className={`text-center mt-4 ${submitMessage.includes('éxito') || submitMessage.includes('successfully') ? 'text-green-400' : 'text-red-400'}`}>
+                            {submitMessage.includes('éxito') || submitMessage.includes('successfully') ? t.success : t.error}
                         </p>
                     )}
                 </form>

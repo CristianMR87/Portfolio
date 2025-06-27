@@ -2,6 +2,8 @@ import React, { useState, useEffect, useRef } from 'react';
 import { FaHtml5, FaCss3Alt, FaReact, FaJava, FaPython, FaGitAlt, FaGithub, FaCode, FaUbuntu } from 'react-icons/fa';
 import { SiTailwindcss, SiBootstrap, SiOracle } from 'react-icons/si';
 import { motion } from 'framer-motion';
+import { useLanguage } from '../contextLanguage';
+import { translations } from '../i18n';
 
 interface Technology {
     icon: React.ReactNode;
@@ -16,6 +18,8 @@ const TechnologiesSection: React.FC = () => {
     const sectionRef = useRef<HTMLElement>(null);
     const [isVisible, setIsVisible] = useState<boolean>(false);
     const lastScrollY = useRef<number>(0);
+    const { language } = useLanguage();
+    const t = translations[language].technologies;
 
     useEffect(() => {
         const section = sectionRef.current;
@@ -75,10 +79,10 @@ const TechnologiesSection: React.FC = () => {
                 className={`text-5xl font-bold text-blue-400 text-center mb-8 transition-all duration-700 ease-in-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'
                     }`}
             >
-                Tecnologías
+                {t.title}
             </h2>
             <motion.div initial={{ opacity: 0, y: 50 }} animate={isVisible ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.4 }} className="gap-3 grid md:grid-cols-3 justify-center">
-                {[frontend, backend, complementos].map((category, i) => (
+                {[t.frontend, t.backend, t.complement].map((catTitle, i) => (
                     <motion.div
                         key={i}
                         initial={{
@@ -88,13 +92,11 @@ const TechnologiesSection: React.FC = () => {
                         }}
                         animate={isVisible ? { opacity: 1, x: 0, y: 0 } : {}}
                         transition={{ duration: 0.5, ease: 'easeOut' }}
-                        className="flex flex-col items-center" // Añadimos flex y centrado
+                        className="flex flex-col items-center"
                     >
-                        <h3 className="text-xl font-semibold text-white md:mb-12 mb-8"> {/* Ajustamos el margen */}
-                            {i === 0 ? 'Frontend' : i === 1 ? 'Backend' : 'Complementos'}
-                        </h3>
+                        <h3 className="text-xl font-semibold text-white md:mb-12 mb-8">{catTitle}</h3>
                         <div className="flex flex-wrap justify-center md:gap-10 gap-8 mb-5 min-w-45 max-w-64">
-                            {category.map((tech, index) => (
+                            {(i === 0 ? frontend : i === 1 ? backend : complementos).map((tech, index) => (
                                 <div key={index} className="flex flex-col items-center md:-mt-5 justify-center group transition-all duration-300 relative">
                                     <span className={`p-3 rounded-full bg-neutral-950  shadow-lg ${tech.shadow} ${tech.hover} ${tech.active} transition-all duration-300 ease-in-out`}>
                                         {tech.icon}

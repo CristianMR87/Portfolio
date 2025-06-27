@@ -2,6 +2,8 @@ import React, { useEffect, useState, useRef } from 'react';
 import { FaLinkedin, FaGithub } from 'react-icons/fa';
 import EmailSection from './EmailSection';
 import Button from './Button';
+import { useLanguage } from '../contextLanguage';
+import { translations } from '../i18n';
 
 interface NavbarProps {
     scrollToSection: (ref: React.RefObject<HTMLDivElement | null>) => void;
@@ -15,11 +17,29 @@ interface NavbarProps {
     };
 }
 
+const LanguageSelector: React.FC<{ isMobile?: boolean }> = () => {
+    const { language, setLanguage } = useLanguage();
+    // Alterna entre 'en' y 'es' al hacer click
+    const toggleLanguage = () => setLanguage(language === 'en' ? 'es' : 'en');
+    return (
+        <button
+            onClick={toggleLanguage}
+            className="w-10 h-10 flex items-center justify-center rounded-full bg-blue-950 border border-gray-700 text-2xl shadow-lg hover:shadow-blue-400/60 active:shadow-blue-400/60 transition-all duration-300 cursor-pointer ml-4"
+            title={language === 'en' ? 'Cambiar a Español' : 'Switch to English'}
+            aria-label="Toggle language"
+        >
+            {language === 'en' ? '🇬🇧' : '🇪🇸'}
+        </button>
+    );
+};
+
 const Navbar: React.FC<NavbarProps> = ({ scrollToSection, refs }) => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
     const [shouldCloseEmail, setShouldCloseEmail] = useState(false);
     const menuRef = useRef<HTMLUListElement>(null);
+    const { language } = useLanguage();
+    const t = translations[language].navbar;
 
     useEffect(() => {
         const handleScroll = () => {
@@ -60,12 +80,7 @@ const Navbar: React.FC<NavbarProps> = ({ scrollToSection, refs }) => {
     }, [isMenuOpen, shouldCloseEmail]);
 
     const toggleMenu = () => {
-        console.log('Estado antes del clic:', isMenuOpen);
-        setIsMenuOpen((prev) => {
-            const newState = !prev;
-            console.log('Nuevo estado:', newState);
-            return newState;
-        });
+        setIsMenuOpen((prev) => !prev);
         setShouldCloseEmail(false);
     };
 
@@ -76,6 +91,8 @@ const Navbar: React.FC<NavbarProps> = ({ scrollToSection, refs }) => {
         >
             <div className="flex items-center justify-between max-w-7xl mx-auto lg:grid lg:grid-cols-3">
                 <div className="flex items-center space-x-4 shrink-0 lg:shrink lg:justify-self-start">
+                    {/* Botón de idioma a la izquierda */}
+                    <LanguageSelector />
                     <Button onClick={toggleMenu} className="lg:hidden">
                         <svg
                             stroke="currentColor"
@@ -90,10 +107,6 @@ const Navbar: React.FC<NavbarProps> = ({ scrollToSection, refs }) => {
                             <path d="M3 4H21V6H3V4ZM3 11H15V13H3V11ZM3 18H21V20H3V18Z"></path>
                         </svg>
                     </Button>
-                    <img
-                        src="/images/1.png"
-                        className="hidden lg:block lg:w-[50px] lg:h-[50px] rounded-full object-cover border-2 border-gray-700"
-                    />
                 </div>
                 <ul
                     ref={menuRef}
@@ -112,7 +125,7 @@ const Navbar: React.FC<NavbarProps> = ({ scrollToSection, refs }) => {
                                 setIsMenuOpen(false);
                             }}
                         >
-                            Sobre mí
+                            {t.about}
                         </a>
                     </li>
                     <li className="group relative bg-transparent">
@@ -125,7 +138,7 @@ const Navbar: React.FC<NavbarProps> = ({ scrollToSection, refs }) => {
                                 setIsMenuOpen(false);
                             }}
                         >
-                            Experiencia
+                            {t.experience}
                         </a>
                     </li>
                     <li className="group relative bg-transparent">
@@ -138,7 +151,7 @@ const Navbar: React.FC<NavbarProps> = ({ scrollToSection, refs }) => {
                                 setIsMenuOpen(false);
                             }}
                         >
-                            Tecnologías
+                            {t.technologies}
                         </a>
                     </li>
                     <li className="group relative bg-transparent">
@@ -151,7 +164,7 @@ const Navbar: React.FC<NavbarProps> = ({ scrollToSection, refs }) => {
                                 setIsMenuOpen(false);
                             }}
                         >
-                            Proyectos
+                            {t.projects}
                         </a>
                     </li>
                     <li className="group relative bg-transparent">
@@ -164,7 +177,7 @@ const Navbar: React.FC<NavbarProps> = ({ scrollToSection, refs }) => {
                                 setIsMenuOpen(false);
                             }}
                         >
-                            Formación
+                            {t.education}
                         </a>
                     </li>
                     <li className="group relative bg-transparent">
@@ -177,7 +190,7 @@ const Navbar: React.FC<NavbarProps> = ({ scrollToSection, refs }) => {
                                 setIsMenuOpen(false);
                             }}
                         >
-                            Contacto
+                            {t.contact}
                         </a>
                     </li>
                 </ul>
