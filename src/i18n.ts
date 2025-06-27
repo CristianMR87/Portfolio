@@ -14,8 +14,7 @@ export const translations = {
         about: {
             hello: "¡Hola! Soy Cristian.",
             role: "Desarrollador Full-Stack.",
-            desc1: "Actualmente estudiante de 2º año de DAW y futuro desarrollador Full-Stack.\nApasionado por la tecnología y el mundo del desarrollo web. Con más de un año de formación autodidacta y actualmente estudiando DAW, centro mis conocimientos en tecnologías como Java, Python, Oracle SQL, React, Bootstrap, Ubuntu... He desarrollado varios proyectos personales aplicando estas tecnologías, desde su creación hasta su despliegue final.",
-            desc2: "Siéntete libre de contactarme para cualquier información extra.",
+            desc: "Actualmente estudiante de 2º año de DAW y futuro desarrollador Full-Stack.\nApasionado por la tecnología y el mundo del desarrollo web. Con más de un año de formación autodidacta y actualmente estudiando DAW, centro mis conocimientos en tecnologías como Java, Python, Oracle SQL, React, Bootstrap, Ubuntu... He desarrollado varios proyectos personales aplicando estas tecnologías, desde su creación hasta su despliegue final. Siéntete libre de contactarme para cualquier información extra.",
             available: "Disponible para trabajar",
             emailCopied: "¡Email Copiado!",
             downloadCV: "Descargar CV",
@@ -109,7 +108,7 @@ export const translations = {
                     title: "Autodidacta / Freelance",
                     period: "2024 - Actualidad",
                     institution: "Online",
-                    listItems: ["- edX - HarvardX: CS50's", "- FreeCodecamp (HTML, CSS)", "- LeetCode", "- Colaboración en diversos proyectos de código abierto"],
+                    listItems: ["- CS50’s Introduction to Computer Science – HarvardX", "- FreeCodecamp (HTML, CSS)", "- LeetCode", "- Colaboración en diversos proyectos de código abierto"],
                     badgeText: "Autodidacta"
                 },
                 {
@@ -168,8 +167,7 @@ export const translations = {
         about: {
             hello: "Hi! I'm Cristian.",
             role: "Full-Stack Developer.",
-            desc1: "Currently a 2nd year DAW student and future Full-Stack developer. Passionate about technology and the world of web development. With over a year of self-taught training and currently studying DAW, I focus my knowledge on technologies such as Java, Python, Oracle SQL, React, Bootstrap, Ubuntu... I have developed several personal projects applying these technologies, from creation to final deployment.",
-            desc2: "Feel free to contact me for any extra information.",
+            desc: "Currently a 2nd year DAW student and future Full-Stack developer. Passionate about technology and the world of web development. With over a year of self-taught training and currently studying DAW, I focus my knowledge on technologies such as Java, Python, Oracle SQL, React, Bootstrap, Ubuntu... I have developed several personal projects applying these technologies, from creation to final deployment. Feel free to contact me for any extra information.",
             available: "Available for work",
             emailCopied: "Email Copied!",
             downloadCV: "Download CV",
@@ -254,16 +252,16 @@ export const translations = {
             items: [
                 {
                     title: "Higher Degree in Web App Development (DAW)",
-                    period: "2024 - Present",
+                    period: "2024 - Ongoing",
                     institution: "I.E.S. San Clemente",
-                    listItems: ["- Specialization in Web Development", "- Back end: Java and Python", "- DB: OracleSQL", "- Deployment with Ubuntu", "- Responsive front ends (Bootstrap, TailWind, media queries)"],
+                    listItems: ["- Specialization in Web Development", "- Back end: Java and Python", "- DB: SQL", "- Deployment with Ubuntu", "- Responsive front ends (Bootstrap, TailWind, media queries)"],
                     badgeText: "Higher Degree"
                 },
                 {
                     title: "Self-taught / Freelance",
                     period: "2024 - Present",
                     institution: "Online",
-                    listItems: ["- edX - HarvardX: CS50's", "- FreeCodecamp (HTML, CSS)", "- LeetCode", "- Collaboration in various open source projects"],
+                    listItems: ["- CS50’s Introduction to Computer Science – HarvardX", "- FreeCodecamp (HTML, CSS)", "- LeetCode", "- Collaboration in various open source projects"],
                     badgeText: "Self-taught"
                 },
                 {

@@ -43,7 +43,7 @@ const ExperienceSection: React.FC = () => {
 
     return (
         <section ref={sectionRef} className="min-w-95 md:w-full lg:w-[1024px] w-4/5 p-4 mt-5 mx-auto">
-            {/* Animación del Título */}
+            {/* Title Animation */}
             <motion.h2
                 initial={{ opacity: 0, y: 50 }}
                 animate={isVisible ? { opacity: 1, y: 0 } : {}}
@@ -53,7 +53,7 @@ const ExperienceSection: React.FC = () => {
                 {t.title}
             </motion.h2>
 
-            {/* Animación de las Tarjetas */}
+            {/* Cards Animation */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
                 {t.items.map((exp, index) => (
                     <motion.div

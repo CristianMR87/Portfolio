@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { FaReact, FaPython, FaBootstrap, FaHtml5, FaCss3, FaFlask } from 'react-icons/fa';
+import { FaReact, FaPython, FaBootstrap, FaHtml5, FaCss3, FaFlask, FaGithub } from 'react-icons/fa';
 import { useLanguage } from '../contextLanguage';
 import { translations } from '../i18n';
 
@@ -16,6 +16,7 @@ interface ProjectCardProps {
     position?: 'left' | 'center' | 'right';
     detailsBtn: string;
     hideBtn: string;
+    githubUrl?: string;
 }
 
 const ProjectCard: React.FC<ProjectCardProps & { isVisible?: boolean }> = ({
@@ -32,6 +33,7 @@ const ProjectCard: React.FC<ProjectCardProps & { isVisible?: boolean }> = ({
     position,
     detailsBtn,
     hideBtn,
+    githubUrl,
 }) => {
     const [isExpanded, setIsExpanded] = useState(false);
     const cardRef = useRef<HTMLDivElement>(null);
@@ -94,6 +96,7 @@ const ProjectCard: React.FC<ProjectCardProps & { isVisible?: boolean }> = ({
                     alt={imageAlt}
                     className="w-full h-48 object-cover rounded-xl border border-gray-800 transition-opacity duration-300 group-hover:opacity-30"
                 />
+                {/* DEMO button */}
                 {link && (
                     <a
                         href={link}
@@ -109,6 +112,19 @@ const ProjectCard: React.FC<ProjectCardProps & { isVisible?: boolean }> = ({
                     </a>
                 )}
             </div>
+            {githubUrl && (
+                <a
+                    href={githubUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="absolute right-6 top-[14rem] bg-neutral-900/80 hover:bg-neutral-800 text-white p-1 rounded-full shadow transition-all z-20"
+                    style={{ transform: 'translateY(0)' }}
+                    title="See code"
+                    aria-label="Github"
+                >
+                    <FaGithub size={27} />
+                </a>
+            )}
             <div className="flex items-center justify-between mt-4">
                 <h3 className="text-xl font-semibold text-white">{title}</h3>
             </div>
@@ -224,6 +240,7 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ className }) => {
                             ]
                         }
                         link={idx === 0 ? undefined : idx === 1 ? "https://nimbus-weather.vercel.app/" : "https://cristian-estudios.vercel.app/"}
+                        githubUrl={idx === 0 ? "https://github.com/CristianMR87/Portfolio" : idx === 1 ? "https://github.com/CristianMR87/Nimbus-Weather" : "https://github.com/CristianMR87/Web-Bootstrap"}
                         badgeText={proj.badgeText}
                         badgeColor={
                             idx === 0 ? { shadow: 'shadow-blue-500/40', hover: 'hover:shadow-blue-500/80', active: 'active:shadow-blue-500/80', bg: 'bg-blue-500', badge: 'bg-blue-600' }

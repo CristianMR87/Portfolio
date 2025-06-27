@@ -26,10 +26,7 @@ const AboutSection: React.FC = () => {
                     <p className="text-4xl font-bold text-blue-400">{t.hello}</p>
                     <p className="text-4xl font-bold">{t.role}</p>
                     <p className="text-gray-300 text-lg mt-8 text-justify">
-                        {t.desc1}
-                    </p>
-                    <p className="text-gray-300 text-lg mt-8 text-justify">
-                        {t.desc2}
+                        {t.desc}
                     </p>
                     <div className="inline-block border-2 border-green-600 text-green-600 text-sm mt-7 font-semibold py-3 px-7 rounded-full">
                         {t.available}
