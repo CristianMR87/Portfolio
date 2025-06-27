@@ -77,8 +77,8 @@ const AboutSection: React.FC = () => {
                     </div>
                     <div className="group">
                         <a
-                            href="/CV Cristian Morano.pdf"
-                            download="CV_Cristian_Morano.pdf"
+                            href={language === 'en' ? '/CV Cristian Morano EN.pdf' : '/CV Cristian Morano SP.pdf'}
+                            download={language === 'en' ? 'CV Cristian Morano EN.pdf' : 'CV Cristian Morano SP.pdf'}
                             title={t.cvTitle}
                             className="mt-8 inline-block bg-gradient-to-br from-black to-blue-950 border border-cyan-400/30 rounded-full shadow-lg shadow-blue-500/40 hover:shadow-blue-500/80 transition-all duration-300 cursor-pointer px-4 py-2 gradient-text"
                         >

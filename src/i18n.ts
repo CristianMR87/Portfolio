@@ -142,10 +142,17 @@ export const translations = {
             send: "Enviar Mensaje",
             sending: "Enviando...",
             success: "¡Mensaje enviado con éxito! Te contactaré pronto.",
-            error: "Hubo un error al enviar el mensaje. Por favor, intenta de nuevo."
+            error: "Hubo un error al enviar el mensaje. Por favor, intenta de nuevo.",
+            required: "Completa este campo"
         },
         footer: {
             rights: "Todos los derechos reservados"
+        },
+        email: {
+            contacto: "Contacto",
+            copiar: "Copiar email",
+            enviar: "Enviar email",
+            copiado: "¡Email Copiado!"
         }
     },
     en: {
@@ -289,10 +296,17 @@ export const translations = {
             send: "Send Message",
             sending: "Sending...",
             success: "Message sent successfully! I will contact you soon.",
-            error: "There was an error sending the message. Please try again."
+            error: "There was an error sending the message. Please try again.",
+            required: "Please fill out this field"
         },
         footer: {
             rights: "All rights reserved"
+        },
+        email: {
+            contacto: "Contact",
+            copiar: "Copy email",
+            enviar: "Send email",
+            copiado: "Email Copied!"
         }
     }
 };

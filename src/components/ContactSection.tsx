@@ -105,6 +105,8 @@ const ContactSection: React.FC = () => {
                                 className="w-full mt-1 p-3 bg-neutral-900/50 border border-gray-700 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-blue-400 transition-all duration-300"
                                 placeholder={t.namePlaceholder}
                                 required
+                                onInvalid={e => (e.target as HTMLInputElement).setCustomValidity(t.required)}
+                                onInput={e => (e.target as HTMLInputElement).setCustomValidity("")}
                             />
                         </div>
                         <div>
@@ -118,6 +120,8 @@ const ContactSection: React.FC = () => {
                                 className="w-full mt-1 p-3 bg-neutral-900/50 border border-gray-700 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-blue-400 transition-all duration-300"
                                 placeholder={t.emailPlaceholder}
                                 required
+                                onInvalid={e => (e.target as HTMLInputElement).setCustomValidity(t.required)}
+                                onInput={e => (e.target as HTMLInputElement).setCustomValidity("")}
                             />
                         </div>
                     </div>
@@ -132,6 +136,8 @@ const ContactSection: React.FC = () => {
                             className="w-full mt-1 p-3 bg-neutral-900/50 border border-gray-700 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-blue-400 transition-all duration-300"
                             placeholder={t.subjectPlaceholder}
                             required
+                            onInvalid={e => (e.target as HTMLInputElement).setCustomValidity(t.required)}
+                            onInput={e => (e.target as HTMLInputElement).setCustomValidity("")}
                         />
                     </div>
                     <div>
@@ -145,6 +151,8 @@ const ContactSection: React.FC = () => {
                             rows={4}
                             placeholder={t.messagePlaceholder}
                             required
+                            onInvalid={e => (e.target as HTMLTextAreaElement).setCustomValidity(t.required)}
+                            onInput={e => (e.target as HTMLTextAreaElement).setCustomValidity("")}
                         />
                     </div>
                     <div className="flex justify-between sm:justify-end gap-4 mt-6">

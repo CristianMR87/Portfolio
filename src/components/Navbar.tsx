@@ -19,16 +19,25 @@ interface NavbarProps {
 
 const LanguageSelector: React.FC<{ isMobile?: boolean }> = () => {
     const { language, setLanguage } = useLanguage();
-    // Alterna entre 'en' y 'es' al hacer click
     const toggleLanguage = () => setLanguage(language === 'en' ? 'es' : 'en');
+    const flagUrl = language === 'en'
+        ? 'https://flagcdn.com/gb.svg'
+        : 'https://flagcdn.com/es.svg';
+    const altText = language === 'en' ? 'United Kingdom' : 'España';
     return (
         <button
             onClick={toggleLanguage}
-            className="w-10 h-10 flex items-center justify-center rounded-full bg-blue-950 border border-gray-700 text-2xl shadow-lg hover:shadow-blue-400/60 active:shadow-blue-400/60 transition-all duration-300 cursor-pointer ml-4"
+            type="button"
+            className="flex items-center justify-center w-10 h-10 bg-gradient-to-br from-black to-blue-950 border border-cyan-400/30 rounded-full shadow-lg shadow-blue-500/40 hover:shadow-blue-400/60 active:shadow-blue-400/60 transition-all duration-300 cursor-pointer ml-2"
             title={language === 'en' ? 'Cambiar a Español' : 'Switch to English'}
             aria-label="Toggle language"
         >
-            {language === 'en' ? '🇬🇧' : '🇪🇸'}
+            <img
+                src={flagUrl}
+                width={25}
+                alt={altText}
+                style={{ objectFit: 'cover', boxShadow: '0 0 4px #0ff4' }}
+            />
         </button>
     );
 };
@@ -90,9 +99,7 @@ const Navbar: React.FC<NavbarProps> = ({ scrollToSection, refs }) => {
                 }`}
         >
             <div className="flex items-center justify-between max-w-7xl mx-auto lg:grid lg:grid-cols-3">
-                <div className="flex items-center space-x-4 shrink-0 lg:shrink lg:justify-self-start">
-                    {/* Botón de idioma a la izquierda */}
-                    <LanguageSelector />
+                <div className="flex items-center shrink-0 lg:shrink lg:justify-self-start">
                     <Button onClick={toggleMenu} className="lg:hidden">
                         <svg
                             stroke="currentColor"
@@ -107,6 +114,7 @@ const Navbar: React.FC<NavbarProps> = ({ scrollToSection, refs }) => {
                             <path d="M3 4H21V6H3V4ZM3 11H15V13H3V11ZM3 18H21V20H3V18Z"></path>
                         </svg>
                     </Button>
+                    <LanguageSelector />
                 </div>
                 <ul
                     ref={menuRef}
@@ -114,6 +122,9 @@ const Navbar: React.FC<NavbarProps> = ({ scrollToSection, refs }) => {
                             ? 'left-0 bg-gradient-to-br from-black to-blue-950 shadow-lg shadow-blue-500/40 mt-1 scale-90'
                             : '-left-full bg-transparent scale-100'
                         } lg:flex lg:border-hidden border border-gray-700 -ml-2 lg:space-x-6 fixed lg:static top-15 h-auto w-40 lg:w-auto rounded-2xl p-4 lg:p-0 transition-all duration-500 ease-in-out z-40 space-y-4 lg:space-y-0 lg:justify-self-center lg:text-center lg:whitespace-nowrap lg:opacity-100`}
+                    onClick={() => {
+                        if (window.innerWidth < 1024 && isMenuOpen) setIsMenuOpen(false);
+                    }}
                 >
                     <li className="group relative">
                         <a

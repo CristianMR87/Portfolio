@@ -26,7 +26,8 @@ const EducationCard: React.FC<EducationCardProps> = ({
     activeShadowColor
 }) => {
     const [isExpanded, setIsExpanded] = useState(false);
-
+    const { language } = useLanguage();
+    const t = translations[language].projects;
     return (
         <div
             className={`relative min-w-80 bg-gradient-to-br from-black to-blue-950 p-4 rounded-xl shadow-xl ${shadowColor} transition-all duration-300 border border-gray-700 group ${hoverShadowColor === 'shadow-blue-500/80' ? 'hover:shadow-blue-500/80' :
@@ -54,7 +55,7 @@ const EducationCard: React.FC<EducationCardProps> = ({
                 onClick={() => setIsExpanded(!isExpanded)}
                 className="md:hidden text-green-400 font-semibold flex items-center justify-center gap-1 mt-4 transition-colors duration-700 mx-auto cursor-pointer"
             >
-                {isExpanded ? 'Ocultar' : 'Detalles'}
+                {isExpanded ? t.hideBtn : t.detailsBtn}
                 <svg
                     className={`w-4 h-4 transform transition-transform duration-700 ${isExpanded ? 'rotate-180' : ''}`}
                     fill="none"

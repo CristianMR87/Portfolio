@@ -14,6 +14,8 @@ interface ProjectCardProps {
     badgeText: string;
     badgeColor: { shadow: string; hover: string; active: string; bg: string; badge: string };
     position?: 'left' | 'center' | 'right';
+    detailsBtn: string;
+    hideBtn: string;
 }
 
 const ProjectCard: React.FC<ProjectCardProps & { isVisible?: boolean }> = ({
@@ -28,6 +30,8 @@ const ProjectCard: React.FC<ProjectCardProps & { isVisible?: boolean }> = ({
     badgeColor,
     isVisible,
     position,
+    detailsBtn,
+    hideBtn,
 }) => {
     const [isExpanded, setIsExpanded] = useState(false);
     const cardRef = useRef<HTMLDivElement>(null);
@@ -121,7 +125,7 @@ const ProjectCard: React.FC<ProjectCardProps & { isVisible?: boolean }> = ({
                 onClick={toggleExpand}
                 className="md:hidden text-green-400 hover:text-green-500 active:text-green-500 font-semibold flex items-center justify-center gap-1 mt-4 transition-colors duration-700 mx-auto cursor-pointer"
             >
-                {isExpanded ? 'Ocultar' : 'Detalles'}
+                {isExpanded ? hideBtn : detailsBtn}
                 <svg
                     className={`w-4 h-4 transform transition-transform duration-700 ${isExpanded ? 'rotate-180' : ''}`}
                     fill="none"
@@ -228,6 +232,8 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ className }) => {
                         }
                         isVisible={isVisible}
                         position={idx === 0 ? 'left' : idx === 1 ? 'center' : 'right'}
+                        detailsBtn={t.detailsBtn}
+                        hideBtn={t.hideBtn}
                     />
                 ))}
             </div>
