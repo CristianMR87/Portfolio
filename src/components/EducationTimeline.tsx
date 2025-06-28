@@ -82,7 +82,6 @@ const EducationTimeline: React.FC = () => {
     const { language } = useLanguage();
     const t = translations[language].education;
 
-    // Helper: asignar colores y posición a cada tarjeta
     const cardMeta = [
         {
             badgeColor: "bg-blue-600",

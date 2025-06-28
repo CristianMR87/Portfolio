@@ -15,26 +15,24 @@ interface Technology {
     textColor: string;
 }
 
-// TechnologyIcon component for tooltip logic
+
 const TechnologyIcon: React.FC<{ tech: Technology }> = ({ tech }) => {
     const [showTooltip, setShowTooltip] = useState(false);
     const timeoutRef = useRef<number | null>(null);
 
-    // Handler for mobile touch
+
     const handleTouch = () => {
         setShowTooltip(true);
         if (timeoutRef.current) window.clearTimeout(timeoutRef.current);
         timeoutRef.current = window.setTimeout(() => setShowTooltip(false), 1500);
     };
 
-    // Hide tooltip on unmount
     useEffect(() => {
         return () => {
             if (timeoutRef.current) window.clearTimeout(timeoutRef.current);
         };
     }, []);
 
-    // Combine hover/active/zoom classes with showTooltip for mobile
     const zoomClass = showTooltip ? 'scale-115 ' + tech.shadow : '';
 
     return (
@@ -114,7 +112,7 @@ const TechnologiesSection: React.FC = () => {
         { icon: <FaGitAlt className="text-orange-600" size={35} />, shadow: 'shadow-orange-600/70', hover: 'hover:shadow-orange-700/80 hover:scale-115', active: 'active:scale-115', title: 'Git', textColor: 'text-orange-600' },
         { icon: <FaGithub className="text-gray-50" size={35} />, shadow: 'shadow-gray-50/70', hover: 'hover:shadow-gray-50/80 hover:scale-115', active: 'active:scale-115', title: 'GitHub', textColor: 'text-white-600' },
         { icon: <SiDocker className="text-cyan-300" size={35} />, shadow: 'shadow-cyan-300/70', hover: 'hover:shadow-cyan-400/80 hover:scale-115', active: 'active:scale-115', title: 'Docker', textColor: 'text-cyan-300' },
-        { icon: <img src={azurelogo} alt="Azure" width={35} height={35} className="text-blue-600"/>, shadow: 'shadow-blue-500/70', hover: 'hover:shadow-blue-600/80 hover:scale-115', active: 'active:scale-115', title: 'Azure', textColor: 'text-blue-500' },
+        { icon: <img src={azurelogo} alt="Azure" width={35} height={35} className="text-blue-600" />, shadow: 'shadow-blue-500/70', hover: 'hover:shadow-blue-600/80 hover:scale-115', active: 'active:scale-115', title: 'Azure', textColor: 'text-blue-500' },
         { icon: <FaUbuntu className="text-orange-600" size={35} />, shadow: 'shadow-orange-600/70', hover: 'hover:shadow-orange-700/80 hover:scale-115', active: 'active:scale-115', title: 'Ubuntu', textColor: 'text-orange-600' },
     ];
 

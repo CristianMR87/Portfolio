@@ -57,7 +57,7 @@ function EmailSection({ closeOnScroll }: EmailSectionProps) {
             className="flex shrink-0 ml-auto lg:ml-0 lg:justify-self-end relative"
             title={t.contacto}
         >
-            {/* Botón principal */}
+            {/* Main Button */}
             <Button onClick={toggleOptions}>
                 <FaEnvelope
                     size={24}
@@ -70,7 +70,7 @@ function EmailSection({ closeOnScroll }: EmailSectionProps) {
                     title={t.copiar}
                     className="absolute top-17 left-1/2 transform -translate-x-1/2 flex space-x-2 animate-slideIn"
                 >
-                    {/* Opción 1: Copiar email */}
+                    {/* Option 1: Copy email */}
                     <Button onClick={copyEmail}>
                         <FaCopy
                             size={16}
@@ -82,7 +82,7 @@ function EmailSection({ closeOnScroll }: EmailSectionProps) {
                             </span>
                         )}
                     </Button>
-                    {/* Opción 2: Enviar email */}
+                    {/* Option 2: Send email */}
                     <a
                         title={t.enviar}
                         href="mailto:Cristianfmorano@gmail.com"
