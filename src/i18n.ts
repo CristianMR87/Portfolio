@@ -14,7 +14,7 @@ export const translations = {
         about: {
             hello: "¡Hola! Soy Cristian.",
             role: "Desarrollador Full-Stack.",
-            desc: "Actualmente estudiante de 2º año de DAW y futuro desarrollador Full-Stack.\nApasionado por la tecnología y el mundo del desarrollo web. Con más de un año de formación autodidacta y actualmente estudiando DAW, centro mis conocimientos en tecnologías como Java, Python, Oracle SQL, React, Bootstrap, Ubuntu... He desarrollado varios proyectos personales aplicando estas tecnologías, desde su creación hasta su despliegue final. Siéntete libre de contactarme para cualquier información extra.",
+            desc: "Actualmente estudiante de 2º año de DAW y futuro desarrollador Full-Stack.\nApasionado por la tecnología y el mundo del desarrollo web. Con más de un año de formación autodidacta y actualmente estudiando DAW, centro mis conocimientos en tecnologías como Java, Spring Boot, Python, Azure, SQL, React, Tailwind, Ubuntu... He desarrollado varios proyectos personales aplicando estas tecnologías, desde su creación hasta su despliegue final. Siéntete libre de contactarme para cualquier información extra.",
             available: "Disponible para trabajar",
             emailCopied: "¡Email Copiado!",
             downloadCV: "Descargar CV",
@@ -167,7 +167,7 @@ export const translations = {
         about: {
             hello: "Hi! I'm Cristian.",
             role: "Full-Stack Developer.",
-            desc: "Currently a 2nd year DAW student and future Full-Stack developer. Passionate about technology and the world of web development. With over a year of self-taught training and currently studying DAW, I focus my knowledge on technologies such as Java, Python, Oracle SQL, React, Bootstrap, Ubuntu... I have developed several personal projects applying these technologies, from creation to final deployment. Feel free to contact me for any extra information.",
+            desc: "Currently a 2nd year DAW student and future Full-Stack developer. Passionate about technology and the world of web development. With over a year of self-taught training and currently studying DAW, I focus my knowledge on technologies such as Java, Spring Boot, Python, Azure, SQL, React, Tailwind, Ubuntu... I have developed several personal projects applying these technologies, from creation to final deployment. Feel free to contact me for any extra information.",
             available: "Available for work",
             emailCopied: "Email Copied!",
             downloadCV: "Download CV",
